@@ -1,3 +1,6 @@
+DOCKER_IMAGE ?= juanlucasbg/wescale-emailer
+DOCKER_CONTAINER ?= wescale-emailer
+
 .PHONY: build test-unit run clean keygen test-service test-repo test-http test-migrations test-database test-pkg test-licence-dev test-telemetry dev coverage coverage-report docker-build docker-run docker-stop docker-clean docker-logs docker-buildx-setup docker-publish docker-compose-up docker-compose-down docker-compose-build openapi-bundle openapi-lint openapi-preview demo-hmac
 
 build:
@@ -111,35 +114,35 @@ keygen:
 # Docker commands
 docker-build:
 	@echo "Building Docker image..."
-	docker build -t notifuse:latest .
+	docker build -t $(DOCKER_IMAGE):latest .
 
 docker-run:
 	@echo "Running Docker container..."
-	docker run -d --name notifuse \
+	docker run -d --name $(DOCKER_CONTAINER) \
 		-p 8080:8080 \
 		-e SECRET_KEY=$${SECRET_KEY} \
 		-e ROOT_EMAIL=$${ROOT_EMAIL:-admin@example.com} \
 		-e API_ENDPOINT=$${API_ENDPOINT:-http://localhost:8080} \
 		-e WEBHOOK_ENDPOINT=$${WEBHOOK_ENDPOINT:-http://localhost:8080} \
-		notifuse:latest
+		$(DOCKER_IMAGE):latest
 
 docker-stop:
 	@echo "Stopping Docker container..."
-	docker stop notifuse || true
-	docker rm notifuse || true
+	docker stop $(DOCKER_CONTAINER) || true
+	docker rm $(DOCKER_CONTAINER) || true
 
 docker-clean: docker-stop
 	@echo "Removing Docker image..."
-	docker rmi notifuse:latest || true
+	docker rmi $(DOCKER_IMAGE):latest || true
 
 docker-logs:
 	@echo "Showing Docker container logs..."
-	docker logs -f notifuse
+	docker logs -f $(DOCKER_CONTAINER)
 
 docker-buildx-setup:
 	@echo "Setting up Docker buildx for multi-platform builds..."
-	@docker buildx create --name notifuse-builder --use --bootstrap 2>/dev/null || \
-		docker buildx use notifuse-builder 2>/dev/null || \
+	@docker buildx create --name wescale-emailer-builder --use --bootstrap 2>/dev/null || \
+		docker buildx use wescale-emailer-builder 2>/dev/null || \
 		echo "Buildx builder already exists and is active"
 	@docker buildx inspect --bootstrap
 
@@ -147,10 +150,10 @@ docker-publish:
 	@echo "Building and publishing multi-platform Docker image to Docker Hub..."
 	@if [ -z "$(word 2,$(MAKECMDGOALS))" ]; then \
 		echo "Building with tag: latest for amd64 and arm64"; \
-		docker buildx build --platform linux/amd64,linux/arm64 -t notifuse/notifuse:latest --push .; \
+		docker buildx build --platform linux/amd64,linux/arm64 -t $(DOCKER_IMAGE):latest --push .; \
 	else \
 		echo "Building with tag: $(word 2,$(MAKECMDGOALS)) for amd64 and arm64"; \
-		docker buildx build --platform linux/amd64,linux/arm64 -t notifuse/notifuse:$(word 2,$(MAKECMDGOALS)) --push .; \
+		docker buildx build --platform linux/amd64,linux/arm64 -t $(DOCKER_IMAGE):$(word 2,$(MAKECMDGOALS)) --push .; \
 	fi
 
 # This prevents make from trying to run the tag as a target

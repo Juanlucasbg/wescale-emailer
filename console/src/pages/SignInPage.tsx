@@ -94,7 +94,7 @@ export function SignInPage() {
     (code: string): string => {
       switch (code) {
         case 'not_provisioned':
-          return t`No Notifuse account is linked to that identity. Ask an administrator to invite you first.`
+          return t`No WeScale account is linked to that identity. Ask an administrator to invite you first.`
         case 'email_unverified':
           return t`Your identity provider has not verified your email address.`
         case 'link_conflict':
@@ -205,8 +205,11 @@ export function SignInPage() {
 
   return (
     <MainLayout>
-      <div className="flex items-center justify-center h-[calc(100vh-48px)]">
-        <Card title={t`Sign In`} style={{ width: 400 }}>
+      <div className="wescale-auth-form">
+        <Card title={showCodeInput ? t`Check your inbox` : t`Welcome to WeScale`} className="wescale-auth-card">
+          <p className="wescale-auth-description">
+            {showCodeInput ? t`One quick step to get back to building your brand.` : t`Sign in to manage your audience and keep your brand moving.`}
+          </p>
           {!showCodeInput ? (
             <Form
               form={form}
@@ -223,12 +226,12 @@ export function SignInPage() {
                   { type: 'email', message: t`Please enter a valid email!` }
                 ]}
               >
-                <Input placeholder={t`Email`} type="email" />
+                <Input placeholder={t`you@yourbrand.com`} type="email" autoComplete="email" size="large" />
               </Form.Item>
 
               <Form.Item>
                 <Button type="primary" htmlType="submit" block loading={loading}>
-                  {t`Send Magic Code`}
+                  {t`Send sign-in code`}
                 </Button>
               </Form.Item>
 
@@ -279,7 +282,7 @@ export function SignInPage() {
                   </Button>
                 </Form.Item>
 
-                <Space style={{ width: '100%', justifyContent: 'space-between' }}>
+                <Space className="wescale-code-actions" wrap style={{ width: '100%', justifyContent: 'space-between' }}>
                   <Button
                     type="link"
                     onClick={() => setShowCodeInput(false)}

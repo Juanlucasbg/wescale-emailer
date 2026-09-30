@@ -66,7 +66,7 @@ describe('AuditLogsTab', () => {
   it('lists the workspace and shows the licence notice when not licensed', async () => {
     licence.licensed = false
     renderTab(false)
-    expect(await screen.findByText(/Audit logs require a Notifuse Enterprise licence/)).toBeInTheDocument()
+    expect(await screen.findByText(/Audit logs require a WeScale Enterprise licence/)).toBeInTheDocument()
     await waitFor(() => expect(auditLogApi.list).toHaveBeenCalledWith(expect.objectContaining({ scope: 'workspace', workspace_id: 'ws1' })))
     expect(screen.queryByText('Whole deployment')).not.toBeInTheDocument()
   })

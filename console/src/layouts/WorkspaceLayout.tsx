@@ -22,6 +22,7 @@ import { LanguageSwitcher } from '../components/LanguageSwitcher'
 import { Workspace, UserPermissions } from '../services/api/types'
 import { ContactsCsvUploadProvider } from '../components/contacts/ContactsCsvUploadProvider'
 import { useState, useEffect } from 'react'
+import './WeScaleWorkspace.css'
 import { FileManagerProvider } from '../components/file_manager/context'
 import { FileManagerSettings } from '../components/file_manager/interfaces'
 import { workspaceService } from '../services/api/workspace'
@@ -33,7 +34,6 @@ import {
   FolderOpenOutlined,
   LineChartOutlined,
   SettingOutlined,
-  WarningOutlined,
   DownOutlined
 } from '@ant-design/icons'
 
@@ -63,6 +63,7 @@ export function WorkspaceLayout() {
   const { signout, workspaces, user, refreshWorkspaces } = useAuth()
   const navigate = useNavigate()
   const [collapsed, setCollapsed] = useState(false)
+  const [isSmallViewport, setIsSmallViewport] = useState(false)
   const [userPermissions, setUserPermissions] = useState<UserPermissions | null>(null)
   const [loadingPermissions, setLoadingPermissions] = useState(true)
 
@@ -70,6 +71,10 @@ export function WorkspaceLayout() {
   const matches = useMatches()
   const currentPath = matches[matches.length - 1]?.pathname || ''
   const isSettingsPage = currentPath.includes('/settings') || currentPath.includes('/blog')
+
+  useEffect(() => {
+    if (isSmallViewport) setCollapsed(true)
+  }, [currentPath, isSmallViewport])
 
   // The web analytics settings live at /settings/web-analytics and belong to
   // the settings entry, so a settings path belongs to no group.
@@ -486,7 +491,8 @@ export function WorkspaceLayout() {
 
   return (
     <ContactsCsvUploadProvider>
-      <Layout style={{ minHeight: '100vh', backgroundColor: '#F9F9F9' }}>
+      <Layout className="wescale-workspace" style={{ minHeight: '100dvh', backgroundColor: '#f5f5f4' }}>
+        <a className="wescale-skip-link" href="#workspace-content">{t`Skip to content`}</a>
         <Layout>
           <Sider
             width={250}
@@ -495,39 +501,34 @@ export function WorkspaceLayout() {
               position: 'fixed',
               // Both follow the licence banner, which is fixed at the top of the viewport and
               // mounted above this layout. The variable is 0px when there is no banner.
-              height: minusBannerOffset('100vh'),
+              height: minusBannerOffset('100dvh'),
               left: 0,
               top: withBannerOffset('0px'),
               // The nav inside owns the scrolling; the panel must not also
               // scroll, or the logo and the collapse button travel with it.
               overflow: 'hidden',
               zIndex: 10,
-              backgroundColor: '#F9F9F9'
+              backgroundColor: '#f5f5f4'
+            }}
+            breakpoint="lg"
+            onBreakpoint={(broken) => {
+              setIsSmallViewport(broken)
+              setCollapsed(broken)
             }}
             collapsible
             collapsed={collapsed}
             trigger={null}
             className="workspace-sider border-r border-gray-200"
           >
-            <div
-              style={{
-                flex: '0 0 auto',
-                padding: '16px 0 16px 27px',
-                textAlign: 'center',
-                borderBottom: '1px solid #f0f0f0'
-              }}
-            >
+            <Link to="/console" className="wescale-workspace-brand" aria-label={t`WeScale home`}>
               <img
                 src={collapsed ? '/console/icon.png' : '/console/logo.png'}
-                alt=""
-                style={{
-                  height: '31px',
-                  width: 'auto',
-                  transition: 'height 0.2s'
-                }}
+                alt="WeScale"
+                className={collapsed ? 'wescale-workspace-brand-icon' : 'wescale-workspace-brand-logo'}
               />
-            </div>
-            <div className="workspace-sider-nav">
+              {!collapsed && <span>{t`Your growth workspace`}</span>}
+            </Link>
+            <nav className="workspace-sider-nav" aria-label={t`Workspace navigation`}>
               <Menu
                 mode="inline"
                 selectedKeys={[selectedKey]}
@@ -535,7 +536,7 @@ export function WorkspaceLayout() {
                 onOpenChange={handleOpenChange}
                 style={{
                   borderRight: 0,
-                  backgroundColor: '#F9F9F9',
+                  backgroundColor: '#f5f5f4',
                   fontSize: '13px',
                   // Item labels are <Link> anchors, which index.css pins to 500.
                   // Submenu titles are plain text and inherit this instead, so it
@@ -545,20 +546,28 @@ export function WorkspaceLayout() {
                 items={loadingPermissions ? [] : menuItems}
                 theme="light"
               />
-            </div>
+            </nav>
             <div
+              className="wescale-workspace-sidebar-footer"
               style={{
                 flex: '0 0 auto',
                 padding: '16px',
-                borderTop: '1px solid #f0f0f0',
-                backgroundColor: '#F9F9F9'
+                borderTop: '1px solid #e7e7e4',
+                backgroundColor: '#f5f5f4'
               }}
             >
+              {!collapsed && (
+                <a className="wescale-workspace-community" href="https://www.skool.com/heckman" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faQuestionCircle} />
+                  <span>{t`WeScale community`}</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )}
               <div
                 style={{
                   textAlign: 'center',
                   fontSize: '9px',
-                  color: '#000',
+                  color: '#86868e',
                   opacity: 0.7,
                   marginBottom: '8px'
                 }}
@@ -569,6 +578,7 @@ export function WorkspaceLayout() {
                 type="text"
                 block
                 icon={<FontAwesomeIcon icon={collapsed ? faAngleRight : faAngleLeft} />}
+                aria-label={collapsed ? t`Expand navigation` : t`Collapse navigation`}
                 onClick={() => setCollapsed(!collapsed)}
               >
                 {!collapsed && t`Collapse`}
@@ -576,14 +586,15 @@ export function WorkspaceLayout() {
             </div>
           </Sider>
           <Header
+            className="wescale-workspace-header"
             style={{
               position: 'fixed',
               top: withBannerOffset('0px'),
               right: 0,
               width: `calc(100% - ${collapsed ? '80px' : '250px'})`,
               height: '64px',
-              backgroundColor: '#F9F9F9',
-              borderBottom: '1px solid #f0f0f0',
+              backgroundColor: '#f5f5f4',
+              borderBottom: '1px solid #e7e7e4',
               padding: '0 24px',
               display: 'flex',
               alignItems: 'center',
@@ -593,6 +604,8 @@ export function WorkspaceLayout() {
             }}
           >
             <Select
+              className="wescale-workspace-selector"
+              aria-label={t`Select workspace`}
               value={workspaceId}
               variant="filled"
               onChange={handleWorkspaceChange}
@@ -605,7 +618,7 @@ export function WorkspaceLayout() {
                       {workspace.settings.logo_url && (
                         <img
                           src={workspace.settings.logo_url}
-                          alt=""
+                          alt={workspace.name}
                           style={{
                             height: '14px',
                             width: '14px',
@@ -629,7 +642,7 @@ export function WorkspaceLayout() {
                         // the number. Guessing it here would grey the control out on a
                         // deployment that has room.
                         label: (
-                          <Space className="text-indigo-500">
+                          <Space className="wescale-new-workspace">
                             <FontAwesomeIcon icon={faPlus} /> {t`New workspace`}
                           </Space>
                         ),
@@ -648,11 +661,11 @@ export function WorkspaceLayout() {
                       key: 'docs',
                       label: (
                         <a
-                          href="https://docs.notifuse.com/"
+                          href="https://wescale.ai/pages/wescale-gpts"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <FontAwesomeIcon icon={faFileLines} className="mr-2" /> {t`Documentation`}
+                          <FontAwesomeIcon icon={faFileLines} className="mr-2" /> {t`WeScale GPTs`}
                         </a>
                       )
                     },
@@ -660,12 +673,12 @@ export function WorkspaceLayout() {
                       key: 'report-issue',
                       label: (
                         <a
-                          href="https://github.com/notifuse/notifuse/issues"
+                          href="https://www.skool.com/heckman"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <WarningOutlined className="mr-2" />
-                          {t`Report An Issue`}
+                          <FontAwesomeIcon icon={faQuestionCircle} className="mr-2" />
+                          {t`WeScale community`}
                         </a>
                       )
                     }
@@ -674,6 +687,7 @@ export function WorkspaceLayout() {
                 placement="bottomRight"
               >
                 <Button
+                  className="wescale-workspace-help"
                   color="default"
                   variant="filled"
                   icon={<FontAwesomeIcon icon={faQuestionCircle} />}
@@ -700,10 +714,10 @@ export function WorkspaceLayout() {
                 trigger={['click']}
                 placement="bottomRight"
               >
-                <Button type="text">
+                <Button type="text" className="wescale-workspace-account" aria-label={t`Account menu`}>
                   <Space size="small">
                     <Avatar src={getGravatarUrl(user?.email)} size={24} />
-                    {user?.email}
+                    <span className="wescale-workspace-account-email">{user?.email}</span>
                     <DownOutlined style={{ fontSize: '10px' }} />
                   </Space>
                 </Button>
@@ -711,15 +725,16 @@ export function WorkspaceLayout() {
             </Space>
           </Header>
           <Layout
+            className="wescale-workspace-body"
             style={{
               marginLeft: collapsed ? '80px' : '250px',
               marginTop: withBannerOffset('64px'),
               padding: isSettingsPage ? '0' : '24px',
               transition: 'margin-left 0.2s',
-              backgroundColor: '#F9F9F9'
+              backgroundColor: '#f5f5f4'
             }}
           >
-            <Content style={{ backgroundColor: '#F9F9F9' }}>
+            <Content id="workspace-content" tabIndex={-1} style={{ backgroundColor: '#f5f5f4' }}>
               <FileManagerProvider
                 key={`fm-${workspaceId}-${!userPermissions?.templates?.write}`}
                 settings={workspaces.find((w) => w.id === workspaceId)?.settings.file_manager}

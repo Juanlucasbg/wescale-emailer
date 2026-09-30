@@ -56,7 +56,7 @@ describe('EditPermissionsDrawer error reporting', () => {
 
   it('shows the licence refusal the server explained', async () => {
     setUserPermissions.mockRejectedValue(
-      new Error('Custom permissions require a Notifuse Studio licence.')
+      new Error('Custom permissions require a WeScale Studio licence.')
     )
 
     renderDrawer()
@@ -64,7 +64,7 @@ describe('EditPermissionsDrawer error reporting', () => {
 
     await waitFor(() =>
       expect(
-        screen.getByText('Custom permissions require a Notifuse Studio licence.')
+        screen.getByText('Custom permissions require a WeScale Studio licence.')
       ).toBeInTheDocument()
     )
     expect(screen.queryByText('Failed to update permissions')).not.toBeInTheDocument()
@@ -134,7 +134,7 @@ describe('EditPermissionsDrawer under an unlicensed deployment', () => {
     renderUnder(['template_i18n'])
 
     expect(
-      screen.getByText('Custom permissions require a Notifuse Studio licence.')
+      screen.getByText('Custom permissions require a WeScale Studio licence.')
     ).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /save permissions/i })).toBeDisabled()
     const switches = screen.getAllByRole('switch')

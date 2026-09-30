@@ -65,12 +65,12 @@ export const BaseNode: React.FC<BaseNodeProps> = ({
         style={{
           padding: `8px ${CARD_PADDING_X}px`,
           minWidth: CARD_MIN_WIDTH,
-          border: selected ? '1px solid #7763F1' : isOrphan ? '1px solid #f97316' : '1px solid #e5e7eb',
+          border: selected ? '1px solid #0f8a3d' : isOrphan ? '1px solid #f97316' : '1px solid #e5e7eb',
           boxShadow: selected ? '0 4px 12px rgba(119,99,241,0.3)' : 'none'
         }}
       >
         <div className="flex items-center gap-1.5">
-          <span style={{ color: selected ? '#7763F1' : '#6b7280' }}>{icon}</span>
+          <span style={{ color: selected ? '#0f8a3d' : '#6b7280' }}>{icon}</span>
           <span style={{ fontSize: '16px', fontWeight: 500 }}>{label}</span>
         </div>
         {description && (

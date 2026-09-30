@@ -240,7 +240,7 @@
                           "alt": "",
                           "fluidOnMobile": "false",
                           "sizes": "",
-                          "src": "https://storage.googleapis.com/cdn-eu-rimdian/notifuse/logo.png",
+                          "src": "https://wescale.ai/cdn/shop/files/WeScale_Logo_FULL_Black_2.png?height=144&v=1756131515",
                           "srcset": "",
                           "title": "",
                           "usemap": ""
@@ -249,7 +249,7 @@
                       {
                         "id": "1c771e88-da3e-4d96-a4e6-ec08e7878225",
                         "type": "mj-text",
-                        "content": "<p>Welcome to Notifuse,</p><p>Click on the button bellow to visit our website:</p>",
+                        "content": "<p>Welcome to WeScale,</p><p>Connect with your audience and grow your brand. Visit our website to get started:</p>",
                         "attributes": {
                           "align": "left",
                           "color": "#333333",
@@ -280,14 +280,14 @@
                           "lineHeight": "120%",
                           "textDecoration": "none",
                           "textTransform": "none",
-                          "backgroundColor": "#7763f1",
+                          "backgroundColor": "#0f8a3d",
                           "borderRadius": "4px",
                           "paddingBottom": "5px",
                           "paddingLeft": "25px",
                           "paddingRight": "25px",
                           "paddingTop": "5px",
                           "verticalAlign": "middle",
-                          "href": "https://www.notifuse.com",
+                          "href": "https://wescale.ai/",
                           "rel": "noopener noreferrer",
                           "target": "_blank"
                         }
@@ -295,7 +295,7 @@
                       {
                         "id": "1de51dc3-ca56-471a-86d5-acb5830ff57d",
                         "type": "mj-text",
-                        "content": "<p>Thanks,</p><p>Team Notifuse</p>",
+                        "content": "<p>Thanks,</p><p>Team WeScale</p>",
                         "attributes": {
                           "align": "left",
                           "color": "#333333",
@@ -382,7 +382,7 @@
                       {
                         "id": "c68f2f57-4552-4a49-9d20-8c215a12a425",
                         "type": "mj-text",
-                        "content": "<p>Powered by <span style=\"color: #7763f1\"><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"editor-link\" href=\"https://www.notifuse.com\">Notifuse</a></span></p>",
+                        "content": "<p>Powered by <span style=\"color: #0f8a3d\"><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" class=\"editor-link\" href=\"https://wescale.ai/\">WeScale</a></span></p>",
                         "attributes": {
                           "align": "left",
                           "color": "#6b7280",

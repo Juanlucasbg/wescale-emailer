@@ -66,8 +66,8 @@
 /* Active state for toolbar buttons - blue icon color, no background */
 .notifuse-editor-toolbar-button-active .notifuse-editor-toolbar-icon,
 .notifuse-editor-toolbar-button-active svg {
-  color: #1890ff;
-  stroke: #1890ff;
+  color: #0f8a3d;
+  stroke: #0f8a3d;
 }
 
 .notifuse-editor-toolbar-button-active:hover:not(:disabled) {

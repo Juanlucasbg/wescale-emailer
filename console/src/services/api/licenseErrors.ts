@@ -115,7 +115,7 @@ export function licenseRefusedMessage(refusal: LicenseRefusal): string {
   const capability = i18n._(label)
   return refusal.requiredTier
     ? i18n._(
-        msg`${{ capability }} requires a Notifuse ${{ tier: refusal.requiredTier }} licence.`
+        msg`${{ capability }} requires a WeScale ${{ tier: refusal.requiredTier }} licence.`
       )
-    : i18n._(msg`${{ capability }} requires a Notifuse licence.`)
+    : i18n._(msg`${{ capability }} requires a WeScale licence.`)
 }

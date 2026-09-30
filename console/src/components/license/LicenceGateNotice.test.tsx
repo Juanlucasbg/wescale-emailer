@@ -32,7 +32,7 @@ describe('LicenceGateNotice', () => {
     renderNotice('rbac', { entitlements: entitlements(['template_i18n']) })
 
     expect(
-      screen.getByText('Custom permissions require a Notifuse Studio licence.')
+      screen.getByText('Custom permissions require a WeScale Studio licence.')
     ).toBeInTheDocument()
     // A full grant is never gated, and the person reading this needs to know that before they
     // are told what to buy.
@@ -43,7 +43,7 @@ describe('LicenceGateNotice', () => {
     renderNotice('sso', { entitlements: entitlements(['rbac']) })
 
     expect(
-      screen.getByText('Single sign-on requires a Notifuse Enterprise licence.')
+      screen.getByText('Single sign-on requires a WeScale Enterprise licence.')
     ).toBeInTheDocument()
   })
 

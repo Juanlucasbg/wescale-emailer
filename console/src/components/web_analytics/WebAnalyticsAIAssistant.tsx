@@ -225,7 +225,7 @@ export function WebAnalyticsAIAssistant(props: {
     // prose. Kept at the service default rather than raised: DeepSeek-reasoner
     // rejects anything above 8192.
     maxTokens: 8192,
-    notConfiguredGradient: `linear-gradient(135deg, ${PRIMARY_COLOR} 0%, #4f46e5 100%)`
+    notConfiguredGradient: `linear-gradient(135deg, ${PRIMARY_COLOR} 0%, #27770b 100%)`
   }
 
   // ---------------------------------------------------------------------------

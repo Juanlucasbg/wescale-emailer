@@ -12,14 +12,14 @@ func TestGetTranslations_PerLocale(t *testing.T) {
 		lang            string
 		expectedSubject string // MagicCode.Subject
 	}{
-		{"en", "Your Notifuse authentication code"},
-		{"fr", "Votre code d'authentification Notifuse"},
-		{"es", "Tu código de autenticación de Notifuse"},
-		{"de", "Ihr Notifuse-Authentifizierungscode"},
-		{"ca", "El teu codi d'autenticació de Notifuse"},
-		{"pt-BR", "Seu código de autenticação da Notifuse"},
-		{"ja", "Notifuse 認証コード"},
-		{"it", "Il tuo codice di autenticazione Notifuse"},
+		{"en", "Your WeScale authentication code"},
+		{"fr", "Votre code d'authentification WeScale"},
+		{"es", "Tu código de autenticación de WeScale"},
+		{"de", "Ihr WeScale-Authentifizierungscode"},
+		{"ca", "El teu codi d'autenticació de WeScale"},
+		{"pt-BR", "Seu código de autenticação da WeScale"},
+		{"ja", "WeScale 認証コード"},
+		{"it", "Il tuo codice di autenticazione WeScale"},
 	}
 
 	for _, tc := range cases {

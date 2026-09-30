@@ -136,7 +136,7 @@ export interface MetricConfig {
 }
 
 export const COMPARISON_COLOR = '#9ca3af'
-export const PRIMARY_COLOR = '#7763f1'
+export const PRIMARY_COLOR = '#0f8a3d'
 export const POSITIVE_COLOR = '#10b981'
 export const NEGATIVE_COLOR = '#f97316'
 

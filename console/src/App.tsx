@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider } from '@tanstack/react-router'
 import { I18nProvider } from '@lingui/react'
 import { router } from './router'
+import { brand } from './brand'
 import { AuthProvider } from './contexts/AuthContext'
 import { LicenseProvider } from './contexts/LicenseContext'
 import { LocaleProvider, useLocale, i18n } from './contexts/LocaleContext'
@@ -43,63 +44,56 @@ const queryClient = new QueryClient({
 
 const theme: ThemeConfig = {
   token: {
-    colorPrimary: '#7763F1',
-    colorLink: '#7763F1'
+    colorPrimary: brand.green,
+    colorLink: brand.green,
+    colorLinkHover: brand.ctaHover,
+    colorText: brand.ink,
+    colorTextSecondary: brand.secondary,
+    colorTextTertiary: brand.muted,
+    colorTextHeading: brand.ink,
+    colorBgLayout: brand.background,
+    colorBgContainer: brand.surface,
+    colorBgElevated: brand.surface,
+    colorBorder: brand.border,
+    colorBorderSecondary: brand.border,
+    colorInfo: brand.green,
+    fontFamily: brand.fontFamily,
+    fontSize: 13,
+    borderRadius: 8,
+    borderRadiusLG: 14,
+    controlHeight: 36
   },
   components: {
-    Layout: {
-      // bodyBg: 'rgb(243, 246, 252)'
-      bodyBg: '#F9F9F9',
-      lightSiderBg: '#F9F9F9',
-      siderBg: '#F9F9F9'
-    },
+    Layout: { bodyBg: brand.background, lightSiderBg: brand.surface, siderBg: brand.surface },
     Button: {
-      // primaryColor: '#212121',
-      // colorTextLightSolid: '#616161'
+      primaryColor: brand.ink,
+      colorPrimary: brand.cta,
+      colorPrimaryHover: '#62e133',
+      colorPrimaryActive: '#3cb912',
+      primaryShadow: 'none',
+      fontWeight: 500
     },
-    Card: {
-      //   headerBg: '#f0f0f0',
-      headerFontSize: 16,
-      // Card sizes every corner from borderRadiusLG alone. The other radius tokens never
-      // reached the card, and overriding a global token per component now emits a scoped
-      // CSS variable, so they would only reround the buttons, inputs and popups nested
-      // inside cards.
-      borderRadiusLG: 4,
-      colorBorderSecondary: 'var(--color-gray-200)',
-      colorBgContainer: '#F9F9F9'
-    },
+    Card: { headerFontSize: 16, borderRadiusLG: 14, colorBorderSecondary: brand.border, colorBgContainer: brand.surface },
     Table: {
-      headerBg: 'transparent',
-      // Sized and coloured through the cell/header tokens instead of the global fontSize
-      // and colorTextHeading: those cascade out of the table wrapper as CSS variables and
-      // would shrink and recolour every antd component rendered inside a cell.
-      cellFontSize: 12,
-      cellFontSizeMD: 12,
-      cellFontSizeSM: 12,
-      headerColor: 'rgb(51 65 85)',
-      footerColor: 'rgb(51 65 85)',
-      colorBgContainer: 'transparent',
-      rowHoverBg: 'transparent',
-      // The container is transparent, so antd's default sort-highlight fills resolve to
-      // opaque black on the sorted column and hovered sortable headers. Keep them
-      // transparent to match the flat table style; the sort arrow still signals order.
-      headerSortActiveBg: 'transparent',
-      headerSortHoverBg: 'transparent',
-      bodySortBg: 'transparent'
+      headerBg: brand.background,
+      cellFontSize: 12, cellFontSizeMD: 12, cellFontSizeSM: 12,
+      headerColor: brand.secondary, footerColor: brand.secondary,
+      colorBgContainer: brand.surface,
+      rowHoverBg: '#f1f7f2',
+      headerSortActiveBg: '#edf3ed', headerSortHoverBg: '#edf3ed', bodySortBg: '#f8faf8'
     },
-    Drawer: {
-      // Drawer paints its panel straight from colorBgElevated and exposes no background
-      // token of its own, so this override has to stay on the global token.
-      colorBgElevated: '#F9F9F9'
+    Menu: {
+      itemColor: brand.secondary,
+      itemSelectedColor: brand.green,
+      itemSelectedBg: brand.greenTint,
+      itemHoverBg: brand.background,
+      subMenuItemBg: 'transparent',
+      itemBorderRadius: 8
     },
-    Modal: {
-      // contentBg is the only thing Modal derived from colorBgElevated, and setting it
-      // directly keeps the override from cascading into the dialog's popups and sliders.
-      contentBg: '#F9F9F9'
-    },
-    Timeline: {
-      dotBg: '#F9F9F9'
-    }
+    Tabs: { titleFontSize: 13, inkBarColor: brand.green },
+    Drawer: { colorBgElevated: brand.surface },
+    Modal: { contentBg: brand.surface },
+    Timeline: { dotBg: brand.surface }
   }
 }
 

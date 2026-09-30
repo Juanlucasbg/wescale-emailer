@@ -61,13 +61,13 @@ describe('llmApi.streamChat error handling', () => {
       error: 'license_required',
       feature: 'ses_tenant',
       required_tier: 'Studio',
-      message: 'SES tenant isolation requires a Notifuse licence (Studio or above).',
+      message: 'SES tenant isolation requires a WeScale licence (Studio or above).',
       docs: 'https://notifuse.com/licence-features'
     })
 
     const error = await errorFrom()
 
-    expect(error.message).toBe('SES tenant isolation requires a Notifuse Studio licence.')
+    expect(error.message).toBe('SES tenant isolation requires a WeScale Studio licence.')
     expect(error.message).not.toContain('license_required')
   })
 

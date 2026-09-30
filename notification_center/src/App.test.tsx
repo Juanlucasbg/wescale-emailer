@@ -316,6 +316,44 @@ describe('Notification Center App', () => {
     })
   })
 
+  describe('Workspace branding', () => {
+    it('uses WeScale identity when workspace branding is absent', async () => {
+      vi.mocked(notificationCenterApi.parseNotificationCenterParams).mockReturnValue(testData.validParams)
+      vi.mocked(notificationCenterApi.getContactPreferences).mockResolvedValueOnce({
+        contact: { id: 'contact-123', email: 'test@example.com', first_name: 'John' },
+        public_lists: [],
+        contact_lists: [],
+      })
+
+      render(<App />)
+
+      await screen.findByText(/Welcome/i)
+      const logo = screen.getByRole('img', { name: 'WeScale' })
+      expect(logo).toHaveAttribute('src', '/logo.png')
+      expect(logo.closest('a')).toHaveAttribute('href', 'https://wescale.ai/')
+      expect(document.querySelector("link[rel='icon']")).toHaveAttribute('href', '/icon.png')
+    })
+
+    it('retains a workspace logo, website, and favicon', async () => {
+      vi.mocked(notificationCenterApi.parseNotificationCenterParams).mockReturnValue(testData.validParams)
+      vi.mocked(notificationCenterApi.getContactPreferences).mockResolvedValueOnce({
+        contact: { id: 'contact-123', email: 'test@example.com', first_name: 'John' },
+        public_lists: [],
+        contact_lists: [],
+        logo_url: 'https://workspace.example/logo.png',
+        website_url: 'https://workspace.example/',
+      })
+
+      render(<App />)
+
+      const logo = await screen.findByRole('img', { name: 'Workspace Logo' })
+      expect(logo).toHaveAttribute('src', 'https://workspace.example/logo.png')
+      expect(logo.closest('a')).toHaveAttribute('href', 'https://workspace.example/')
+      expect(document.querySelector("link[rel='icon']")).toHaveAttribute('href', 'https://workspace.example/logo.png')
+      expect(document.querySelector("link[rel='icon']")).not.toHaveAttribute('type')
+    })
+  })
+
   describe('Manual unsubscribe via UI', () => {
     it('should call unsubscribeOneClick when clicking unsubscribe button', async () => {
       const user = userEvent.setup()

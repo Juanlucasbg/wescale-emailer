@@ -67,7 +67,7 @@ export function LicenseSettings() {
           type="info"
           showIcon
           title={t`Only an instance administrator can view or install the licence key.`}
-          description={t`The licence covers this whole deployment rather than this workspace. Ask the person who runs this Notifuse instance.`}
+          description={t`The licence covers this whole deployment rather than this workspace. Ask the person who runs this WeScale instance.`}
         />
       </>
     )

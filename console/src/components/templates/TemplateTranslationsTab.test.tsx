@@ -68,7 +68,7 @@ describe('TemplateTranslationsTab under an unlicensed deployment', () => {
     renderTab(['rbac'], { fr: saved, de: unsaved })
 
     expect(
-      screen.getByText('Template translations require a Notifuse Studio licence.')
+      screen.getByText('Template translations require a WeScale Studio licence.')
     ).toBeInTheDocument()
     expect(switchFor('de')).toBeDisabled()
   })

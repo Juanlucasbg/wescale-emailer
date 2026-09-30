@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: notifuse/notifuse
+  IMAGE_NAME: juanlucasbg/wescale-emailer
 
 jobs:
   build:
@@ -36,9 +36,11 @@ jobs:
       - name: Get git commit info
         id: git-info
         run: |
-          echo "commit-sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
-          echo "commit-short-sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          echo "tag-name=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          {
+            echo "commit-sha=$(git rev-parse HEAD)"
+            echo "commit-short-sha=$(git rev-parse --short HEAD)"
+            echo "tag-name=${GITHUB_REF#refs/tags/}"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -58,13 +60,15 @@ jobs:
             type=ref,event=tag
             type=raw,value=latest,enable=${{ github.ref_name == 'latest' }}
           labels: |
+            org.opencontainers.image.title=WeScale Emailer
+            org.opencontainers.image.source=https://github.com/Juanlucasbg/wescale-emailer
             org.opencontainers.image.revision=${{ steps.git-info.outputs.commit-sha }}
             org.opencontainers.image.version=${{ steps.git-info.outputs.tag-name }}
-            notifuse.git.commit=${{ steps.git-info.outputs.commit-sha }}
-            notifuse.git.commit.short=${{ steps.git-info.outputs.commit-short-sha }}
-            notifuse.git.tag=${{ steps.git-info.outputs.tag-name }}
-            notifuse.build.date=${{ github.run_id }}
-            notifuse.build.url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            wescale-emailer.git.commit=${{ steps.git-info.outputs.commit-sha }}
+            wescale-emailer.git.commit.short=${{ steps.git-info.outputs.commit-short-sha }}
+            wescale-emailer.git.tag=${{ steps.git-info.outputs.tag-name }}
+            wescale-emailer.build.date=${{ github.run_id }}
+            wescale-emailer.build.url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
       - name: Build and push by digest
         id: build
@@ -145,19 +149,23 @@ jobs:
       - name: Create manifest list and push
         working-directory: ${{ runner.temp }}/digests
         run: |
-          tag_args=$(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON")
-          src_args=""
-          for f in *; do
-            src_args="$src_args ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@sha256:$f"
+          mapfile -t image_tags < <(jq -r '.tags[]' <<< "$DOCKER_METADATA_OUTPUT_JSON")
+          tag_args=()
+          for image_tag in "${image_tags[@]}"; do
+            tag_args+=(-t "$image_tag")
           done
-          docker buildx imagetools create $tag_args $src_args
+          src_args=()
+          for f in *; do
+            src_args+=("${REGISTRY}/${IMAGE_NAME}@sha256:$f")
+          done
+          docker buildx imagetools create "${tag_args[@]}" "${src_args[@]}"
 
       - name: Get manifest digest
         id: digest
         run: |
           first_tag=$(jq -r '.tags[0]' <<< "$DOCKER_METADATA_OUTPUT_JSON")
           digest=$(crane digest "$first_tag")
-          echo "digest=$digest" >> $GITHUB_OUTPUT
+          echo "digest=$digest" >> "$GITHUB_OUTPUT"
           echo "Manifest digest: $digest"
 
       - name: Attest manifest list

@@ -29,6 +29,9 @@ const languageNames: Record<Language, string> = {
   pl: 'Polski'
 }
 
+const defaultLogoUrl = `${import.meta.env.BASE_URL}logo.png`
+const defaultIconUrl = `${import.meta.env.BASE_URL}icon.png`
+
 function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -237,18 +240,20 @@ function App() {
     loadNotificationData()
   }, [])
 
-  // Set favicon when logo is available
+  // Use workspace identity when supplied, otherwise use the WeScale icon.
   useEffect(() => {
+    const existingLink = document.querySelector("link[rel*='icon']") as HTMLLinkElement | null
+    const link = existingLink || document.createElement('link')
+    link.rel = 'icon'
+    link.href = notificationData?.logo_url || defaultIconUrl
     if (notificationData?.logo_url) {
-      const existingLink = document.querySelector("link[rel*='icon']") as HTMLLinkElement | null
-      const link = existingLink || document.createElement('link')
-      link.type = 'image/x-icon'
-      link.rel = 'shortcut icon'
-      link.href = notificationData.logo_url
+      link.removeAttribute('type')
+    } else {
+      link.type = 'image/png'
+    }
 
-      if (!existingLink) {
-        document.head.appendChild(link)
-      }
+    if (!existingLink) {
+      document.head.appendChild(link)
     }
   }, [notificationData?.logo_url])
 
@@ -349,7 +354,7 @@ function App() {
         })
 
         toast.success(t('successSubscribed'), {
-          style: { backgroundColor: '#f0fdf4', borderLeft: '4px solid #22c55e', color: '#166534' },
+          style: { backgroundColor: '#dff1e5', borderLeft: '4px solid #0f8a3d', color: '#0f8a3d' },
           duration: 3000
         })
       }
@@ -406,7 +411,7 @@ function App() {
         })
 
         toast.success(t('successUnsubscribed'), {
-          style: { backgroundColor: '#f0fdf4', borderLeft: '4px solid #22c55e', color: '#166534' },
+          style: { backgroundColor: '#dff1e5', borderLeft: '4px solid #0f8a3d', color: '#0f8a3d' },
           duration: 3000
         })
       }
@@ -432,10 +437,11 @@ function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <div className="p-6 max-w-sm mx-auto">
+      <div className="brand-state">
+        <div className="brand-state-panel">
+          <img src={defaultLogoUrl} alt="WeScale" className="brand-state-logo" />
           <div className="text-center">
-            <div className="text-xl font-medium text-black">{t('loading')}</div>
+            <div role="status" className="text-lg font-medium text-foreground animate-pulse">{t('loading')}</div>
           </div>
         </div>
       </div>
@@ -444,11 +450,12 @@ function App() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <div className="p-6 max-w-sm mx-auto">
+      <div className="brand-state">
+        <div className="brand-state-panel">
+          <img src={defaultLogoUrl} alt="WeScale" className="brand-state-logo" />
           <div className="text-center">
-            <div className="text-xl font-medium text-red-500">{t('error')}</div>
-            <p className="text-gray-700 mt-2">{error}</p>
+            <h1 className="text-xl font-medium text-destructive">{t('error')}</h1>
+            <p className="text-secondary-foreground mt-2">{error}</p>
           </div>
         </div>
       </div>
@@ -457,27 +464,27 @@ function App() {
 
   if (isPreviewMode) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="p-8 max-w-2xl mx-auto">
-          <div className="bg-white rounded-lg shadow-xl p-8 border-2 border-indigo-200">
+      <div className="brand-state">
+        <div className="w-full max-w-2xl mx-auto">
+          <div className="brand-state-panel mx-auto">
             <div className="text-center">
-              <div className="text-5xl mb-4">👁️</div>
-              <div className="text-3xl font-bold text-indigo-600 mb-4">Preview Mode</div>
-              <p className="text-gray-700 text-lg mb-6">
+              <img src={defaultLogoUrl} alt="WeScale" className="brand-state-logo" />
+              <h1 className="text-3xl font-bold tracking-tight text-foreground mb-4">Preview Mode</h1>
+              <p className="text-secondary-foreground text-lg mb-6">
                 This is a preview of your email template's notification center links.
               </p>
-              <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-6 text-left">
-                <p className="text-sm text-gray-700 mb-3">
-                  <strong className="text-indigo-700">What you're seeing:</strong>
+              <div className="bg-accent border border-border rounded-xl p-6 text-left">
+                <p className="text-sm text-secondary-foreground mb-3">
+                  <strong className="text-primary">What you're seeing:</strong>
                 </p>
-                <ul className="text-sm text-gray-600 space-y-2 list-disc list-inside">
+                <ul className="text-sm text-secondary-foreground space-y-2 list-disc list-inside">
                   <li>This preview shows how subscription/unsubscribe links work</li>
                   <li>In production, real contacts will see their actual preferences</li>
                   <li>Links in live emails use secure authentication</li>
                 </ul>
               </div>
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-sm text-gray-500">
+              <div className="mt-6 pt-6 border-t border-border">
+                <p className="text-sm text-muted-foreground">
                   To test with real functionality, send yourself a test email from the template
                   editor.
                 </p>
@@ -489,28 +496,24 @@ function App() {
     )
   }
 
-  const websiteUrl = notificationData?.website_url || '#'
+  const websiteUrl = notificationData?.website_url || 'https://wescale.ai/'
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-dvh flex flex-col bg-background">
       <Toaster />
       {/* Topbar with bottom border */}
-      <div className="bg-white border-b border-gray-200 w-full">
-        <div className="flex items-center h-16 px-4 max-w-[600px] mx-auto">
-          <div className="flex-shrink-0 mr-4 md:mr-6">
-            {notificationData?.logo_url ? (
-              <a href={websiteUrl} target="_blank" rel="noopener noreferrer" title="Visit website">
-                <img
-                  src={notificationData.logo_url}
-                  alt="Workspace Logo"
-                  className="h-8 md:h-10 w-auto object-contain"
-                />
-              </a>
-            ) : (
-              <div className="w-8 md:w-10 h-8 md:h-10"></div> /* Empty space when no logo */
-            )}
+      <header className="preference-header bg-card w-full">
+        <div className="flex items-center gap-4 h-20 px-5 max-w-[720px] mx-auto">
+          <div className="flex-shrink-0">
+            <a href={websiteUrl} target="_blank" rel="noopener noreferrer" title="Visit website">
+              <img
+                src={notificationData?.logo_url || defaultLogoUrl}
+                alt={notificationData?.logo_url ? 'Workspace Logo' : 'WeScale'}
+                className="h-6 md:h-8 max-w-32 w-auto object-contain"
+              />
+            </a>
           </div>
-          <div className="text-sm font-medium text-gray-800 flex-1 text-center">
+          <div className="text-xs sm:text-sm font-medium text-foreground flex-1 text-right">
             <a
               href={websiteUrl}
               target="_blank"
@@ -524,7 +527,7 @@ function App() {
           <div className="flex-shrink-0">
             <div className="relative" ref={languageMenuRef}>
               <button
-                className="flex items-center focus:outline-none rounded-sm p-1 transition-all border border-gray-300 hover:bg-gray-50 cursor-pointer"
+                className="flex items-center rounded-lg p-2 border border-border hover:bg-accent cursor-pointer"
                 onClick={() => setShowLanguageMenu(!showLanguageMenu)}
                 onKeyDown={handleLanguageKeyDown}
                 aria-label="Select language"
@@ -540,13 +543,13 @@ function App() {
 
               {showLanguageMenu && (
                 <div
-                  className="absolute right-0 mt-2 py-2 w-32 bg-white rounded-md shadow-lg border border-gray-200 z-10"
+                  className="absolute right-0 mt-2 py-2 w-32 bg-white rounded-md shadow-lg border border-border z-10"
                   role="menu"
                 >
                   {Object.entries(languageNames).map(([code, name]) => (
                     <button
                       key={code}
-                      className="block w-full text-left px-4 py-1 text-sm hover:bg-gray-100 cursor-pointer"
+                      className="block w-full text-left px-4 py-1 text-sm hover:bg-accent cursor-pointer"
                       onClick={() => {
                         setLanguage(code as Language)
                         setShowLanguageMenu(false)
@@ -574,18 +577,18 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col items-center p-4">
-        <div className="w-full max-w-[600px]">
+      <main className="flex-1 flex flex-col items-center px-5 py-10 md:py-14">
+        <div className="w-full max-w-[680px]">
           {notificationData && (
             <>
-              <div className="mb-6 mt-4">
-                <div className="text-md font-medium">
+              <div className="mb-8">
+                <h1 className="text-2xl md:text-3xl tracking-tight font-medium break-words">
                   {t('welcome')}{' '}
                   {notificationData.contact.first_name || notificationData.contact.email}
-                </div>
+                </h1>
               </div>
 
               {/* Confirmation result */}
@@ -593,7 +596,7 @@ function App() {
                 <div
                   className={`mb-6 p-4 rounded-sm border ${
                     confirmationResult.success
-                      ? 'bg-green-50 border-green-200 text-green-800'
+                      ? 'bg-accent border-border text-primary'
                       : 'bg-red-50 border-red-200 text-red-800'
                   }`}
                 >
@@ -610,30 +613,27 @@ function App() {
                   <div className="space-y-3">
                     {allLists.map((list) => {
                       const isSubscribed = subscriptions[list.id] || false
-                      const isActive = list.status === 'active'
                       const canToggle = list.status !== 'bounced' && list.status !== 'complained'
 
                       return (
                         <div
                           key={list.id}
-                          className={`p-4 border border-gray-300 rounded-sm ${
-                            isActive ? 'bg-white' : 'bg-gray-50'
-                          }`}
+                          className="p-5 md:p-6 border border-border rounded-xl bg-card"
                         >
-                          <div className="flex items-center justify-between">
-                            <div className="flex-1">
+                          <div className="flex items-center justify-between gap-3">
+                            <div className="flex-1 min-w-0 break-words">
                               <div className="font-medium">
                                 {list.name}
                                 {list.status &&
                                   list.status !== 'active' &&
                                   list.status !== 'unsubscribed' && (
-                                    <span className="ml-2 text-xs px-2 py-1 bg-gray-200 text-gray-700 rounded-full">
+                                    <span className="ml-2 text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded-md">
                                       {list.status}
                                     </span>
                                   )}
                               </div>
                               {list.description && (
-                                <p className="text-sm text-gray-600 mt-1">{list.description}</p>
+                                <p className="text-sm text-secondary-foreground leading-relaxed mt-2">{list.description}</p>
                               )}
                             </div>
                             <div className="ml-4">
@@ -646,10 +646,10 @@ function App() {
                                 disabled={processingLists[list.id] || !canToggle}
                                 className={`cursor-pointer ${
                                   !canToggle
-                                    ? 'border-gray-300 text-gray-400 cursor-not-allowed'
+                                    ? 'border-border text-muted-foreground cursor-not-allowed'
                                     : isSubscribed
-                                    ? 'border-red-500 text-red-500 hover:bg-red-50'
-                                    : 'border-blue-500 text-blue-500 hover:bg-blue-50'
+                                    ? 'border-border text-muted-foreground hover:bg-accent hover:text-primary'
+                                    : 'border-primary bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground'
                                 }`}
                               >
                                 {processingLists[list.id]
@@ -671,24 +671,24 @@ function App() {
 
               {/* Empty state when no lists */}
               {allLists.length === 0 && (
-                <p className="text-center text-gray-500 py-4">{t('noSubscriptions')}</p>
+                <p className="text-center text-muted-foreground bg-card border border-border rounded-xl px-6 py-10">{t('noSubscriptions')}</p>
               )}
             </>
           )}
         </div>
-      </div>
+      </main>
 
       {/* Footer */}
-      <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
+      <footer className="border-t border-border py-6 text-center text-xs text-muted-foreground">
         <a
           href={websiteUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-gray-700 hover:underline"
+          className="hover:text-secondary-foreground hover:underline"
         >
           {t('visitWebsite')}
         </a>
-      </div>
+      </footer>
     </div>
   )
 }

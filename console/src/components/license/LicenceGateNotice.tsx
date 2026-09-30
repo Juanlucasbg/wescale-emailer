@@ -50,11 +50,11 @@ export function LicenceGateNotice({
 
   // One sentence per capability rather than a template, so a plural subject gets a plural verb.
   const titles: Record<LicenseFeature, string> = {
-    rbac: t`Custom permissions require a Notifuse ${tier} licence.`,
-    ses_tenant: t`SES tenant isolation requires a Notifuse ${tier} licence.`,
-    sso: t`Single sign-on requires a Notifuse ${tier} licence.`,
-    audit_logs: t`Audit logs require a Notifuse ${tier} licence.`,
-    template_i18n: t`Template translations require a Notifuse ${tier} licence.`
+    rbac: t`Custom permissions require a WeScale ${tier} licence.`,
+    ses_tenant: t`SES tenant isolation requires a WeScale ${tier} licence.`,
+    sso: t`Single sign-on requires a WeScale ${tier} licence.`,
+    audit_logs: t`Audit logs require a WeScale ${tier} licence.`,
+    template_i18n: t`Template translations require a WeScale ${tier} licence.`
   }
 
   // What the deployment keeps. Each mirrors the rule the backend actually enforces: a full

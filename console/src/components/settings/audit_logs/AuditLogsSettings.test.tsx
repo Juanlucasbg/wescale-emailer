@@ -72,7 +72,7 @@ describe("AuditLogsSettings", () => {
     licence.licensed = false;
     renderSettings(true);
     expect(
-      screen.getByText(/Audit logs require a Notifuse Enterprise licence/),
+      screen.getByText(/Audit logs require a WeScale Enterprise licence/),
     ).toBeInTheDocument();
   });
 

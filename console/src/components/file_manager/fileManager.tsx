@@ -95,7 +95,7 @@ const styles = {
   pullRight: { float: 'right' as const },
   paddingRightSmall: { paddingRight: 8 },
   textRight: { textAlign: 'right' as const },
-  primary: { color: '#1890ff' } // Default antd primary color - replace with actual color if different
+  primary: { color: '#0f8a3d' } // Default antd primary color - replace with actual color if different
 }
 
 export const FileManager = (props: FileManagerProps) => {
@@ -993,7 +993,7 @@ export const FileManager = (props: FileManagerProps) => {
                   right: 0,
                   bottom: 0,
                   backgroundColor: 'rgba(24, 144, 255, 0.1)',
-                  border: '2px dashed #1890ff',
+                  border: '2px dashed #0f8a3d',
                   borderRadius: 8,
                   display: 'flex',
                   alignItems: 'center',
@@ -1002,7 +1002,7 @@ export const FileManager = (props: FileManagerProps) => {
                   pointerEvents: 'none'
                 }}
               >
-                <Typography.Text style={{ fontSize: 18, color: '#1890ff' }}>
+                <Typography.Text style={{ fontSize: 18, color: '#0f8a3d' }}>
                   {t`Drop files here to upload`}
                 </Typography.Text>
               </div>
@@ -1105,7 +1105,7 @@ export const FileManager = (props: FileManagerProps) => {
                 }}
               >
                 {item.status === 'pending' && <ClockCircleOutlined style={{ color: '#999' }} />}
-                {item.status === 'uploading' && <LoadingOutlined style={{ color: '#1890ff' }} />}
+                {item.status === 'uploading' && <LoadingOutlined style={{ color: '#0f8a3d' }} />}
                 {item.status === 'done' && <CheckCircleOutlined style={{ color: '#52c41a' }} />}
                 {item.status === 'failed' && <CloseCircleOutlined style={{ color: '#ff4d4f' }} />}
                 <span

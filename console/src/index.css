@@ -1,21 +1,49 @@
 @import "tailwindcss";
 @import "./components/email_builder/editor.css";
 @import "./styles/reactflow.css";
+@font-face {
+  font-family: "Poppins";
+  src: url("/brand/fonts/poppins-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/brand/fonts/poppins-medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/brand/fonts/poppins-bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700 900;
+  font-display: swap;
+}
 @theme {
-  --color-primary: #7763f1;
+  --color-primary: #0f8a3d;
+  --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 :root {
-  --background: rgb(243, 246, 252);
-  --foreground: #171717;
-  --primary: #7763f1;
+  --background: #f5f5f4;
+  --foreground: #111114;
+  --primary: #0f8a3d;
+  --brand-ink: #111114;
+  --brand-soft: #f5f5f4;
+  --brand-line: #e7e7e4;
+  --brand-green: #0f8a3d;
+  --brand-green-tint: #dff1e5;
+  --brand-cta: #47d616;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color-scheme: light;
+  color: var(--foreground);
   background-color: var(--background);
 
   font-synthesis: none;
@@ -26,11 +54,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #0f8a3d;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #27770b;
 }
 
 h1 {
@@ -43,7 +71,7 @@ h1 {
 } */
 
 .ant-table-tbody>tr:hover>td, .tr-hover:hover>td {
-  border-bottom: 1px solid rgba(78, 108, 255, 0.4) !important;
+  border-bottom: 1px solid rgba(15, 138, 61, 0.22) !important;
 }
 
 /* Contacts table: fixed left (email) and right (actions) columns need an
@@ -53,10 +81,10 @@ h1 {
  * content shows through underneath. */
 td.ant-table-cell.contacts-fixed-col,
 th.ant-table-cell.contacts-fixed-col {
-  background-color: #F9F9F9;
+  background-color: #ffffff;
 }
 .ant-table-tbody > tr:hover > td.ant-table-cell.contacts-fixed-col {
-  background-color: #F9F9F9;
+  background-color: #ffffff;
 }
 /* antd v6 emits its tokens as CSS variables by default and puts them on every
  * component root, so the selected-row color is finally readable by name here
@@ -66,7 +94,7 @@ th.ant-table-cell.contacts-fixed-col {
  * no longer outranks antd's and the fixed column keeps the grey above. */
 .ant-table-tbody > tr.ant-table-row.ant-table-row-selected > td.ant-table-cell.contacts-fixed-col,
 .ant-table-tbody > tr.ant-table-row.ant-table-row-selected:hover > td.ant-table-cell.contacts-fixed-col {
-  background-color: var(--ant-control-item-bg-active, rgb(244, 240, 255));
+  background-color: var(--ant-control-item-bg-active, #dff1e5);
 }
 
 .drawer-body-no-padding .ant-drawer-body {
@@ -107,7 +135,7 @@ th.ant-table-cell.contacts-fixed-col {
 }
 
 .ant-alert.ant-alert-info {
-  border-left-color: #1890ff !important;
+  border-left-color: #0f8a3d !important;
 }
 
 .ant-alert.ant-alert-success {
@@ -226,4 +254,36 @@ th.ant-table-cell.contacts-fixed-col {
  * rather than two unrelated accents. */
 .ant-table-tbody > tr.best-timescore-row > td:first-child {
   box-shadow: inset 4px 0 0 0 hsl(180, 70%, 50%);
+}
+
+/* Shared product surfaces, including drawers and editors. */
+body { margin: 0; min-width: 320px; }
+#root { min-height: 100dvh; }
+h1, h2, h3, .ant-typography { text-wrap: pretty; }
+h1, h2, h3 { letter-spacing: -0.025em; }
+.ant-statistic-content, .ant-table { font-variant-numeric: tabular-nums; }
+.ant-btn, .ant-menu-item, .ant-menu-submenu-title, .ant-input, .ant-select-selector {
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+.ant-btn-primary:not(:disabled):active { transform: translateY(1px); }
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
+  outline: 2px solid var(--brand-green);
+  outline-offset: 3px;
+}
+.ant-card-head-title { font-weight: 500; letter-spacing: -0.015em; }
+.ant-modal-title, .ant-drawer-title { letter-spacing: -0.02em; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Ghost primary controls need the darker brand green against white surfaces. */
+.ant-btn-primary.ant-btn-background-ghost:not(:disabled) {
+  color: var(--brand-green);
+  border-color: var(--brand-green);
+  background: transparent;
+}
+.ant-btn-primary.ant-btn-background-ghost:not(:disabled):hover {
+  color: #27770b;
+  border-color: #27770b;
+  background: #dff1e5;
 }

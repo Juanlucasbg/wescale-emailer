@@ -1279,7 +1279,7 @@ export function CreateTemplateDrawer({
             indicatorsRender={(current, total) => (
               <span
                 style={{
-                  color: '#1890ff',
+                  color: '#0f8a3d',
                   fontSize: '12px',
                   fontWeight: 'bold'
                 }}

@@ -191,16 +191,16 @@
 /* Active state for toolbar buttons - blue icon instead of blue background */
 .youtube-toolbar-popover .notifuse-editor-toolbar-button.ant-btn-primary {
   background-color: transparent;
-  color: #1890ff;
+  color: #0f8a3d;
 }
 
 .youtube-toolbar-popover .notifuse-editor-toolbar-button.ant-btn-primary:hover:not(:disabled) {
   background-color: #f0f0f0;
-  color: #1890ff;
+  color: #0f8a3d;
 }
 
 .youtube-toolbar-popover .notifuse-editor-toolbar-button.ant-btn-primary .notifuse-editor-toolbar-icon {
-  color: #1890ff;
+  color: #0f8a3d;
 }
 
 /* Caption Wrapper and Input */

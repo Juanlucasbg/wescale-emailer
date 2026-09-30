@@ -57,6 +57,14 @@ func NewTestSMTPMailer(config *Config) *SMTPMailer {
 	}
 }
 
+// brandEmail applies the shared WeScale presentation to platform emails.
+func brandEmail(body string) string {
+	body = strings.Replace(body, "<body>", `<body style="margin: 0; padding: 32px 16px; background-color: #f5f5f4; color: #111114; font-family: Poppins, Arial, sans-serif; line-height: 1.6;">
+		<div style="max-width: 560px; margin: 0 auto; padding: 32px; background-color: #ffffff; border: 1px solid #e7e7e4; border-radius: 16px;">
+			<img src="https://wescale.ai/cdn/shop/files/WeScale_Logo_FULL_Black_2.png?height=144&amp;v=1756131515" alt="WeScale" width="148" style="display: block; width: 148px; height: auto; margin-bottom: 28px;">`, 1)
+	return strings.Replace(body, "</body>", "</div></body>", 1)
+}
+
 // SendWorkspaceInvitation sends an invitation email with the given token
 func (m *SMTPMailer) SendWorkspaceInvitation(email, workspaceName, inviterName, token, language string) error {
 	t := GetTranslations(language)
@@ -85,11 +93,11 @@ func (m *SMTPMailer) SendWorkspaceInvitation(email, workspaceName, inviterName, 
 	htmlBody := fmt.Sprintf(`
 	<html lang="%s">
 		<body>
-			<h1>%s</h1>
+			<h1 style="font-size: 26px; line-height: 1.25; letter-spacing: -0.5px; color: #111114;">%s</h1>
 			<p>%s</p>
 			<p>%s</p>
 			<p>%s</p>
-			<p><a href="%s">%s</a></p>
+			<p><a href="%s" style="display: inline-block; padding: 12px 22px; background-color: #0f8a3d; color: #ffffff; border-radius: 8px; text-decoration: none; font-weight: 600;">%s</a></p>
 			<p>%s</p>
 			<p>%s</p>
 			<p>%s</p>
@@ -115,7 +123,7 @@ func (m *SMTPMailer) SendWorkspaceInvitation(email, workspaceName, inviterName, 
 		t.Invitation.Expiry,
 		t.Invitation.SignOff, t.Common.TeamName)
 
-	msg.SetBodyString(mail.TypeTextHTML, htmlBody)
+	msg.SetBodyString(mail.TypeTextHTML, brandEmail(htmlBody))
 	msg.AddAlternativeString(mail.TypeTextPlain, plainBody)
 
 	// Create SMTP client
@@ -165,10 +173,10 @@ func (m *SMTPMailer) SendMagicCode(email, code, language string) error {
 	htmlBody := fmt.Sprintf(`
 	<html lang="%s">
 		<body>
-			<h1>%s</h1>
+			<h1 style="font-size: 26px; line-height: 1.25; letter-spacing: -0.5px; color: #111114;">%s</h1>
 			<p>%s</p>
 			<p>%s</p>
-			<h2 style="font-size: 24px; letter-spacing: 3px; background-color: #f5f5f5; padding: 15px; display: inline-block; border-radius: 5px;">%s</h2>
+			<h2 style="font-size: 28px; letter-spacing: 6px; color: #0f8a3d; background-color: #dff1e5; padding: 16px 24px; display: inline-block; border-radius: 8px;">%s</h2>
 			<p>%s</p>
 			<p>%s</p>
 			<p>%s<br>%s</p>
@@ -191,7 +199,7 @@ func (m *SMTPMailer) SendMagicCode(email, code, language string) error {
 		t.MagicCode.IgnoreNotice,
 		t.MagicCode.SignOff, t.Common.TeamName)
 
-	msg.SetBodyString(mail.TypeTextHTML, htmlBody)
+	msg.SetBodyString(mail.TypeTextHTML, brandEmail(htmlBody))
 	msg.AddAlternativeString(mail.TypeTextPlain, plainBody)
 
 	// Create SMTP client
@@ -241,13 +249,13 @@ func (m *SMTPMailer) SendCircuitBreakerAlert(email, workspaceName, broadcastName
 	htmlBody := fmt.Sprintf(`
 	<html lang="%s">
 		<body>
-			<h1 style="color: #d32f2f;">%s</h1>
+			<h1 style="color: #111114;">%s</h1>
 			<p>%s</p>
 			<p>%s</p>
 
-			<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0;">
-				<h3 style="color: #856404; margin-top: 0;">%s</h3>
-				<p style="margin-bottom: 0; color: #856404;"><strong>%s</strong></p>
+			<div style="background-color: #f5f5f4; border-left: 3px solid #0f8a3d; padding: 15px; border-radius: 5px; margin: 20px 0;">
+				<h3 style="color: #52525a; margin-top: 0;">%s</h3>
+				<p style="margin-bottom: 0; color: #52525a;"><strong>%s</strong></p>
 			</div>
 
 			<p>%s<br>%s</p>
@@ -269,7 +277,7 @@ func (m *SMTPMailer) SendCircuitBreakerAlert(email, workspaceName, broadcastName
 		t.CircuitBreaker.ReasonLabel, reason,
 		t.CircuitBreaker.SignOff, t.Common.TeamName)
 
-	msg.SetBodyString(mail.TypeTextHTML, htmlBody)
+	msg.SetBodyString(mail.TypeTextHTML, brandEmail(htmlBody))
 	msg.AddAlternativeString(mail.TypeTextPlain, plainBody)
 
 	// Create SMTP client

@@ -74,7 +74,7 @@ export function AcceptInvitationPage() {
       // Sign in the user with the returned token
       await signin(response.token)
 
-      message.success(t`Invitation accepted successfully! Welcome to the workspace.`)
+      message.success(t`Invitation accepted. Welcome to your workspace.`)
 
       // Navigate to the dashboard
       setTimeout(() => {
@@ -96,8 +96,8 @@ export function AcceptInvitationPage() {
   if (loading) {
     return (
       <MainLayout>
-        <div className="flex items-center justify-center h-[calc(100vh-48px)]">
-          <Card style={{ width: 500, textAlign: 'center' }}>
+        <div className="wescale-auth-form">
+          <Card className="wescale-auth-card" style={{ textAlign: 'center' }}>
             <Spin size="large" />
             <div style={{ marginTop: 16 }}>
               <Text>{t`Verifying invitation...`}</Text>
@@ -111,8 +111,8 @@ export function AcceptInvitationPage() {
   if (error || !invitationData) {
     return (
       <MainLayout>
-        <div className="flex items-center justify-center h-[calc(100vh-48px)]">
-          <Card style={{ width: 500 }}>
+        <div className="wescale-auth-form">
+          <Card className="wescale-auth-card">
             <div style={{ textAlign: 'center', marginBottom: 24 }}>
               <Title level={3} type="danger">
                 {t`Invalid Invitation`}
@@ -132,17 +132,17 @@ export function AcceptInvitationPage() {
 
   return (
     <MainLayout>
-      <div className="flex items-center justify-center h-[calc(100vh-48px)]">
-        <Card style={{ width: 500 }}>
+      <div className="wescale-auth-form">
+        <Card className="wescale-auth-card">
           <div style={{ textAlign: 'center', marginBottom: 24 }}>
-            <Title level={3}>{t`Workspace Invitation`}</Title>
+            <Title level={3}>{t`Join your WeScale workspace`}</Title>
             <Text type="secondary">
               {t`You've been invited to join`} <strong>{invitationData.workspace.name}</strong>
             </Text>
           </div>
 
           <div
-            style={{ marginBottom: 24, padding: 16, backgroundColor: '#f5f5f5', borderRadius: 8 }}
+            className="wescale-invitation-details"
           >
             <div style={{ marginBottom: 8 }}>
               <Text strong>{t`Workspace:`}</Text> {invitationData.workspace.name}

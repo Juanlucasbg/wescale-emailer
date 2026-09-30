@@ -2,40 +2,54 @@ import { Layout } from 'antd'
 import { useLingui } from '@lingui/react/macro'
 import { ReactNode } from 'react'
 import { withBannerOffset } from '../components/license/bannerOffset'
+import './WeScaleOnboarding.css'
 
 const { Content } = Layout
 
 interface MainLayoutProps {
   children: ReactNode
+  showcase?: boolean
 }
 
-export function MainLayout({ children }: MainLayoutProps) {
+export function MainLayout({ children, showcase = true }: MainLayoutProps) {
   const { t } = useLingui()
 
   return (
-    <Layout
-      style={{
-        minHeight: '100vh',
-        backgroundImage: 'url(/console/splash.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
-      {/* The licence banner is fixed at the top of the viewport, above this layout; the padding
-          follows it so the first row of content is never hidden underneath. 0px when absent. */}
-      <Content style={{ padding: '24px', paddingTop: withBannerOffset('24px') }}>
-        {children}
-      </Content>
-      <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-2 py-1 rounded-sm text-[9px]">
-        <a
-          href="https://unsplash.com/fr/@zetong"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="!text-gray-400 no-underline"
-        >
-          {t`Photo by Zetong Li`}
+    <Layout className="wescale-onboarding" style={{ paddingTop: withBannerOffset('0px') }}>
+      <a className="wescale-skip-link" href="#wescale-content">{t`Skip to content`}</a>
+      <header className="wescale-onboarding-header">
+        <a href="https://wescale.ai/" target="_blank" rel="noopener noreferrer" aria-label={t`WeScale home`}>
+          <img src="/console/logo.png" alt={t`WeScale`} className="wescale-onboarding-logo" />
         </a>
+        <a href="https://www.skool.com/heckman/about" target="_blank" rel="noopener noreferrer" className="wescale-community-link">
+          {t`Explore the community`} <span aria-hidden="true">↗</span>
+        </a>
+      </header>
+      <div className={`wescale-onboarding-grid${showcase ? '' : ' wescale-onboarding-grid-wide'}`}>
+        {showcase && <aside className="wescale-onboarding-story">
+          <div className="wescale-story-copy">
+            <span className="wescale-eyebrow">{t`Built for brand builders`}</span>
+            <h1>{t`Build your brand.`}<br /><span>{t`Keep it growing.`}</span></h1>
+            <p>{t`Bring your audience, campaigns, and customer journeys together in your WeScale workspace.`}</p>
+          </div>
+          <figure className="wescale-founders">
+            <img src="/console/brand/founders.png" alt={t`Chris and Meg Heckman, founders of WeScale`} />
+            <figcaption>
+              <strong>{t`Chris & Meg Heckman`}</strong>
+              <span>{t`Founders of WeScale`}</span>
+            </figcaption>
+          </figure>
+          <p className="wescale-story-note">{t`Learn, launch, and grow with the WeScale community.`}</p>
+        </aside>}
+        <Content id="wescale-content" tabIndex={-1} className="wescale-onboarding-content">{children}</Content>
       </div>
+      <footer className="wescale-onboarding-footer">
+        <span>{t`WeScale · Your brand, built together.`}</span>
+        <nav aria-label={t`WeScale policies`}>
+          <a href="https://wescale.ai/policies/privacy-policy" target="_blank" rel="noopener noreferrer">{t`Privacy policy`}</a>
+          <a href="https://wescale.ai/policies/terms-of-service" target="_blank" rel="noopener noreferrer">{t`Terms of service`}</a>
+        </nav>
+      </footer>
     </Layout>
   )
 }
@@ -48,22 +62,9 @@ interface MainLayoutSidebarProps {
 
 export function MainLayoutSidebar({ children, title, extra }: MainLayoutSidebarProps) {
   return (
-    <div
-      className="fixed right-0 bottom-0 w-[400px] p-6 backdrop-blur-lg bg-white/90 border-l border-black/[0.06] overflow-y-auto"
-      style={{ top: withBannerOffset('0px') }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: '20px'
-        }}
-      >
-        <h3 style={{ margin: 0 }}>{title}</h3>
-        {extra}
-      </div>
+    <section className="wescale-onboarding-panel">
+      <div className="wescale-panel-heading"><h2>{title}</h2>{extra}</div>
       {children}
-    </div>
+    </section>
   )
 }

@@ -271,7 +271,7 @@ export function AIAssistantChat({
               role={{
                 user: {
                   placement: 'end',
-                  avatar: <Avatar icon={<User size={12} />} style={{ background: '#1890ff' }} />
+                  avatar: <Avatar icon={<User size={12} />} style={{ background: '#0f8a3d' }} />
                 },
                 ai: {
                   placement: 'start',
@@ -328,7 +328,7 @@ export function AIAssistantChat({
                               href={part}
                               target="_blank"
                               rel="noopener noreferrer"
-                              style={{ color: '#1890ff' }}
+                              style={{ color: '#0f8a3d' }}
                             >
                               {part}
                             </a>

@@ -16,7 +16,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: notifuse/notifuse
+  IMAGE_NAME: juanlucasbg/wescale-emailer
 
 jobs:
   build:
@@ -58,6 +58,9 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=${{ inputs.tag || 'latest' }}
+          labels: |
+            org.opencontainers.image.title=WeScale Emailer
+            org.opencontainers.image.source=https://github.com/Juanlucasbg/wescale-emailer
 
       - name: Build and push by digest
         if: ${{ inputs.push }}
@@ -144,23 +147,30 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=${{ inputs.tag || 'latest' }}
+          labels: |
+            org.opencontainers.image.title=WeScale Emailer
+            org.opencontainers.image.source=https://github.com/Juanlucasbg/wescale-emailer
 
       - name: Create manifest list and push
         working-directory: ${{ runner.temp }}/digests
         run: |
-          tag_args=$(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON")
-          src_args=""
-          for f in *; do
-            src_args="$src_args ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@sha256:$f"
+          mapfile -t image_tags < <(jq -r '.tags[]' <<< "$DOCKER_METADATA_OUTPUT_JSON")
+          tag_args=()
+          for image_tag in "${image_tags[@]}"; do
+            tag_args+=(-t "$image_tag")
           done
-          docker buildx imagetools create $tag_args $src_args
+          src_args=()
+          for f in *; do
+            src_args+=("${REGISTRY}/${IMAGE_NAME}@sha256:$f")
+          done
+          docker buildx imagetools create "${tag_args[@]}" "${src_args[@]}"
 
       - name: Get manifest digest
         id: digest
         run: |
           first_tag=$(jq -r '.tags[0]' <<< "$DOCKER_METADATA_OUTPUT_JSON")
           digest=$(crane digest "$first_tag")
-          echo "digest=$digest" >> $GITHUB_OUTPUT
+          echo "digest=$digest" >> "$GITHUB_OUTPUT"
           echo "Manifest digest: $digest"
 
       - name: Attest manifest list

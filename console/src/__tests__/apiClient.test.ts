@@ -191,7 +191,7 @@ describe('api client licence refusals', () => {
     error: 'license_required',
     feature: 'ses_tenant',
     required_tier: 'Studio',
-    message: 'SES tenant isolation requires a Notifuse licence (Studio or above).',
+    message: 'SES tenant isolation requires a WeScale licence (Studio or above).',
     docs: 'https://notifuse.com/licence-features'
   }
 
@@ -201,7 +201,7 @@ describe('api client licence refusals', () => {
     const error = await rejection(api.post('/api/ses.enableTenantIsolation', {}))
 
     expect(error.status).toBe(402)
-    expect(error.message).toBe('SES tenant isolation requires a Notifuse Studio licence.')
+    expect(error.message).toBe('SES tenant isolation requires a WeScale Studio licence.')
     // Never the raw code, which is what a dropped branch would surface.
     expect(error.message).not.toContain('license_required')
     // The body travels untouched, so a component that wants the feature or the docs link
@@ -239,14 +239,14 @@ describe('api client licence refusals', () => {
         jsonResponse(402, {
           error: 'license_required',
           feature: 'a_capability_from_2028',
-          message: 'That capability requires a Notifuse licence.',
+          message: 'That capability requires a WeScale licence.',
           docs: 'https://notifuse.com/licence-features'
         })
       )
     )
 
     const error = await rejection(api.post('/api/anything', {}))
-    expect(error.message).toBe('That capability requires a Notifuse licence.')
+    expect(error.message).toBe('That capability requires a WeScale licence.')
   })
 
   // Detection is by the `error` field, never by the status. The two refusals are different

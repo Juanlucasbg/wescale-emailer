@@ -108,10 +108,11 @@ export function CreateWorkspacePage() {
             ghost
             icon={<ArrowLeftOutlined />}
             onClick={handleBackToDashboard}
-            style={{ padding: '4px', lineHeight: 1 }}
+            aria-label={t`Back to dashboard`}
           />
         }
       >
+        <p className="wescale-auth-description">{t`Give your brand a home. Set up your workspace to start connecting with your audience.`}</p>
         <Form
           name="create-workspace"
           layout="vertical"

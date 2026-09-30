@@ -14,13 +14,13 @@ describe('licenseRefusalFromBody', () => {
         error: 'license_required',
         feature: 'ses_tenant',
         required_tier: 'Studio',
-        message: 'SES tenant isolation requires a Notifuse licence (Studio or above).',
+        message: 'SES tenant isolation requires a WeScale licence (Studio or above).',
         docs: 'https://notifuse.com/licence-features'
       })
     ).toEqual({
       feature: 'ses_tenant',
       requiredTier: 'Studio',
-      message: 'SES tenant isolation requires a Notifuse licence (Studio or above).',
+      message: 'SES tenant isolation requires a WeScale licence (Studio or above).',
       docs: 'https://notifuse.com/licence-features'
     })
   })
@@ -84,7 +84,7 @@ describe('licenseRefusedMessage', () => {
         message: 'server prose',
         docs: ''
       })
-    ).toBe('Custom permissions requires a Notifuse Studio licence.')
+    ).toBe('Custom permissions requires a WeScale Studio licence.')
   })
 
   it('says existing workspaces are unaffected when the quota is reached', () => {
@@ -105,10 +105,10 @@ describe('licenseRefusedMessage', () => {
       licenseRefusedMessage({
         feature: 'teleportation',
         requiredTier: 'Enterprise',
-        message: 'Teleportation requires a Notifuse licence.',
+        message: 'Teleportation requires a WeScale licence.',
         docs: ''
       })
-    ).toBe('Teleportation requires a Notifuse licence.')
+    ).toBe('Teleportation requires a WeScale licence.')
   })
 
   it('labels every gate the backend can name, never the raw token', () => {

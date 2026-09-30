@@ -7,7 +7,7 @@
 
 /* Selection highlight */
 .react-flow__node.selected .automation-node {
-  border-color: #1890ff;
+  border-color: #0f8a3d;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
@@ -18,14 +18,14 @@
 }
 
 .react-flow__edge.selected .react-flow__edge-path {
-  stroke: #1890ff;
+  stroke: #0f8a3d;
 }
 
 /* Handle styles */
 .react-flow__handle {
   width: 10px;
   height: 10px;
-  background-color: #1890ff;
+  background-color: #0f8a3d;
   border: 2px solid #fff;
   transition: all 0.15s ease;
 }

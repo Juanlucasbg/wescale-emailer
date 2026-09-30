@@ -1,0 +1,593 @@
+.wescale-workspace,
+.wescale-hub {
+  font-family: 'Poppins', sans-serif;
+  color: #111114;
+}
+
+.wescale-skip-link {
+  position: fixed;
+  top: var(--license-banner-height, 0px);
+  left: 16px;
+  z-index: 50;
+  padding: 12px 18px;
+  background: #111114;
+  color: #fff !important;
+  border-radius: 0 0 8px 8px;
+  transform: translateY(-150%);
+}
+
+.wescale-skip-link:focus {
+  transform: translateY(0);
+}
+
+.wescale-workspace .workspace-sider {
+  background: #fff !important;
+  border-right: 1px solid #e7e7e4;
+}
+
+.wescale-workspace-brand {
+  flex: 0 0 auto;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 25px;
+  border-bottom: 1px solid #e7e7e4;
+}
+
+.wescale-workspace-brand-logo {
+  width: 164px;
+  height: auto;
+  display: block;
+}
+
+.wescale-workspace-brand-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.wescale-workspace-brand span {
+  font-size: 10px;
+  color: #86868e;
+  letter-spacing: .015em;
+}
+
+.wescale-workspace .workspace-sider-nav {
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
+
+.wescale-workspace .workspace-sider-nav .ant-menu {
+  background: #fff !important;
+}
+
+.wescale-workspace .ant-menu-item-selected,
+.wescale-workspace .ant-menu-submenu-selected > .ant-menu-submenu-title {
+  color: #0f8a3d;
+}
+
+.wescale-workspace .ant-menu-item-selected {
+  background: #dff1e5;
+}
+
+.wescale-workspace .ant-menu-item-selected a {
+  color: #0f8a3d !important;
+}
+
+.wescale-workspace .ant-menu-item,
+.wescale-workspace .ant-menu-submenu-title {
+  transition: background .2s ease, color .2s ease;
+}
+
+.wescale-workspace-sidebar-footer {
+  background: #fff !important;
+}
+
+.wescale-workspace-community {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 8px 18px;
+  color: #52525a !important;
+  font-size: 11px;
+}
+
+.wescale-workspace-community > span:last-child {
+  margin-left: auto;
+}
+
+.wescale-workspace-community:hover {
+  color: #0f8a3d !important;
+}
+
+.wescale-workspace-body,
+#workspace-content {
+  min-width: 0;
+}
+
+.wescale-workspace-header {
+  background: #fff !important;
+}
+
+.wescale-workspace-selector .ant-select-selector {
+  background: #f5f5f4 !important;
+}
+
+.wescale-new-workspace {
+  color: #0f8a3d;
+}
+
+.wescale-workspace-account-email {
+  display: inline-block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.wescale-hub {
+  min-height: 100dvh;
+  background: #f5f5f4;
+}
+
+.wescale-hub-header,
+.wescale-hub-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 48px;
+}
+
+.wescale-hub-header {
+  border-bottom: 1px solid #e7e7e4;
+}
+
+.wescale-hub-logo {
+  display: block;
+  width: 164px;
+  height: auto;
+}
+
+.wescale-hub-community-link,
+.wescale-hub-section-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  color: #111114 !important;
+}
+
+.wescale-hub-main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 60px 48px 72px;
+}
+
+.wescale-hub-intro {
+  padding-bottom: 52px;
+}
+
+.wescale-hub-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 22px;
+  color: #52525a;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.wescale-hub-eyebrow > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #47d616;
+  box-shadow: 0 0 0 4px #dff1e5;
+}
+
+.wescale-hub-intro h1 {
+  margin: 0;
+  font-size: clamp(36px, 4.7vw, 64px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+
+.wescale-hub-intro h1 > span {
+  color: #0f8a3d;
+}
+
+.wescale-hub-intro > p {
+  max-width: 470px;
+  margin: 22px 0 0;
+  color: #52525a;
+  font-size: 14px;
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+
+.wescale-hub-workspaces {
+  padding: 28px 32px 32px;
+  border: 1px solid #e7e7e4;
+  border-radius: 16px;
+  background: #fff;
+  scroll-margin-top: 24px;
+}
+
+.wescale-hub-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.wescale-hub-section-kicker {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  color: #86868e;
+}
+
+.wescale-hub-section-heading h2 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+
+.wescale-hub-workspace-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wescale-hub .ant-btn-primary {
+  background: #47d616;
+  border-color: #47d616;
+  color: #111114;
+  box-shadow: none;
+  font-weight: 500;
+}
+
+.wescale-hub .ant-btn-primary:hover {
+  background: #3fc310 !important;
+  border-color: #3fc310 !important;
+  color: #111114 !important;
+}
+
+.wescale-hub-workspace-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.wescale-hub-workspace {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px;
+  background: #f5f5f4;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  color: #111114;
+  font-family: inherit;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.wescale-hub-workspace:hover {
+  background: #eff8f1;
+  border-color: #bbdfc7;
+}
+
+.wescale-hub-workspace:active {
+  transform: translateY(1px);
+}
+
+.wescale-hub-workspace-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #dff1e5;
+  color: #0f8a3d;
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.wescale-hub-workspace-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.wescale-hub-workspace-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+}
+
+.wescale-hub-workspace-copy strong {
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wescale-hub-workspace-copy > span {
+  font-size: 10px;
+  color: #86868e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wescale-hub-workspace-arrow {
+  color: #0f8a3d;
+  font-size: 16px;
+}
+
+.wescale-hub-empty {
+  text-align: center;
+  padding: 16px 20px 28px;
+}
+
+.wescale-hub-empty p {
+  margin: 0 auto 20px;
+  max-width: 380px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #52525a;
+}
+
+.wescale-hub-resources {
+  margin-top: 54px;
+}
+
+.wescale-hub-resource-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.wescale-hub-resource {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e7e7e4;
+  padding-bottom: 20px;
+  color: #111114 !important;
+}
+
+.wescale-hub-resource > img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  transition: transform .25s ease;
+}
+
+.wescale-hub-resource:hover > img {
+  transform: translateY(-3px);
+}
+
+.wescale-hub-resource > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 20px;
+}
+
+.wescale-hub-resource h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -.025em;
+}
+
+.wescale-hub-resource p {
+  margin: 0 0 20px;
+  color: #52525a;
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 290px;
+}
+
+.wescale-hub-resource > div > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  font-size: 11px;
+  font-weight: 500;
+  color: #0f8a3d;
+}
+
+.wescale-hub-footer {
+  border-top: 1px solid #e7e7e4;
+  color: #86868e;
+  font-size: 10px;
+}
+
+.wescale-hub-footer > a {
+  color: #52525a !important;
+}
+
+.wescale-hub a:focus-visible,
+.wescale-hub button:focus-visible,
+.wescale-workspace a:focus-visible,
+.wescale-workspace button:focus-visible {
+  outline: 2px solid #0f8a3d;
+  outline-offset: 4px;
+}
+
+@media (max-width: 991px) {
+  /* Expanded navigation overlays the page so narrow viewports retain usable content width. */
+  .wescale-workspace-header {
+    width: calc(100% - 80px) !important;
+  }
+
+  .wescale-workspace-body {
+    margin-left: 80px !important;
+  }
+
+  .wescale-workspace .workspace-sider:not(.ant-layout-sider-collapsed) {
+    box-shadow: 12px 0 24px rgba(17, 17, 20, .08);
+  }
+
+  #workspace-content {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .wescale-workspace-account-email {
+    max-width: 140px;
+  }
+
+  .wescale-hub-header,
+  .wescale-hub-footer {
+    padding: 24px;
+  }
+
+  .wescale-hub-main {
+    padding: 44px 24px 52px;
+  }
+}
+
+@media (max-width: 700px) {
+  .wescale-workspace-header {
+    padding: 0 12px !important;
+  }
+
+  .wescale-workspace-selector {
+    width: 160px !important;
+    min-width: 0;
+    max-width: 42vw;
+    flex-shrink: 1;
+    margin-right: 8px;
+  }
+
+  .wescale-workspace-account-email,
+  .wescale-workspace-help {
+    display: none;
+  }
+
+  .wescale-workspace-header > .ant-space {
+    gap: 6px !important;
+  }
+
+  .wescale-workspace-account {
+    padding: 4px;
+  }
+
+  .wescale-workspace-account .ant-space {
+    gap: 3px !important;
+  }
+
+  .wescale-hub-workspace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wescale-hub-workspaces {
+    padding: 24px;
+  }
+
+  .wescale-hub-section-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .wescale-hub-resource-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .wescale-hub-resource {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+  }
+
+  .wescale-hub-resource > div {
+    padding-top: 0;
+  }
+
+  .wescale-hub-resource p {
+    margin-bottom: 14px;
+  }
+
+  .wescale-hub-resource > img {
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 420px) {
+  .wescale-workspace-selector {
+    max-width: 32vw;
+  }
+
+  .wescale-hub-header,
+  .wescale-hub-footer {
+    padding: 20px;
+  }
+
+  .wescale-hub-logo {
+    width: 132px;
+  }
+
+  .wescale-hub-community-link {
+    font-size: 10px;
+    gap: 6px;
+  }
+
+  .wescale-hub-main {
+    padding: 36px 20px 40px;
+  }
+
+  .wescale-hub-workspaces {
+    padding: 20px;
+  }
+
+  .wescale-hub-workspace {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .wescale-hub-resource {
+    grid-template-columns: 92px 1fr;
+    gap: 14px;
+  }
+
+  .wescale-hub-resource h3 {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wescale-hub *,
+  .wescale-workspace * {
+    transition-duration: 0s !important;
+  }
+}

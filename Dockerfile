@@ -92,8 +92,8 @@ FROM alpine:3.24
 # Labels belong on the image that ships, not on a builder stage: a registry scanner reads
 # the final manifest. BUSL-1.1 is the SPDX identifier for the Licensed Work; the AGPL half
 # travels as its own file below, because /licenses is the directory a scanner opens.
-LABEL org.opencontainers.image.title="Notifuse" \
-      org.opencontainers.image.source="https://github.com/Notifuse/notifuse" \
+LABEL org.opencontainers.image.title="WeScale Emailer" \
+      org.opencontainers.image.source="https://github.com/Juanlucasbg/wescale-emailer" \
       org.opencontainers.image.licenses="BUSL-1.1"
 
 # Add necessary runtime packages.

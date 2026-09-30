@@ -723,16 +723,23 @@ func (h *RootHandler) serveBlogFeed(w http.ResponseWriter, r *http.Request, work
 
 // serveBlog404 serves a 404 page for blog
 func (h *RootHandler) serveBlog404(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusNotFound)
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.WriteHeader(http.StatusNotFound)
 	_, _ = w.Write([]byte(`<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 Not Found</title>
+<title>WeScale | 404 Not Found</title>
+<link rel="icon" href="/console/favicon-32x32.png" type="image/png">
+<style>
+@font-face{font-family:Poppins;src:url('/console/brand/fonts/poppins-regular.woff2') format('woff2');font-display:swap}
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f5f5f4;color:#111114;font-family:Poppins,system-ui,sans-serif;text-align:center;line-height:1.7}
+.brand-logo{width:168px;height:auto;margin-bottom:32px}h1{font-size:32px;letter-spacing:-.025em;line-height:1.2}p{max-width:48ch;color:#52525a}a{display:inline-block;padding:12px 24px;background:#47d616;color:#111114;border-radius:8px;text-decoration:none}a:hover{background:#dff1e5}a:focus-visible{outline:2px solid #0f8a3d;outline-offset:4px}
+</style>
 </head>
 <body>
+<img class="brand-logo" src="/console/logo.png" alt="WeScale">
 <h1>404 Not Found</h1>
 <p>The page you're looking for doesn't exist.</p>
 <p><a href="/">Go back home</a></p>
@@ -787,9 +794,16 @@ func (h *RootHandler) handleBlogRenderError(w http.ResponseWriter, blogErr *doma
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog Unavailable</title>
+<title>WeScale | Blog Unavailable</title>
+<link rel="icon" href="/console/favicon-32x32.png" type="image/png">
+<style>
+@font-face{font-family:Poppins;src:url('/console/brand/fonts/poppins-regular.woff2') format('woff2');font-display:swap}
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f5f5f4;color:#111114;font-family:Poppins,system-ui,sans-serif;text-align:center;line-height:1.7}
+.brand-logo{width:168px;height:auto;margin-bottom:32px}h1{font-size:32px;letter-spacing:-.025em;line-height:1.2}p{max-width:48ch;color:#52525a}a{display:inline-block;padding:12px 24px;background:#47d616;color:#111114;border-radius:8px;text-decoration:none}a:hover{background:#dff1e5}a:focus-visible{outline:2px solid #0f8a3d;outline-offset:4px}
+</style>
 </head>
 <body>
+<img class="brand-logo" src="/console/logo.png" alt="WeScale">
 <h1>Blog Temporarily Unavailable</h1>
 <p>The blog is currently being set up. Please check back later.</p>
 </body>
@@ -804,9 +818,16 @@ func (h *RootHandler) handleBlogRenderError(w http.ResponseWriter, blogErr *doma
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 Not Found</title>
+<title>WeScale | 404 Not Found</title>
+<link rel="icon" href="/console/favicon-32x32.png" type="image/png">
+<style>
+@font-face{font-family:Poppins;src:url('/console/brand/fonts/poppins-regular.woff2') format('woff2');font-display:swap}
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f5f5f4;color:#111114;font-family:Poppins,system-ui,sans-serif;text-align:center;line-height:1.7}
+.brand-logo{width:168px;height:auto;margin-bottom:32px}h1{font-size:32px;letter-spacing:-.025em;line-height:1.2}p{max-width:48ch;color:#52525a}a{display:inline-block;padding:12px 24px;background:#47d616;color:#111114;border-radius:8px;text-decoration:none}a:hover{background:#dff1e5}a:focus-visible{outline:2px solid #0f8a3d;outline-offset:4px}
+</style>
 </head>
 <body>
+<img class="brand-logo" src="/console/logo.png" alt="WeScale">
 <h1>404 Not Found</h1>
 <p>The page you're looking for doesn't exist.</p>
 <p><a href="/">Go back home</a></p>
@@ -822,9 +843,16 @@ func (h *RootHandler) handleBlogRenderError(w http.ResponseWriter, blogErr *doma
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Error</title>
+<title>WeScale | Error</title>
+<link rel="icon" href="/console/favicon-32x32.png" type="image/png">
+<style>
+@font-face{font-family:Poppins;src:url('/console/brand/fonts/poppins-regular.woff2') format('woff2');font-display:swap}
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f5f5f4;color:#111114;font-family:Poppins,system-ui,sans-serif;text-align:center;line-height:1.7}
+.brand-logo{width:168px;height:auto;margin-bottom:32px}h1{font-size:32px;letter-spacing:-.025em;line-height:1.2}p{max-width:48ch;color:#52525a}a{display:inline-block;padding:12px 24px;background:#47d616;color:#111114;border-radius:8px;text-decoration:none}a:hover{background:#dff1e5}a:focus-visible{outline:2px solid #0f8a3d;outline-offset:4px}
+</style>
 </head>
 <body>
+<img class="brand-logo" src="/console/logo.png" alt="WeScale">
 <h1>Something Went Wrong</h1>
 <p>We're sorry, but something went wrong. Please try again later.</p>
 </body>

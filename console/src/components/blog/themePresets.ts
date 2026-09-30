@@ -13,7 +13,7 @@ const defaultTheme: ThemePreset = {
   id: 'default',
   name: 'Default',
   description: 'A beautiful Medium-inspired blog theme with full Liquid support',
-  placeholderColor: '#7763f1',
+  placeholderColor: '#0f8a3d',
   files: {
     'home.liquid': `{%- comment -%} Include Header (shares parent scope for workspace/base_url access) {%- endcomment -%}
 {% include 'header' %}
@@ -567,7 +567,7 @@ const defaultTheme: ThemePreset = {
           </a>
           <p class="text-gray-600 text-sm">&copy; {{ current_year }} All rights reserved.</p>
           <p class="text-gray-500 text-xs mt-1">
-            Powered by <a href="https://www.notifuse.com" target="_blank" rel="noopener" style="color: var(--color-link); text-decoration: none;">Notifuse</a>
+            Powered by <a href="https://wescale.ai/" target="_blank" rel="noopener" style="color: var(--color-link); text-decoration: none;">WeScale</a>
           </p>
         </div>
 
@@ -576,26 +576,9 @@ const defaultTheme: ThemePreset = {
           <a href="{{ base_url }}/privacy" class="footer-link">Privacy</a>
 
           <div class="social-links">
-            <a href="https://www.notifuse.com" target="_blank" rel="noopener noreferrer" aria-label="Website">
-              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-              </svg>
-            </a>
-            <a href="https://x.com/notifuse" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </a>
-            <a href="https://github.com/Notifuse/notifuse" target="_blank" rel="noopener noreferrer"
-              aria-label="GitHub">
-              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
-                <path fill-rule="evenodd"
-                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                  clip-rule="evenodd" />
-              </svg>
-            </a>
+            <a href="https://wescale.ai/" target="_blank" rel="noopener noreferrer" aria-label="WeScale website">Website</a>
+            <a href="https://www.skool.com/heckman" target="_blank" rel="noopener noreferrer" aria-label="WeScale community">Community</a>
+            <a href="https://wescale.ai/pages/wescale-gpts" target="_blank" rel="noopener noreferrer" aria-label="WeScale GPTs">GPTs</a>
           </div>
         </div>
       </div>
@@ -780,7 +763,10 @@ const defaultTheme: ThemePreset = {
   <!-- No widget specified. Use: {% render 'shared', widget: 'widget_name' %} -->
 {%- endif -%}`,
 
-    'styles.css': `/* ==================== 
+    'styles.css': `@font-face { font-family: 'Poppins'; src: url('/console/brand/fonts/poppins-regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/console/brand/fonts/poppins-medium.woff2') format('woff2'); font-weight: 500 600; font-display: swap; }
+@font-face { font-family: 'Poppins'; src: url('/console/brand/fonts/poppins-bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+/* ====================
    CSS CUSTOM PROPERTIES
    ==================== */
 
@@ -792,13 +778,13 @@ const defaultTheme: ThemePreset = {
   /* Secondary/muted text */
   --color-text-heading: #1a1a1a;
   /* Heading text color */
-  --color-link: #7763f1;
+  --color-link: #0f8a3d;
   /* Link color */
-  --color-link-hover: #5a47d9;
+  --color-link-hover: #27770b;
   /* Link hover */
-  --color-cta: #7763f1;
+  --color-cta: #0f8a3d;
   /* CTA button background (Purple) */
-  --color-cta-hover: #5a47d9;
+  --color-cta-hover: #27770b;
   /* CTA hover state (Darker purple) */
   --color-cta-text: #fff;
   /* CTA text color */
@@ -810,7 +796,7 @@ const defaultTheme: ThemePreset = {
   /* Body background */
   --color-container: #fafafa;
   /* Container background */
-  --color-active-pill: #7763f1;
+  --color-active-pill: #0f8a3d;
   /* Active category pill */
   --color-pill: #f5f5f5;
   /* Inactive category pill */
@@ -819,8 +805,8 @@ const defaultTheme: ThemePreset = {
 
   /* ==================== TYPOGRAPHY ==================== */
   /* Base Settings */
-  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  --font-family-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --font-family-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   --font-size-base: 1rem;
   /* 16px - Base font size */
   --line-height-base: 1.6;
@@ -2183,7 +2169,7 @@ function createPreviewBanner(previewVersion) {
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background: #7763f1;
+      background: #0f8a3d;
       color: white;
       padding: 12px 20px;
       border-radius: 24px;

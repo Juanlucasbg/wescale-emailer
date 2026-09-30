@@ -406,7 +406,7 @@ describe('invite member drawer', () => {
     const drawer = await openInvite(['template_i18n'])
 
     expect(
-      within(drawer).getByText('Custom permissions require a Notifuse Studio licence.')
+      within(drawer).getByText('Custom permissions require a WeScale Studio licence.')
     ).toBeInTheDocument()
     const switches = within(drawer).getAllByRole('switch')
     expect(switches.length).toBeGreaterThan(0)

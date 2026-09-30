@@ -281,12 +281,12 @@ msgid "{0}-{1} of {total} broadcasts"
 msgstr "{0}-{1} of {total} broadcasts"
 
 #: src/services/api/licenseErrors.ts:118
-msgid "{capability} requires a Notifuse {tier} licence."
-msgstr "{capability} requires a Notifuse {tier} licence."
+msgid "{capability} requires a WeScale {tier} licence."
+msgstr "{capability} requires a WeScale {tier} licence."
 
 #: src/services/api/licenseErrors.ts:120
-msgid "{capability} requires a Notifuse licence."
-msgstr "{capability} requires a Notifuse licence."
+msgid "{capability} requires a WeScale licence."
+msgstr "{capability} requires a WeScale licence."
 
 #: src/pages/BroadcastsPage.tsx:962
 msgid "{clicks} clicks out of {recipients} recipients"
@@ -579,6 +579,10 @@ msgstr "A bulk action is already running"
 msgid "A count of past activity includes the event that fires the automation, so \"at least 3 opens\" enrolls on the third open."
 msgstr "A count of past activity includes the event that fires the automation, so \"at least 3 opens\" enrolls on the third open."
 
+#: src/pages/DashboardPage.tsx:119
+msgid "A little help goes a long way."
+msgstr "A little help goes a long way."
+
 #: src/components/blog/ThemeEditorDrawer.tsx:459
 msgid "A newer draft was found in local storage. Would you like to restore it or discard it?"
 msgstr "A newer draft was found in local storage. Would you like to restore it or discard it?"
@@ -641,6 +645,10 @@ msgstr "Accept Invitation"
 #: src/components/settings/Integrations.tsx:1863
 msgid "Access Key"
 msgstr "Access Key"
+
+#: src/layouts/WorkspaceLayout.tsx:717
+msgid "Account menu"
+msgstr "Account menu"
 
 #: src/components/contacts/BulkUpdateDrawer.tsx:589
 #: src/components/settings/audit_logs/AuditFilterBuilder.tsx:100
@@ -943,10 +951,10 @@ msgid "Address Line 2"
 msgstr "Address Line 2"
 
 #: src/components/settings/WebAnalyticsSettings.tsx:363
-msgid "Adds a signed identity to the links of tracked emails, so a recipient who clicks one is recognised on landing without any code on your site. Their visit is then tied to their contact record — timeline entries, goals and automation enrolments. Unlike identify(), which your own server calls, this one is minted by Notifuse for every recipient of every tracked send, which is why it is off by default."
-msgstr "Adds a signed identity to the links of tracked emails, so a recipient who clicks one is recognised on landing without any code on your site. Their visit is then tied to their contact record — timeline entries, goals and automation enrolments. Unlike identify(), which your own server calls, this one is minted by Notifuse for every recipient of every tracked send, which is why it is off by default."
+msgid "Adds a signed identity to the links of tracked emails, so a recipient who clicks one is recognised on landing without any code on your site. Their visit is then tied to their contact record — timeline entries, goals and automation enrolments. Unlike identify(), which your own server calls, this one is minted by WeScale for every recipient of every tracked send, which is why it is off by default."
+msgstr "Adds a signed identity to the links of tracked emails, so a recipient who clicks one is recognised on landing without any code on your site. Their visit is then tied to their contact record — timeline entries, goals and automation enrolments. Unlike identify(), which your own server calls, this one is minted by WeScale for every recipient of every tracked send, which is why it is off by default."
 
-#: src/pages/SetupWizard.tsx:369
+#: src/pages/SetupWizard.tsx:374
 msgid "Admin email is required"
 msgstr "Admin email is required"
 
@@ -954,7 +962,7 @@ msgstr "Admin email is required"
 #~ msgid "Advanced"
 #~ msgstr "Advanced"
 
-#: src/pages/SetupWizard.tsx:548
+#: src/pages/SetupWizard.tsx:554
 msgid "Advanced Settings"
 msgstr "Advanced Settings"
 
@@ -1093,7 +1101,7 @@ msgstr "All time"
 msgid "All transactional emails (notifications, password resets, etc.) will be sent through this provider from now on."
 msgstr "All transactional emails (notifications, password resets, etc.) will be sent through this provider from now on."
 
-#: src/pages/SetupWizard.tsx:583
+#: src/pages/SetupWizard.tsx:589
 msgid "Allow receiving emails to trigger transactional notifications. Requires TLS certificates."
 msgstr "Allow receiving emails to trigger transactional notifications. Requires TLS certificates."
 
@@ -1103,7 +1111,7 @@ msgid "Allowed domains"
 msgstr "Allowed domains"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:664
-#: src/pages/SetupWizard.tsx:761
+#: src/pages/SetupWizard.tsx:767
 msgid "Allowed email domains"
 msgstr "Allowed email domains"
 
@@ -1200,7 +1208,7 @@ msgstr "Annotation updated"
 
 #: src/components/web_analytics/tabs/AnnotationsTab.tsx:109
 #: src/components/web_analytics/WebAnalyticsAIAssistant.tsx:374
-#: src/layouts/WorkspaceLayout.tsx:354
+#: src/layouts/WorkspaceLayout.tsx:359
 #: src/pages/WebAnalyticsPage.tsx:98
 msgid "Annotations"
 msgstr "Annotations"
@@ -1248,11 +1256,11 @@ msgstr "API Command"
 #: src/components/settings/Integrations.tsx:2095
 #: src/components/settings/Integrations.tsx:2480
 #: src/components/settings/SystemSettingsDrawer.tsx:283
-#: src/pages/SetupWizard.tsx:379
+#: src/pages/SetupWizard.tsx:384
 msgid "API Endpoint"
 msgstr "API Endpoint"
 
-#: src/pages/SetupWizard.tsx:382
+#: src/pages/SetupWizard.tsx:387
 msgid "API endpoint is required"
 msgstr "API endpoint is required"
 
@@ -1456,7 +1464,7 @@ msgstr "Array index: {segment}"
 msgid "Ask about your traffic..."
 msgstr "Ask about your traffic..."
 
-#: src/components/ai-assistant/useAIAssistant.tsx:894
+#: src/components/ai-assistant/useAIAssistant.tsx:899
 msgid "Ask me to fix these issues."
 msgstr "Ask me to fix these issues."
 
@@ -1465,8 +1473,12 @@ msgid "Ask me to help write your blog..."
 msgstr "Ask me to help write your blog..."
 
 #: src/components/license/LicenceGateNotice.tsx:134
-#~ msgid "Ask the person who runs this Notifuse instance to install a licence."
-#~ msgstr "Ask the person who runs this Notifuse instance to install a licence."
+#~ msgid "Ask the person who runs this WeScale instance to install a licence."
+#~ msgstr "Ask the person who runs this WeScale instance to install a licence."
+
+#: src/pages/DashboardPage.tsx:90
+msgid "Ask your administrator to invite you to a workspace."
+msgstr "Ask your administrator to invite you to a workspace."
 
 #: src/components/segment/form_leaf.tsx:487
 #: src/components/segment/input.tsx:811
@@ -1477,7 +1489,7 @@ msgstr "at least"
 msgid "At least one condition is required"
 msgstr "At least one condition is required"
 
-#: src/pages/SetupWizard.tsx:766
+#: src/pages/SetupWizard.tsx:772
 msgid "At least one domain is required when auto-create is enabled"
 msgstr "At least one domain is required when auto-create is enabled"
 
@@ -1548,8 +1560,8 @@ msgid "Audit Logs"
 msgstr "Audit Logs"
 
 #: src/components/license/LicenceGateNotice.tsx:56
-msgid "Audit logs require a Notifuse {tier} licence."
-msgstr "Audit logs require a Notifuse {tier} licence."
+msgid "Audit logs require a WeScale {tier} licence."
+msgstr "Audit logs require a WeScale {tier} licence."
 
 #: src/components/timeline/ContactTimeline.tsx:657
 #: src/components/webhooks/InboundWebhookEventsTab.tsx:82
@@ -1602,7 +1614,7 @@ msgstr "auto"
 msgid "Auto"
 msgstr "Auto"
 
-#: src/pages/SetupWizard.tsx:753
+#: src/pages/SetupWizard.tsx:759
 msgid "Auto-create accounts on first sign-in"
 msgstr "Auto-create accounts on first sign-in"
 
@@ -1667,7 +1679,7 @@ msgid "Automation:"
 msgstr "Automation:"
 
 #: src/components/settings/PermissionsMatrix.tsx:130
-#: src/layouts/WorkspaceLayout.tsx:428
+#: src/layouts/WorkspaceLayout.tsx:433
 #: src/pages/AutomationsPage.tsx:162
 #: src/services/api/errors.ts:71
 msgid "Automations"
@@ -1720,6 +1732,10 @@ msgstr "AWS Secret Key"
 #: src/components/web_analytics/filters/TestFilterModal.tsx:271
 msgid "Back"
 msgstr "Back"
+
+#: src/pages/CreateWorkspacePage.tsx:111
+msgid "Back to dashboard"
+msgstr "Back to dashboard"
 
 #: src/pages/WebAnalyticsLivePage.tsx:64
 #~ msgid "Back to the dashboard"
@@ -1792,7 +1808,7 @@ msgstr "Base URL (Optional)"
 msgid "Base64 encoded TLS certificate"
 msgstr "Base64 encoded TLS certificate"
 
-#: src/pages/SetupWizard.tsx:646
+#: src/pages/SetupWizard.tsx:652
 msgid "Base64 encoded TLS certificate. Run: cat fullchain.pem | base64 -w 0"
 msgstr "Base64 encoded TLS certificate. Run: cat fullchain.pem | base64 -w 0"
 
@@ -1800,7 +1816,7 @@ msgstr "Base64 encoded TLS certificate. Run: cat fullchain.pem | base64 -w 0"
 msgid "Base64 encoded TLS private key"
 msgstr "Base64 encoded TLS private key"
 
-#: src/pages/SetupWizard.tsx:664
+#: src/pages/SetupWizard.tsx:670
 msgid "Base64 encoded TLS private key. Run: cat privkey.pem | base64 -w 0"
 msgstr "Base64 encoded TLS private key. Run: cat privkey.pem | base64 -w 0"
 
@@ -1898,7 +1914,7 @@ msgstr "Blocks"
 #: src/components/settings/BlogSettings.tsx:259
 #: src/components/settings/PermissionsMatrix.tsx:129
 #: src/components/settings/SettingsSidebar.tsx:121
-#: src/layouts/WorkspaceLayout.tsx:262
+#: src/layouts/WorkspaceLayout.tsx:267
 #: src/services/api/errors.ts:70
 msgid "Blog"
 msgstr "Blog"
@@ -2117,6 +2133,10 @@ msgstr "Brief summary of the post"
 msgid "Brief summary shown in post listings and previews"
 msgstr "Brief summary shown in post listings and previews"
 
+#: src/layouts/MainLayout.tsx:33
+msgid "Bring your audience, campaigns, and customer journeys together in your WeScale workspace."
+msgstr "Bring your audience, campaigns, and customer journeys together in your WeScale workspace."
+
 #: src/components/segment/form_leaf.tsx:432
 msgid "broadcast"
 msgstr "broadcast"
@@ -2188,7 +2208,7 @@ msgstr "Broadcast updated successfully"
 
 #: src/components/analytics/EmailMetricsChart.tsx:285
 #: src/components/settings/PermissionsMatrix.tsx:125
-#: src/layouts/WorkspaceLayout.tsx:402
+#: src/layouts/WorkspaceLayout.tsx:407
 #: src/pages/BroadcastsPage.tsx:1604
 #: src/services/api/errors.ts:66
 msgid "Broadcasts"
@@ -2237,6 +2257,18 @@ msgstr "Build a report from your own dimensions"
 msgid "Build complex contact segments using AND/OR logic with filters across multiple data tables. Start by adding conditions for contacts, contact lists, or contact timeline events."
 msgstr "Build complex contact segments using AND/OR logic with filters across multiple data tables. Start by adding conditions for contacts, contact lists, or contact timeline events."
 
+#: src/layouts/MainLayout.tsx:32
+msgid "Build your brand."
+msgstr "Build your brand."
+
+#: src/pages/DashboardPage.tsx:67
+msgid "Build your business."
+msgstr "Build your business."
+
+#: src/pages/DashboardPage.tsx:38
+msgid "Build your foundation with the WeScale Launchpad community."
+msgstr "Build your foundation with the WeScale Launchpad community."
+
 #: src/components/contacts/SegmentsFilter.tsx:84
 msgid "Building"
 msgstr "Building"
@@ -2244,6 +2276,14 @@ msgstr "Building"
 #: src/components/contacts/SegmentsFilter.tsx:60
 msgid "Building segment"
 msgstr "Building segment"
+
+#: src/layouts/MainLayout.tsx:31
+msgid "Built for brand builders"
+msgstr "Built for brand builders"
+
+#: src/pages/DashboardPage.tsx:138
+msgid "Built for your next stage."
+msgstr "Built for your next stage."
 
 #: src/services/api/permissions.ts:211
 msgid "Bulk create contacts and overwrite every field of every contact in the payload"
@@ -2270,7 +2310,7 @@ msgid "Button Attributes"
 msgstr "Button Attributes"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:626
-#: src/pages/SetupWizard.tsx:743
+#: src/pages/SetupWizard.tsx:749
 msgid "Button Label"
 msgstr "Button Label"
 
@@ -2584,9 +2624,13 @@ msgid "Check"
 msgstr "Check"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:705
-#: src/pages/SetupWizard.tsx:566
+#: src/pages/SetupWizard.tsx:572
 msgid "Check for Updates"
 msgstr "Check for Updates"
+
+#: src/pages/SignInPage.tsx:209
+msgid "Check your inbox"
+msgstr "Check your inbox"
 
 #: src/components/email_builder/ui/BlockToolbar.tsx:249
 msgid "Choose a saved block to update"
@@ -2600,6 +2644,14 @@ msgstr "Choose a starting point for your new theme. You can customize everything
 #: src/components/blog/PublishModal.tsx:110
 msgid "Choose when to publish \"{0}\""
 msgstr "Choose when to publish \"{0}\""
+
+#: src/layouts/MainLayout.tsx:38
+msgid "Chris & Meg Heckman"
+msgstr "Chris & Meg Heckman"
+
+#: src/layouts/MainLayout.tsx:36
+msgid "Chris and Meg Heckman, founders of WeScale"
+msgstr "Chris and Meg Heckman, founders of WeScale"
 
 #: src/pages/WebAnalyticsLivePage.tsx:163
 msgid "Cities"
@@ -2716,21 +2768,21 @@ msgid "Clicks"
 msgstr "Clicks"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:579
-#: src/pages/SetupWizard.tsx:723
+#: src/pages/SetupWizard.tsx:729
 msgid "Client ID"
 msgstr "Client ID"
 
-#: src/pages/SetupWizard.tsx:726
+#: src/pages/SetupWizard.tsx:732
 msgid "Client ID is required"
 msgstr "Client ID is required"
 
 #: src/components/settings/Integrations.tsx:2035
 #: src/components/settings/SystemSettingsDrawer.tsx:589
-#: src/pages/SetupWizard.tsx:733
+#: src/pages/SetupWizard.tsx:739
 msgid "Client Secret"
 msgstr "Client Secret"
 
-#: src/pages/SetupWizard.tsx:736
+#: src/pages/SetupWizard.tsx:742
 msgid "Client Secret is required"
 msgstr "Client Secret is required"
 
@@ -2789,9 +2841,13 @@ msgid "Code Editor"
 msgstr "Code Editor"
 
 #: src/components/email_builder/ui/CodePreview.tsx:61
-#: src/layouts/WorkspaceLayout.tsx:574
+#: src/layouts/WorkspaceLayout.tsx:584
 msgid "Collapse"
 msgstr "Collapse"
+
+#: src/layouts/WorkspaceLayout.tsx:581
+msgid "Collapse navigation"
+msgstr "Collapse navigation"
 
 #: src/components/blog_editor/menus/block-actions/BlockColorPopover.tsx:97
 #: src/components/email_builder/blocks/MjDividerBlock.tsx:42
@@ -2814,7 +2870,7 @@ msgstr "Column Attributes"
 msgid "Column width (e.g., '50%', '300px', 'auto')"
 msgstr "Column width (e.g., '50%', '300px', 'auto')"
 
-#: src/pages/SetupWizard.tsx:769
+#: src/pages/SetupWizard.tsx:775
 msgid "Comma-separated list of email domains permitted to auto-create accounts"
 msgstr "Comma-separated list of email domains permitted to auto-create accounts"
 
@@ -2828,7 +2884,7 @@ msgstr "Comma-separated. Only these domains may auto-create accounts."
 
 #: src/components/settings/Integrations.tsx:1884
 #: src/components/settings/SystemSettingsDrawer.tsx:347
-#: src/pages/SetupWizard.tsx:466
+#: src/pages/SetupWizard.tsx:472
 msgid "Common ports: 587 (TLS), 465 (SSL), 25 (unencrypted)"
 msgstr "Common ports: 587 (TLS), 465 (SSL), 25 (unencrypted)"
 
@@ -2907,7 +2963,7 @@ msgstr "Complement, don't repeat the subject line"
 msgid "Complete"
 msgstr "Complete"
 
-#: src/pages/SetupWizard.tsx:798
+#: src/pages/SetupWizard.tsx:804
 msgid "Complete Setup"
 msgstr "Complete Setup"
 
@@ -3055,8 +3111,12 @@ msgid "Connect and manage external services"
 msgstr "Connect and manage external services"
 
 #: src/components/settings/ZapierSettings.tsx:103
-#~ msgid "Connect Notifuse to more than 8,000 apps with Zapier"
-#~ msgstr "Connect Notifuse to more than 8,000 apps with Zapier"
+#~ msgid "Connect WeScale to more than 8,000 apps with Zapier"
+#~ msgstr "Connect WeScale to more than 8,000 apps with Zapier"
+
+#: src/pages/SetupWizard.tsx:350
+msgid "Connect your email service and create your administrator account. Your first campaign starts here."
+msgstr "Connect your email service and create your administrator account. Your first campaign starts here."
 
 #: src/components/settings/Integrations.tsx:2895
 #: src/components/settings/ZapierSettings.tsx:288
@@ -3068,12 +3128,12 @@ msgid "Connected"
 msgstr "Connected"
 
 #: src/components/settings/ZapierSettings.tsx:171
-#~ msgid "Connecting Zapier lets a Zap react to Notifuse events — a new contact, a list subscription, a segment a contact joined — and lets a Zap create or update contacts and subscribe them to your lists. Each Zap you turn on registers its own webhook subscription, which you can see in Settings → Webhooks."
-#~ msgstr "Connecting Zapier lets a Zap react to Notifuse events — a new contact, a list subscription, a segment a contact joined — and lets a Zap create or update contacts and subscribe them to your lists. Each Zap you turn on registers its own webhook subscription, which you can see in Settings → Webhooks."
+#~ msgid "Connecting Zapier lets a Zap react to WeScale events — a new contact, a list subscription, a segment a contact joined — and lets a Zap create or update contacts and subscribe them to your lists. Each Zap you turn on registers its own webhook subscription, which you can see in Settings → Webhooks."
+#~ msgstr "Connecting Zapier lets a Zap react to WeScale events — a new contact, a list subscription, a segment a contact joined — and lets a Zap create or update contacts and subscribe them to your lists. Each Zap you turn on registers its own webhook subscription, which you can see in Settings → Webhooks."
 
 #: src/components/settings/ZapierSettings.tsx:215
-msgid "Connecting Zapier lets a Zap send your transactional notifications — an order confirmation, a password reset — using your templates and your email provider. A Zap can also react to Notifuse events, such as a new contact, a list subscription or a segment a contact joined, and create or update contacts and subscribe them to your lists. Each Zap you turn on registers its own webhook subscription, which you can see in Settings → Webhooks."
-msgstr "Connecting Zapier lets a Zap send your transactional notifications — an order confirmation, a password reset — using your templates and your email provider. A Zap can also react to Notifuse events, such as a new contact, a list subscription or a segment a contact joined, and create or update contacts and subscribe them to your lists. Each Zap you turn on registers its own webhook subscription, which you can see in Settings → Webhooks."
+msgid "Connecting Zapier lets a Zap send your transactional notifications — an order confirmation, a password reset — using your templates and your email provider. A Zap can also react to WeScale events, such as a new contact, a list subscription or a segment a contact joined, and create or update contacts and subscribe them to your lists. Each Zap you turn on registers its own webhook subscription, which you can see in Settings → Webhooks."
+msgstr "Connecting Zapier lets a Zap send your transactional notifications — an order confirmation, a password reset — using your templates and your email provider. A Zap can also react to WeScale events, such as a new contact, a list subscription or a segment a contact joined, and create or update contacts and subscribe them to your lists. Each Zap you turn on registers its own webhook subscription, which you can see in Settings → Webhooks."
 
 #: src/components/transactional/ApiCommandModal.tsx:530
 msgid "Connection Details"
@@ -3174,7 +3234,7 @@ msgid "Contact updated successfully"
 msgstr "Contact updated successfully"
 
 #: src/components/settings/PermissionsMatrix.tsx:122
-#: src/layouts/WorkspaceLayout.tsx:383
+#: src/layouts/WorkspaceLayout.tsx:388
 #: src/pages/ContactsPage.tsx:1000
 #: src/services/api/errors.ts:63
 msgid "Contacts"
@@ -3220,7 +3280,7 @@ msgstr "Container Padding"
 msgid "contains"
 msgstr "contains"
 
-#: src/layouts/WorkspaceLayout.tsx:464
+#: src/layouts/WorkspaceLayout.tsx:469
 msgid "Content"
 msgstr "Content"
 
@@ -3468,6 +3528,10 @@ msgstr "Create a theme version"
 msgid "Create a transactional notification"
 msgstr "Create a transactional notification"
 
+#: src/pages/DashboardPage.tsx:90
+msgid "Create a workspace to start organizing your audience and campaigns."
+msgstr "Create a workspace to start organizing your audience and campaigns."
+
 #: src/components/settings/ZapierSettings.tsx:191
 #~ msgid "Create a Zapier API key"
 #~ msgstr "Create a Zapier API key"
@@ -3585,7 +3649,7 @@ msgstr "Create urgency or curiosity"
 msgid "Create Webhook"
 msgstr "Create Webhook"
 
-#: src/pages/CreateWorkspacePage.tsx:184
+#: src/pages/CreateWorkspacePage.tsx:185
 msgid "Create Workspace"
 msgstr "Create Workspace"
 
@@ -3620,6 +3684,10 @@ msgstr "Create Your First Post"
 #: src/pages/TemplatesPage.tsx:464
 msgid "Create your first template to get started"
 msgstr "Create your first template to get started"
+
+#: src/pages/DashboardPage.tsx:91
+msgid "Create your first workspace"
+msgstr "Create your first workspace"
 
 #: src/components/timeline/ContactTimeline.tsx:451
 msgid "created"
@@ -3871,8 +3939,8 @@ msgid "Custom permissions (RBAC)"
 msgstr "Custom permissions (RBAC)"
 
 #: src/components/license/LicenceGateNotice.tsx:53
-msgid "Custom permissions require a Notifuse {tier} licence."
-msgstr "Custom permissions require a Notifuse {tier} licence."
+msgid "Custom permissions require a WeScale {tier} licence."
+msgstr "Custom permissions require a WeScale {tier} licence."
 
 #: src/components/web_analytics/toolbar.tsx:33
 msgid "Custom range"
@@ -3929,8 +3997,8 @@ msgstr "Daily"
 msgid "Danger Zone"
 msgstr "Danger Zone"
 
-#: src/layouts/WorkspaceLayout.tsx:284
-#: src/layouts/WorkspaceLayout.tsx:302
+#: src/layouts/WorkspaceLayout.tsx:289
+#: src/layouts/WorkspaceLayout.tsx:307
 #: src/pages/AnalyticsPage.tsx:77
 #: src/pages/WebAnalyticsLivePage.tsx:126
 msgid "Dashboard"
@@ -4033,7 +4101,7 @@ msgid "Defaults to meta title"
 msgstr "Defaults to meta title"
 
 #: src/components/settings/Integrations.tsx:2086
-#: src/pages/SetupWizard.tsx:526
+#: src/pages/SetupWizard.tsx:532
 msgid "Defaults to SMTP host"
 msgstr "Defaults to SMTP host"
 
@@ -4530,16 +4598,16 @@ msgid "Do you want to send \"{0}\" immediately or schedule it for later?"
 msgstr "Do you want to send \"{0}\" immediately or schedule it for later?"
 
 #: src/layouts/WorkspaceLayout.tsx:655
-msgid "Documentation"
-msgstr "Documentation"
+#~ msgid "Documentation"
+#~ msgstr "Documentation"
 
 #: src/components/settings/Integrations.tsx:2143
 #: src/components/settings/Integrations.tsx:2489
-#: src/pages/SetupWizard.tsx:605
+#: src/pages/SetupWizard.tsx:611
 msgid "Domain"
 msgstr "Domain"
 
-#: src/pages/SetupWizard.tsx:613
+#: src/pages/SetupWizard.tsx:619
 msgid "Domain for the SMTP bridge server (e.g., smtp.yourcompany.com)"
 msgstr "Domain for the SMTP bridge server (e.g., smtp.yourcompany.com)"
 
@@ -4639,8 +4707,8 @@ msgid "e.g. Marketing"
 msgstr "e.g. Marketing"
 
 #: src/components/transactional/UpsertTransactionalNotificationDrawer.tsx:339
-msgid "e.g. notifuse"
-msgstr "e.g. notifuse"
+#~ msgid "e.g. notifuse"
+#~ msgstr "e.g. notifuse"
 
 #: src/components/transactional/UpsertTransactionalNotificationDrawer.tsx:272
 msgid "E.g. Password Reset Email"
@@ -4669,6 +4737,10 @@ msgstr "E.g. Weekly Newsletter - May 2023"
 #: src/components/transactional/UpsertTransactionalNotificationDrawer.tsx:357
 msgid "e.g. welcome_series"
 msgstr "e.g. welcome_series"
+
+#: src/components/transactional/UpsertTransactionalNotificationDrawer.tsx:339
+msgid "e.g. wescale"
+msgstr "e.g. wescale"
 
 #: src/components/automations/config/FilterConfigForm.tsx:34
 #~ msgid "e.g., Active users only"
@@ -4719,8 +4791,8 @@ msgid "Each contact enters the automation only once"
 msgstr "Each contact enters the automation only once"
 
 #: src/components/settings/ZapierSettings.tsx:188
-#~ msgid "Each Zapier connection needs its own key, and names are unique across this whole Notifuse installation, not just this workspace."
-#~ msgstr "Each Zapier connection needs its own key, and names are unique across this whole Notifuse installation, not just this workspace."
+#~ msgid "Each Zapier connection needs its own key, and names are unique across this whole WeScale installation, not just this workspace."
+#~ msgstr "Each Zapier connection needs its own key, and names are unique across this whole WeScale installation, not just this workspace."
 
 #: src/components/settings/ZapierSettings.tsx:225
 #~ msgid "Each Zapier connection needs its own key, so give a second one a different name."
@@ -4920,7 +4992,7 @@ msgstr "Editor mode"
 #: src/components/settings/Integrations.tsx:2083
 #: src/components/settings/Integrations.tsx:2430
 #: src/components/settings/SystemSettingsDrawer.tsx:438
-#: src/pages/SetupWizard.tsx:523
+#: src/pages/SetupWizard.tsx:529
 msgid "EHLO Hostname"
 msgstr "EHLO Hostname"
 
@@ -4956,8 +5028,7 @@ msgstr "email"
 #: src/components/timeline/ContactTimeline.tsx:584
 #: src/pages/ContactsPage.tsx:369
 #: src/pages/ContactsPage.tsx:536
-#: src/pages/SignInPage.tsx:219
-#: src/pages/SignInPage.tsx:226
+#: src/pages/SignInPage.tsx:222
 msgid "Email"
 msgstr "Email"
 
@@ -5110,7 +5181,7 @@ msgstr "Empty column. Add text, button, or image content."
 msgid "Enable A/B Testing"
 msgstr "Enable A/B Testing"
 
-#: src/pages/SetupWizard.tsx:556
+#: src/pages/SetupWizard.tsx:562
 msgid "Enable Anonymous Telemetry"
 msgstr "Enable Anonymous Telemetry"
 
@@ -5131,11 +5202,11 @@ msgstr "Enable geo-location tracking"
 msgid "Enable or disable a subscription"
 msgstr "Enable or disable a subscription"
 
-#: src/pages/SetupWizard.tsx:687
+#: src/pages/SetupWizard.tsx:693
 msgid "Enable Single Sign-On (OpenID Connect)"
 msgstr "Enable Single Sign-On (OpenID Connect)"
 
-#: src/pages/SetupWizard.tsx:582
+#: src/pages/SetupWizard.tsx:588
 msgid "Enable SMTP Bridge Server"
 msgstr "Enable SMTP Bridge Server"
 
@@ -5148,7 +5219,7 @@ msgid "Enable this rule?"
 msgstr "Enable this rule?"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:361
-#: src/pages/SetupWizard.tsx:481
+#: src/pages/SetupWizard.tsx:487
 msgid "Enable TLS encryption for SMTP connection"
 msgstr "Enable TLS encryption for SMTP connection"
 
@@ -5226,7 +5297,7 @@ msgstr "Enter a name for this block"
 msgid "Enter a name for this integration"
 msgstr "Enter a name for this integration"
 
-#: src/pages/CreateWorkspacePage.tsx:131
+#: src/pages/CreateWorkspacePage.tsx:132
 msgid "Enter a name for your workspace"
 msgstr "Enter a name for your workspace"
 
@@ -5366,7 +5437,7 @@ msgstr "Enter Reply-To email address"
 msgid "Enter spacing"
 msgstr "Enter spacing"
 
-#: src/pages/SignInPage.tsx:255
+#: src/pages/SignInPage.tsx:258
 msgid "Enter the 6-digit code sent to {email}"
 msgstr "Enter the 6-digit code sent to {email}"
 
@@ -5609,6 +5680,10 @@ msgstr "Exits"
 msgid "Expand"
 msgstr "Expand"
 
+#: src/layouts/WorkspaceLayout.tsx:581
+msgid "Expand navigation"
+msgstr "Expand navigation"
+
 #: src/components/settings/LicenseSettings.tsx:110
 msgid "Expired"
 msgstr "Expired"
@@ -5626,14 +5701,35 @@ msgid "Expires:"
 msgstr "Expires:"
 
 #: src/components/web_analytics/WebAnalyticsAIAssistant.tsx:371
-#: src/layouts/WorkspaceLayout.tsx:321
+#: src/layouts/WorkspaceLayout.tsx:326
 #: src/pages/WebAnalyticsPage.tsx:95
 msgid "Explore"
 msgstr "Explore"
 
+#: src/pages/DashboardPage.tsx:45
+msgid "Explore AI tools built for the work of growing a business."
+msgstr "Explore AI tools built for the work of growing a business."
+
+#: src/pages/DashboardPage.tsx:41
+msgid "Explore Launchpad"
+msgstr "Explore Launchpad"
+
+#: src/layouts/MainLayout.tsx:25
+#: src/pages/DashboardPage.tsx:34
+msgid "Explore the community"
+msgstr "Explore the community"
+
+#: src/pages/DashboardPage.tsx:48
+msgid "Explore the GPTs"
+msgstr "Explore the GPTs"
+
+#: src/pages/DashboardPage.tsx:121
+msgid "Explore WeScale"
+msgstr "Explore WeScale"
+
 #: src/components/contacts/ExportContactsModal.tsx:325
 #: src/components/email_builder/MjmlCodeEditor.tsx:643
-#: src/components/logs/AuditLogActions.tsx:50
+#: src/components/logs/AuditLogActions.tsx:52
 #: src/components/templates/ImportExportButton.tsx:416
 #: src/pages/ContactsPage.tsx:1023
 msgid "Export"
@@ -5643,7 +5739,7 @@ msgstr "Export"
 msgid "Export Contacts to CSV"
 msgstr "Export Contacts to CSV"
 
-#: src/components/logs/AuditLogActions.tsx:22
+#: src/components/logs/AuditLogActions.tsx:24
 msgid "Export failed"
 msgstr "Export failed"
 
@@ -5659,7 +5755,7 @@ msgstr "Export MJML"
 msgid "Export the audit log as CSV or NDJSON"
 msgstr "Export the audit log as CSV or NDJSON"
 
-#: src/components/logs/AuditLogActions.tsx:48
+#: src/components/logs/AuditLogActions.tsx:50
 msgid "Export the current filter as CSV or NDJSON, up to {AUDIT_LOG_EXPORT_MAX_ROWS} rows"
 msgstr "Export the current filter as CSV or NDJSON, up to {AUDIT_LOG_EXPORT_MAX_ROWS} rows"
 
@@ -5744,7 +5840,7 @@ msgstr "Failed to clear field"
 msgid "Failed to compile template preview."
 msgstr "Failed to compile template preview."
 
-#: src/pages/SetupWizard.tsx:242
+#: src/pages/SetupWizard.tsx:244
 msgid "Failed to complete setup"
 msgstr "Failed to complete setup"
 
@@ -5919,7 +6015,7 @@ msgstr "Failed to fetch new contacts data"
 msgid "Failed to fetch objects: "
 msgstr "Failed to fetch objects: "
 
-#: src/pages/SetupWizard.tsx:58
+#: src/pages/SetupWizard.tsx:60
 msgid "Failed to fetch setup status"
 msgstr "Failed to fetch setup status"
 
@@ -6134,7 +6230,7 @@ msgstr "Failed to test email provider"
 msgid "Failed to test recipient feed: {0}"
 msgstr "Failed to test recipient feed: {0}"
 
-#: src/pages/SetupWizard.tsx:87
+#: src/pages/SetupWizard.tsx:89
 msgid "Failed to test SMTP connection"
 msgstr "Failed to test SMTP connection"
 
@@ -6216,7 +6312,7 @@ msgstr "Failed to update web analytics settings"
 msgid "Failed to update workspace settings"
 msgstr "Failed to update workspace settings"
 
-#: src/layouts/WorkspaceLayout.tsx:237
+#: src/layouts/WorkspaceLayout.tsx:242
 msgid "Failed to update workspace settings: {errorMessage}"
 msgstr "Failed to update workspace settings: {errorMessage}"
 
@@ -6298,7 +6394,7 @@ msgid "File is too large. Maximum size is 1MB."
 msgstr "File is too large. Maximum size is 1MB."
 
 #: src/components/file_manager/context.tsx:155
-#: src/layouts/WorkspaceLayout.tsx:270
+#: src/layouts/WorkspaceLayout.tsx:275
 #: src/pages/FileManagerPage.tsx:119
 msgid "File Manager"
 msgstr "File Manager"
@@ -6361,7 +6457,7 @@ msgstr "Filter on an event property"
 
 #: src/components/messages/MessageHistoryTab.tsx:573
 #: src/components/web_analytics/WebAnalyticsAIAssistant.tsx:373
-#: src/layouts/WorkspaceLayout.tsx:343
+#: src/layouts/WorkspaceLayout.tsx:348
 #: src/pages/WebAnalyticsPage.tsx:97
 msgid "Filters"
 msgstr "Filters"
@@ -6523,12 +6619,12 @@ msgid "Format"
 msgstr "Format"
 
 #: src/components/settings/Integrations.tsx:204
-#~ msgid "Forwards inbound replies to Notifuse so automations can stop when a contact replies (Exit on reply). Registering webhooks creates the Mailgun route; you must also point your domain's MX records at Mailgun."
-#~ msgstr "Forwards inbound replies to Notifuse so automations can stop when a contact replies (Exit on reply). Registering webhooks creates the Mailgun route; you must also point your domain's MX records at Mailgun."
+#~ msgid "Forwards inbound replies to WeScale so automations can stop when a contact replies (Exit on reply). Registering webhooks creates the Mailgun route; you must also point your domain's MX records at Mailgun."
+#~ msgstr "Forwards inbound replies to WeScale so automations can stop when a contact replies (Exit on reply). Registering webhooks creates the Mailgun route; you must also point your domain's MX records at Mailgun."
 
 #: src/components/settings/Integrations.tsx:228
-msgid "Forwards inbound replies to Notifuse so automations can stop when a contact replies (Exit on reply). Registering webhooks creates the provider-side route; you must also point your domain's MX records at your email provider."
-msgstr "Forwards inbound replies to Notifuse so automations can stop when a contact replies (Exit on reply). Registering webhooks creates the provider-side route; you must also point your domain's MX records at your email provider."
+msgid "Forwards inbound replies to WeScale so automations can stop when a contact replies (Exit on reply). Registering webhooks creates the provider-side route; you must also point your domain's MX records at your email provider."
+msgstr "Forwards inbound replies to WeScale so automations can stop when a contact replies (Exit on reply). Registering webhooks creates the provider-side route; you must also point your domain's MX records at your email provider."
 
 #. placeholder {0}: parsedData.emails.length
 #: src/components/contacts/BulkUpdateDrawer.tsx:246
@@ -6540,6 +6636,10 @@ msgstr "Found {0} email addresses"
 msgid "Found unsaved changes from {0}"
 msgstr "Found unsaved changes from {0}"
 
+#: src/layouts/MainLayout.tsx:39
+msgid "Founders of WeScale"
+msgstr "Founders of WeScale"
+
 #: src/components/automations/AutomationCard.tsx:307
 #: src/components/automations/config/TriggerConfigForm.tsx:345
 msgid "Frequency"
@@ -6550,16 +6650,16 @@ msgid "From"
 msgstr "From"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:405
-#: src/pages/SetupWizard.tsx:504
+#: src/pages/SetupWizard.tsx:510
 msgid "From Email"
 msgstr "From Email"
 
-#: src/pages/SetupWizard.tsx:507
+#: src/pages/SetupWizard.tsx:513
 msgid "From email is required"
 msgstr "From email is required"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:421
-#: src/pages/SetupWizard.tsx:515
+#: src/pages/SetupWizard.tsx:521
 msgid "From Name"
 msgstr "From Name"
 
@@ -6662,6 +6762,10 @@ msgstr "Geography"
 #~ msgid "Geolocation privacy"
 #~ msgstr "Geolocation privacy"
 
+#: src/pages/CreateWorkspacePage.tsx:115
+msgid "Give your brand a home. Set up your workspace to start connecting with your audience."
+msgstr "Give your brand a home. Set up your workspace to start connecting with your audience."
+
 #: src/components/settings/Integrations.tsx:2219
 msgid "Gives this integration its own SES reputation profile and its own suppression list, so another workspace's bounces can't pause or suppress this one. AWS bills per tenant per month, based on volume."
 msgstr "Gives this integration its own SES reputation profile and its own suppression list, so another workspace's bounces can't pause or suppress this one. AWS bills per tenant per month, based on volume."
@@ -6683,7 +6787,7 @@ msgid "Global feed URL is required when enabled"
 msgstr "Global feed URL is required when enabled"
 
 #: src/pages/AcceptInvitationPage.tsx:125
-#: src/pages/SetupWizard.tsx:338
+#: src/pages/SetupWizard.tsx:341
 msgid "Go to Sign In"
 msgstr "Go to Sign In"
 
@@ -6727,7 +6831,7 @@ msgstr "Goal:"
 #: src/components/web_analytics/tabs/DashboardTab.tsx:246
 #: src/components/web_analytics/tabs/DashboardTab.tsx:256
 #: src/components/web_analytics/WebAnalyticsAIAssistant.tsx:372
-#: src/layouts/WorkspaceLayout.tsx:332
+#: src/layouts/WorkspaceLayout.tsx:337
 #: src/pages/WebAnalyticsPage.tsx:96
 msgid "Goals"
 msgstr "Goals"
@@ -6829,7 +6933,7 @@ msgstr "Height"
 
 #: src/components/email_builder/MjmlCodeEditor.tsx:718
 #: src/components/templates/CreateTemplateDrawer.tsx:148
-#: src/layouts/WorkspaceLayout.tsx:681
+#: src/layouts/WorkspaceLayout.tsx:695
 msgid "Help"
 msgstr "Help"
 
@@ -6837,9 +6941,13 @@ msgstr "Help"
 msgid "Help & Support"
 msgstr "Help & Support"
 
+#: src/pages/SetupWizard.tsx:563
+msgid "Help improve the underlying platform by sending anonymous usage statistics. No personal data or message content is collected."
+msgstr "Help improve the underlying platform by sending anonymous usage statistics. No personal data or message content is collected."
+
 #: src/pages/SetupWizard.tsx:557
-msgid "Help us improve Notifuse by sending anonymous usage statistics. No personal data or message content is collected."
-msgstr "Help us improve Notifuse by sending anonymous usage statistics. No personal data or message content is collected."
+#~ msgid "Help us improve WeScale by sending anonymous usage statistics. No personal data or message content is collected."
+#~ msgstr "Help us improve WeScale by sending anonymous usage statistics. No personal data or message content is collected."
 
 #: src/components/blog_editor/components/image/ImageNodeView.tsx:329
 msgid "Helps screen readers describe the image"
@@ -6952,7 +7060,7 @@ msgstr "https://example.com or {{ url }}"
 msgid "https://fonts.googleapis.com/css?family=... or {{ font_url }}"
 msgstr "https://fonts.googleapis.com/css?family=... or {{ font_url }}"
 
-#: src/components/ai-assistant/useAIAssistant.tsx:876
+#: src/components/ai-assistant/useAIAssistant.tsx:881
 msgid "I ran {maxRounds} rounds of tool calls without reaching an answer and stopped there. Ask a narrower question and I will try again."
 msgstr "I ran {maxRounds} rounds of tool calls without reaching an answer and stopped there. Ask a narrower question and I will try again."
 
@@ -6997,7 +7105,7 @@ msgstr "Icon/Favicon URL"
 msgid "ID"
 msgstr "ID"
 
-#: src/pages/CreateWorkspacePage.tsx:148
+#: src/pages/CreateWorkspacePage.tsx:149
 msgid "ID can only contain lowercase letters and numbers"
 msgstr "ID can only contain lowercase letters and numbers"
 
@@ -7014,7 +7122,7 @@ msgstr "ID doesn't match"
 msgid "ID for API:"
 msgstr "ID for API:"
 
-#: src/pages/CreateWorkspacePage.tsx:155
+#: src/pages/CreateWorkspacePage.tsx:156
 msgid "ID is automatically generated but can be modified if needed"
 msgstr "ID is automatically generated but can be modified if needed"
 
@@ -7031,7 +7139,7 @@ msgid "ID must contain only lowercase letters, numbers, underscores, and hyphens
 msgstr "ID must contain only lowercase letters, numbers, underscores, and hyphens"
 
 #: src/components/timeline/ContactTimeline.tsx:783
-#: src/pages/DashboardPage.tsx:94
+#: src/pages/DashboardPage.tsx:106
 msgid "ID:"
 msgstr "ID:"
 
@@ -7356,8 +7464,8 @@ msgstr "Integrations"
 msgid "Invalid email"
 msgstr "Invalid email"
 
-#: src/pages/SetupWizard.tsx:370
-#: src/pages/SetupWizard.tsx:508
+#: src/pages/SetupWizard.tsx:375
+#: src/pages/SetupWizard.tsx:514
 msgid "Invalid email format"
 msgstr "Invalid email format"
 
@@ -7416,7 +7524,7 @@ msgstr "Invalid tree structure: not an object"
 msgid "Invalid tree structure: root must be mjml type"
 msgstr "Invalid tree structure: root must be mjml type"
 
-#: src/pages/SetupWizard.tsx:383
+#: src/pages/SetupWizard.tsx:388
 msgid "Invalid URL format"
 msgstr "Invalid URL format"
 
@@ -7430,8 +7538,12 @@ msgid "Invalid YouTube URL"
 msgstr "Invalid YouTube URL"
 
 #: src/pages/AcceptInvitationPage.tsx:77
-msgid "Invitation accepted successfully! Welcome to the workspace."
-msgstr "Invitation accepted successfully! Welcome to the workspace."
+#~ msgid "Invitation accepted successfully! Welcome to the workspace."
+#~ msgstr "Invitation accepted successfully! Welcome to the workspace."
+
+#: src/pages/AcceptInvitationPage.tsx:77
+msgid "Invitation accepted. Welcome to your workspace."
+msgstr "Invitation accepted. Welcome to your workspace."
 
 #: src/components/settings/WorkspaceMembers.tsx:381
 msgid "Invitation deleted successfully"
@@ -7502,11 +7614,11 @@ msgid "isolation requested but not provisioned"
 msgstr "isolation requested but not provisioned"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:560
-#: src/pages/SetupWizard.tsx:711
+#: src/pages/SetupWizard.tsx:717
 msgid "Issuer URL"
 msgstr "Issuer URL"
 
-#: src/pages/SetupWizard.tsx:714
+#: src/pages/SetupWizard.tsx:720
 msgid "Issuer URL is required"
 msgstr "Issuer URL is required"
 
@@ -7526,6 +7638,14 @@ msgstr "Items per feed"
 #: src/pages/ContactsPage.tsx:732
 msgid "Job Title"
 msgstr "Job Title"
+
+#: src/pages/DashboardPage.tsx:60
+msgid "Join the community"
+msgstr "Join the community"
+
+#: src/pages/AcceptInvitationPage.tsx:138
+msgid "Join your WeScale workspace"
+msgstr "Join your WeScale workspace"
 
 #: src/components/timeline/ContactTimeline.tsx:557
 msgid "joined"
@@ -7556,6 +7676,10 @@ msgstr "JSON Payload Required:"
 msgid "Justify"
 msgstr "Justify"
 
+#: src/pages/DashboardPage.tsx:118
+msgid "Keep building"
+msgstr "Keep building"
+
 #: src/components/settings/SettingsSaveBar.tsx:97
 #: src/components/templates/useTemplateConflictModal.tsx:43
 msgid "Keep editing"
@@ -7572,6 +7696,10 @@ msgstr "Keep it between 35-140 characters"
 #: src/components/email_builder/blocks/MjTitleBlock.tsx:51
 msgid "Keep it concise and descriptive"
 msgstr "Keep it concise and descriptive"
+
+#: src/layouts/MainLayout.tsx:32
+msgid "Keep it growing."
+msgstr "Keep it growing."
 
 #: src/components/segment/input_json_path.tsx:88
 msgid "key or index"
@@ -7677,6 +7805,14 @@ msgstr "Lead"
 msgid "Learn how to enable SMTP bridge"
 msgstr "Learn how to enable SMTP bridge"
 
+#: src/pages/DashboardPage.tsx:31
+msgid "Learn with founders building and growing their businesses."
+msgstr "Learn with founders building and growing their businesses."
+
+#: src/layouts/MainLayout.tsx:42
+msgid "Learn, launch, and grow with the WeScale community."
+msgstr "Learn, launch, and grow with the WeScale community."
+
 #: src/components/settings/Integrations.tsx:646
 msgid "Leave blank to keep the current value"
 msgstr "Leave blank to keep the current value"
@@ -7707,8 +7843,8 @@ msgid "Leave empty to use a random contact from the broadcast audience."
 msgstr "Leave empty to use a random contact from the broadcast audience."
 
 #: src/components/settings/Integrations.tsx:2236
-msgid "Leave empty to use the one Notifuse manages for this integration."
-msgstr "Leave empty to use the one Notifuse manages for this integration."
+msgid "Leave empty to use the one WeScale manages for this integration."
+msgstr "Leave empty to use the one WeScale manages for this integration."
 
 #: src/components/timeline/ContactTimeline.tsx:557
 msgid "left"
@@ -7726,9 +7862,13 @@ msgstr "Left"
 msgid "Left to Right"
 msgstr "Left to Right"
 
-#: src/pages/SetupWizard.tsx:688
+#: src/pages/SetupWizard.tsx:694
 msgid "Let users sign in with an external identity provider (Google Workspace, Keycloak, Okta, …) alongside magic codes."
 msgstr "Let users sign in with an external identity provider (Google Workspace, Keycloak, Okta, …) alongside magic codes."
+
+#: src/pages/SetupWizard.tsx:348
+msgid "Let’s get you started"
+msgstr "Let’s get you started"
 
 #: src/components/templates/CreateTemplateDrawer.tsx:1225
 msgid "Let's take a quick tour to help you get started with building beautiful emails using MJML."
@@ -7987,7 +8127,7 @@ msgstr "List:"
 
 #: src/components/analytics/NewContactsTable.tsx:73
 #: src/components/settings/PermissionsMatrix.tsx:123
-#: src/layouts/WorkspaceLayout.tsx:393
+#: src/layouts/WorkspaceLayout.tsx:398
 #: src/pages/ContactsPage.tsx:424
 #: src/pages/ContactsPage.tsx:544
 #: src/pages/ListsPage.tsx:155
@@ -8006,7 +8146,7 @@ msgstr "Lists write also grants contact writing. Subscribing an address through 
 #: src/components/automations/AutomationCard.tsx:65
 #: src/components/blog/RecentThemesTable.tsx:128
 #: src/components/web_analytics/LiveButton.tsx:46
-#: src/layouts/WorkspaceLayout.tsx:310
+#: src/layouts/WorkspaceLayout.tsx:315
 msgid "Live"
 msgstr "Live"
 
@@ -8052,7 +8192,7 @@ msgstr "Loading automations..."
 msgid "Loading message history..."
 msgstr "Loading message history..."
 
-#: src/pages/SetupWizard.tsx:298
+#: src/pages/SetupWizard.tsx:301
 msgid "Loading setup..."
 msgstr "Loading setup..."
 
@@ -8109,11 +8249,11 @@ msgstr "Logo Preview"
 msgid "Logo URL"
 msgstr "Logo URL"
 
-#: src/layouts/WorkspaceLayout.tsx:693
+#: src/layouts/WorkspaceLayout.tsx:707
 msgid "Logout"
 msgstr "Logout"
 
-#: src/layouts/WorkspaceLayout.tsx:472
+#: src/layouts/WorkspaceLayout.tsx:477
 #: src/pages/LogsPage.tsx:95
 msgid "Logs"
 msgstr "Logs"
@@ -8169,6 +8309,10 @@ msgstr "Make an automation live and install its database trigger, so contacts be
 #: src/components/email_builder/blocks/MjTitleBlock.tsx:52
 msgid "Make it relevant to your email content"
 msgstr "Make it relevant to your email content"
+
+#: src/pages/DashboardPage.tsx:67
+msgid "Make it scale."
+msgstr "Make it scale."
 
 #: src/components/email_builder/blocks/MjSectionBlock.tsx:147
 msgid "Makes the section span the entire email viewport width, ignoring container constraints (typically 600px). Useful for full-bleed backgrounds and hero sections."
@@ -8558,7 +8702,7 @@ msgstr "More options"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:564
 #: src/components/settings/SystemSettingsDrawer.tsx:606
-#: src/pages/SetupWizard.tsx:715
+#: src/pages/SetupWizard.tsx:721
 msgid "Must be a valid https URL"
 msgstr "Must be a valid https URL"
 
@@ -8629,8 +8773,8 @@ msgid "Name:"
 msgstr "Name:"
 
 #: src/components/settings/ZapierSettings.tsx:171
-msgid "Names this connection in Notifuse, and the API key it creates in Settings → Team."
-msgstr "Names this connection in Notifuse, and the API key it creates in Settings → Team."
+msgid "Names this connection in WeScale, and the API key it creates in Settings → Team."
+msgstr "Names this connection in WeScale, and the API key it creates in Settings → Team."
 
 #: src/components/settings/WebAnalyticsSettings.tsx:425
 msgid "Naming a slot renames it everywhere it appears: dashboards, the explore picker and attribution rules."
@@ -8685,8 +8829,9 @@ msgstr "New Theme"
 msgid "New Window"
 msgstr "New Window"
 
-#: src/layouts/WorkspaceLayout.tsx:633
+#: src/layouts/WorkspaceLayout.tsx:646
 #: src/pages/CreateWorkspacePage.tsx:104
+#: src/pages/DashboardPage.tsx:82
 msgid "New workspace"
 msgstr "New workspace"
 
@@ -8978,10 +9123,6 @@ msgstr "No nodes in this automation"
 msgid "No notes"
 msgstr "No notes"
 
-#: src/pages/SignInPage.tsx:97
-msgid "No Notifuse account is linked to that identity. Ask an administrator to invite you first."
-msgstr "No Notifuse account is linked to that identity. Ask an administrator to invite you first."
-
 #: src/components/web_analytics/filters/TestFilterModal.tsx:201
 msgid "No operations defined"
 msgstr "No operations defined"
@@ -9116,9 +9257,17 @@ msgstr "No webhook events found"
 msgid "No webhook subscriptions configured"
 msgstr "No webhook subscriptions configured"
 
+#: src/pages/SignInPage.tsx:97
+msgid "No WeScale account is linked to that identity. Ask an administrator to invite you first."
+msgstr "No WeScale account is linked to that identity. Ask an administrator to invite you first."
+
 #: src/pages/DashboardPage.tsx:51
-msgid "No workspaces"
-msgstr "No workspaces"
+#~ msgid "No workspaces"
+#~ msgstr "No workspaces"
+
+#: src/pages/DashboardPage.tsx:89
+msgid "No workspaces yet"
+msgstr "No workspaces yet"
 
 #: src/components/automations/NodePalette.tsx:21
 msgid "Nodes"
@@ -9260,14 +9409,6 @@ msgstr "Notification name"
 msgid "Notification updated successfully"
 msgstr "Notification updated successfully"
 
-#: src/components/settings/WebhookCard.tsx:298
-msgid "Notifuse disabled this webhook automatically"
-msgstr "Notifuse disabled this webhook automatically"
-
-#: src/components/settings/Integrations.tsx:1074
-msgid "Notifuse will create a tenant in your AWS account, give it its own suppression list, and associate this integration's configuration set and sender identities with it. AWS bills per tenant per month, based on volume."
-msgstr "Notifuse will create a tenant in your AWS account, give it its own suppression list, and associate this integration's configuration set and sender identities with it. AWS bills per tenant per month, based on volume."
-
 #: src/components/settings/Integrations.tsx:2248
 msgid "notifuse-…"
 msgstr "notifuse-…"
@@ -9336,7 +9477,7 @@ msgstr "of the following conditions match:"
 msgid "Off (plaintext)"
 msgstr "Off (plaintext)"
 
-#: src/pages/SetupWizard.tsx:717
+#: src/pages/SetupWizard.tsx:723
 msgid "OIDC issuer base URL — discovery happens at <issuer>/.well-known/openid-configuration"
 msgstr "OIDC issuer base URL — discovery happens at <issuer>/.well-known/openid-configuration"
 
@@ -9356,6 +9497,10 @@ msgstr "Once per contact"
 #: src/services/api/permissions.ts:916
 msgid "One endpoint, but it is the whole assistant: /api/llm.chat streams through the workspace's own provider integration, on the workspace's own billing. When a Firecrawl integration is configured it also lets the assistant run the scrape and search tools from the server, so this grant reaches the open web through your credentials."
 msgstr "One endpoint, but it is the whole assistant: /api/llm.chat streams through the workspace's own provider integration, on the workspace's own billing. When a Firecrawl integration is configured it also lets the assistant run the scrape and search tools from the server, so this grant reaches the open web through your credentials."
+
+#: src/pages/SignInPage.tsx:211
+msgid "One quick step to get back to building your brand."
+msgstr "One quick step to get back to building your brand."
 
 #: src/components/settings/WebhookCard.tsx:342
 msgid "Only a workspace owner can view or rotate the signing secret"
@@ -9527,6 +9672,10 @@ msgstr "Optional"
 msgid "Optional bearer token"
 msgstr "Optional bearer token"
 
+#: src/pages/SetupWizard.tsx:403
+msgid "Optional product updates from the underlying Notifuse platform. Your email is sent to email.notifuse.com when enabled."
+msgstr "Optional product updates from the underlying Notifuse platform. Your email is sent to email.notifuse.com when enabled."
+
 #: src/components/integrations/LLMIntegration.tsx:224
 msgid "Optional. Controls how much reasoning models think. Leave as Default for non-reasoning models; some providers ignore it."
 msgstr "Optional. Controls how much reasoning models think. Leave as Default for non-reasoning models; some providers ignore it."
@@ -9543,7 +9692,7 @@ msgstr "Optional. If provided, sent as Authorization: Bearer <secret>"
 msgid "Optionally filter contacts by segments within the selected lists"
 msgstr "Optionally filter contacts by segments within the selected lists"
 
-#: src/pages/SignInPage.tsx:237
+#: src/pages/SignInPage.tsx:240
 msgid "or"
 msgstr "or"
 
@@ -9675,8 +9824,8 @@ msgid "Paste this snippet before the closing </head> tag of your website."
 msgstr "Paste this snippet before the closing </head> tag of your website."
 
 #: src/components/settings/ZapierSettings.tsx:185
-msgid "Paste this URL into the API URL field when you connect your Notifuse account in Zapier."
-msgstr "Paste this URL into the API URL field when you connect your Notifuse account in Zapier."
+msgid "Paste this URL into the API URL field when you connect your WeScale account in Zapier."
+msgstr "Paste this URL into the API URL field when you connect your WeScale account in Zapier."
 
 #: src/components/blog_editor/components/youtube/YoutubeNodeView.tsx:340
 msgid "Paste YouTube URL..."
@@ -9773,9 +9922,13 @@ msgstr "Period — {detail}"
 #~ msgid "Period set to {summary}"
 #~ msgstr "Period set to {summary}"
 
+#: src/pages/SetupWizard.tsx:573
+msgid "Periodically check for new platform versions and security updates. A popup will list new versions available."
+msgstr "Periodically check for new platform versions and security updates. A popup will list new versions available."
+
 #: src/pages/SetupWizard.tsx:567
-msgid "Periodically check for new Notifuse versions and security updates. A popup will list new versions available."
-msgstr "Periodically check for new Notifuse versions and security updates. A popup will list new versions available."
+#~ msgid "Periodically check for new WeScale versions and security updates. A popup will list new versions available."
+#~ msgstr "Periodically check for new WeScale versions and security updates. A popup will list new versions available."
 
 #: src/services/api/permissions.ts:215
 msgid "Permanently delete any contact"
@@ -9812,8 +9965,8 @@ msgid "Phone Number"
 msgstr "Phone Number"
 
 #: src/layouts/MainLayout.tsx:36
-msgid "Photo by Zetong Li"
-msgstr "Photo by Zetong Li"
+#~ msgid "Photo by Zetong Li"
+#~ msgstr "Photo by Zetong Li"
 
 #: src/components/automations/config/TriggerConfigForm.tsx:110
 #~ msgid "Photo URL"
@@ -9942,7 +10095,7 @@ msgstr "Please enter a slug"
 msgid "Please enter a URL"
 msgstr "Please enter a URL"
 
-#: src/pages/SignInPage.tsx:263
+#: src/pages/SignInPage.tsx:266
 msgid "Please enter a valid 6-digit code!"
 msgstr "Please enter a valid 6-digit code!"
 
@@ -9950,7 +10103,7 @@ msgstr "Please enter a valid 6-digit code!"
 msgid "Please enter a valid email"
 msgstr "Please enter a valid email"
 
-#: src/pages/SignInPage.tsx:223
+#: src/pages/SignInPage.tsx:226
 msgid "Please enter a valid email!"
 msgstr "Please enter a valid email!"
 
@@ -9962,7 +10115,7 @@ msgstr "Please enter a valid image URL"
 #: src/components/settings/GeneralSettings.tsx:270
 #: src/components/settings/LogoInput.tsx:27
 #: src/components/settings/WebhooksSettings.tsx:283
-#: src/pages/CreateWorkspacePage.tsx:168
+#: src/pages/CreateWorkspacePage.tsx:169
 msgid "Please enter a valid URL"
 msgstr "Please enter a valid URL"
 
@@ -9974,7 +10127,7 @@ msgstr "Please enter a valid YouTube URL"
 msgid "Please enter a website URL first"
 msgstr "Please enter a website URL first"
 
-#: src/pages/CreateWorkspacePage.tsx:127
+#: src/pages/CreateWorkspacePage.tsx:128
 msgid "Please enter a workspace name"
 msgstr "Please enter a workspace name"
 
@@ -10016,11 +10169,11 @@ msgstr "Please enter workspace name"
 msgid "Please enter your API key"
 msgstr "Please enter your API key"
 
-#: src/pages/SignInPage.tsx:260
+#: src/pages/SignInPage.tsx:263
 msgid "Please input the magic code!"
 msgstr "Please input the magic code!"
 
-#: src/pages/SignInPage.tsx:222
+#: src/pages/SignInPage.tsx:225
 msgid "Please input your email!"
 msgstr "Please input your email!"
 
@@ -10133,11 +10286,11 @@ msgid "Please upload a CSV file with email addresses"
 msgstr "Please upload a CSV file with email addresses"
 
 #: src/components/transactional/ApiCommandModal.tsx:533
-#: src/pages/SetupWizard.tsx:619
+#: src/pages/SetupWizard.tsx:625
 msgid "Port"
 msgstr "Port"
 
-#: src/pages/SetupWizard.tsx:628
+#: src/pages/SetupWizard.tsx:634
 msgid "Port for the SMTP bridge server (default: 587)"
 msgstr "Port for the SMTP bridge server (default: 587)"
 
@@ -10375,6 +10528,10 @@ msgstr "Priority is required"
 msgid "Priority:"
 msgstr "Priority:"
 
+#: src/layouts/MainLayout.tsx:49
+msgid "Privacy policy"
+msgstr "Privacy policy"
+
 #: src/pages/ListsPage.tsx:277
 msgid "Private"
 msgstr "Private"
@@ -10443,9 +10600,9 @@ msgstr "Public"
 msgid "Public lists are visible in the Notification Center for users to subscribe to"
 msgstr "Public lists are visible in the Notification Center for users to subscribe to"
 
-#: src/pages/SetupWizard.tsx:385
-msgid "Public URL where this Notifuse instance is accessible"
-msgstr "Public URL where this Notifuse instance is accessible"
+#: src/pages/SetupWizard.tsx:390
+msgid "Public URL where this WeScale instance is accessible"
+msgstr "Public URL where this WeScale instance is accessible"
 
 #: src/components/blog/PublishModal.tsx:113
 msgid "Publication"
@@ -10824,8 +10981,8 @@ msgid "Referrers"
 msgstr "Referrers"
 
 #: src/components/contacts/ContactDetailsDrawer.tsx:630
-#: src/components/logs/AuditLogActions.tsx:30
-#: src/components/logs/AuditLogActions.tsx:36
+#: src/components/logs/AuditLogActions.tsx:32
+#: src/components/logs/AuditLogActions.tsx:37
 #: src/components/messages/MessageHistoryTable.tsx:426
 #: src/components/settings/LicenseSettings.tsx:155
 #: src/components/webhooks/InboundWebhookEventsTab.tsx:429
@@ -11035,8 +11192,8 @@ msgid "Report — {dimensions}"
 msgstr "Report — {dimensions}"
 
 #: src/layouts/WorkspaceLayout.tsx:668
-msgid "Report An Issue"
-msgstr "Report An Issue"
+#~ msgid "Report An Issue"
+#~ msgstr "Report An Issue"
 
 #: src/components/web_analytics/WebAnalyticsAIAssistant.tsx:337
 #~ msgid "Report grouped by {dimensions}"
@@ -11090,7 +11247,7 @@ msgstr "Required when SSO is enabled"
 msgid "Requires a padding"
 msgstr "Requires a padding"
 
-#: src/pages/SignInPage.tsx:294
+#: src/pages/SignInPage.tsx:299
 msgid "Resend code"
 msgstr "Resend code"
 
@@ -11262,7 +11419,7 @@ msgid "Role"
 msgstr "Role"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:260
-#: src/pages/SetupWizard.tsx:366
+#: src/pages/SetupWizard.tsx:371
 msgid "Root Email"
 msgstr "Root Email"
 
@@ -11611,7 +11768,7 @@ msgstr "Security"
 msgid "See broadcast send tasks; a listing that names no type is narrowed to the types you may read"
 msgstr "See broadcast send tasks; a listing that names no type is narrowed to the types you may read"
 
-#: src/pages/SetupWizard.tsx:412
+#: src/pages/SetupWizard.tsx:418
 msgid "See docs for:"
 msgstr "See docs for:"
 
@@ -11998,8 +12155,9 @@ msgstr "Select which segment this trigger applies to"
 msgid "Select Winner"
 msgstr "Select Winner"
 
-#: src/layouts/WorkspaceLayout.tsx:600
-#: src/pages/DashboardPage.tsx:31
+#: src/layouts/WorkspaceLayout.tsx:608
+#: src/layouts/WorkspaceLayout.tsx:613
+#: src/pages/DashboardPage.tsx:75
 msgid "Select workspace"
 msgstr "Select workspace"
 
@@ -12067,8 +12225,8 @@ msgid "Send Invitation"
 msgstr "Send Invitation"
 
 #: src/pages/SignInPage.tsx:231
-msgid "Send Magic Code"
-msgstr "Send Magic Code"
+#~ msgid "Send Magic Code"
+#~ msgstr "Send Magic Code"
 
 #: src/components/broadcasts/SendOrScheduleModal.tsx:308
 msgid "Send Now"
@@ -12081,6 +12239,10 @@ msgstr "Send or Schedule"
 #: src/components/broadcasts/SendOrScheduleModal.tsx:164
 msgid "Send or Schedule Broadcast"
 msgstr "Send or Schedule Broadcast"
+
+#: src/pages/SignInPage.tsx:234
+msgid "Send sign-in code"
+msgstr "Send sign-in code"
 
 #: src/components/settings/WebhookCard.tsx:243
 #: src/components/settings/WebhookCard.tsx:457
@@ -12176,7 +12338,7 @@ msgstr "SEO title for search engines (recommended: 50-60 characters)"
 msgid "Separate sides"
 msgstr "Separate sides"
 
-#: src/pages/SetupWizard.tsx:211
+#: src/pages/SetupWizard.tsx:213
 msgid "Server is restarting with new configuration..."
 msgstr "Server is restarting with new configuration..."
 
@@ -12185,7 +12347,7 @@ msgid "Server is restarting..."
 msgstr "Server is restarting..."
 
 #: src/components/settings/SystemSettingsDrawer.tsx:208
-#: src/pages/SetupWizard.tsx:235
+#: src/pages/SetupWizard.tsx:237
 msgid "Server restart timeout. Please refresh the page manually."
 msgstr "Server restart timeout. Please refresh the page manually."
 
@@ -12193,7 +12355,7 @@ msgstr "Server restart timeout. Please refresh the page manually."
 msgid "Server restarted successfully!"
 msgstr "Server restarted successfully!"
 
-#: src/pages/SetupWizard.tsx:225
+#: src/pages/SetupWizard.tsx:227
 msgid "Server restarted successfully! You can now sign in."
 msgstr "Server restarted successfully! You can now sign in."
 
@@ -12213,8 +12375,8 @@ msgid "SES tenant isolation"
 msgstr "SES tenant isolation"
 
 #: src/components/license/LicenceGateNotice.tsx:54
-msgid "SES tenant isolation requires a Notifuse {tier} licence."
-msgstr "SES tenant isolation requires a Notifuse {tier} licence."
+msgid "SES tenant isolation requires a WeScale {tier} licence."
+msgstr "SES tenant isolation requires a WeScale {tier} licence."
 
 #: src/components/web_analytics/explore/BreakdownModal.tsx:70
 #: src/components/web_analytics/explore/DimensionSelector.tsx:104
@@ -12346,6 +12508,10 @@ msgstr "set to"
 msgid "Set to null"
 msgstr "Set to null"
 
+#: src/pages/SetupWizard.tsx:349
+msgid "Set up WeScale"
+msgstr "Set up WeScale"
+
 #: src/pages/WebAnalyticsFiltersPage.tsx:368
 #~ msgid "set value"
 #~ msgstr "set value"
@@ -12380,12 +12546,12 @@ msgstr "Sets the responsive breakpoint for the entire email"
 msgid "Sets the screen width below which the email will switch to mobile layout. Most email clients use 480px as the standard mobile breakpoint."
 msgstr "Sets the screen width below which the email will switch to mobile layout. Most email clients use 480px as the standard mobile breakpoint."
 
-#: src/pages/SetupWizard.tsx:798
+#: src/pages/SetupWizard.tsx:804
 msgid "Setting up..."
 msgstr "Setting up..."
 
 #: src/components/settings/SettingsSidebar.tsx:175
-#: src/layouts/WorkspaceLayout.tsx:481
+#: src/layouts/WorkspaceLayout.tsx:486
 msgid "Settings"
 msgstr "Settings"
 
@@ -12394,12 +12560,12 @@ msgstr "Settings"
 #~ msgstr "Settings › Authentication is the system settings panel on the workspace picker, section “SSO (OpenID Connect)”. Saving it restarts the server."
 
 #: src/pages/SetupWizard.tsx:345
-msgid "Setup"
-msgstr "Setup"
+#~ msgid "Setup"
+#~ msgstr "Setup"
 
 #: src/pages/SetupWizard.tsx:321
-msgid "Setup Complete!"
-msgstr "Setup Complete!"
+#~ msgid "Setup Complete!"
+#~ msgstr "Setup Complete!"
 
 #: src/components/email_builder/blocks/MjSocialElementBlock.tsx:117
 msgid "Share link"
@@ -12447,12 +12613,16 @@ msgid "Showing the top 200 links by unique clicks."
 msgstr "Showing the top 200 links by unique clicks."
 
 #: src/pages/SignInPage.tsx:209
-msgid "Sign In"
-msgstr "Sign In"
+#~ msgid "Sign In"
+#~ msgstr "Sign In"
+
+#: src/pages/SignInPage.tsx:211
+msgid "Sign in to manage your audience and keep your brand moving."
+msgstr "Sign in to manage your audience and keep your brand moving."
 
 #: src/components/settings/SystemSettingsDrawer.tsx:632
-#: src/pages/SetupWizard.tsx:747
-#: src/pages/SignInPage.tsx:248
+#: src/pages/SetupWizard.tsx:753
+#: src/pages/SignInPage.tsx:251
 msgid "Sign in with SSO"
 msgstr "Sign in with SSO"
 
@@ -12495,14 +12665,20 @@ msgid "Single sign-on is temporarily unavailable. Please try a magic code."
 msgstr "Single sign-on is temporarily unavailable. Please try a magic code."
 
 #: src/components/license/LicenceGateNotice.tsx:55
-msgid "Single sign-on requires a Notifuse {tier} licence."
-msgstr "Single sign-on requires a Notifuse {tier} licence."
+msgid "Single sign-on requires a WeScale {tier} licence."
+msgstr "Single sign-on requires a WeScale {tier} licence."
 
 #: src/components/email_builder/blocks/MjSocialElementBlock.tsx:173
 #: src/components/email_builder/ui/FontStyleInput.tsx:179
 #: src/components/file_manager/fileManager.tsx:875
 msgid "Size"
 msgstr "Size"
+
+#: src/layouts/MainLayout.tsx:19
+#: src/layouts/WorkspaceLayout.tsx:495
+#: src/pages/DashboardPage.tsx:54
+msgid "Skip to content"
+msgstr "Skip to content"
 
 #: src/components/contacts/BulkActionProgressModal.tsx:102
 #: src/components/contacts/BulkActionProgressModal.tsx:140
@@ -12539,7 +12715,7 @@ msgstr "SMS"
 msgid "SMTP Bridge"
 msgstr "SMTP Bridge"
 
-#: src/pages/SetupWizard.tsx:610
+#: src/pages/SetupWizard.tsx:616
 msgid "SMTP bridge domain is required"
 msgstr "SMTP bridge domain is required"
 
@@ -12547,7 +12723,7 @@ msgstr "SMTP bridge domain is required"
 msgid "SMTP bridge is not configured."
 msgstr "SMTP bridge is not configured."
 
-#: src/pages/SetupWizard.tsx:625
+#: src/pages/SetupWizard.tsx:631
 msgid "SMTP bridge port is required"
 msgstr "SMTP bridge port is required"
 
@@ -12555,11 +12731,11 @@ msgstr "SMTP bridge port is required"
 msgid "SMTP bridge server for forwarding transactional emails"
 msgstr "SMTP bridge server for forwarding transactional emails"
 
-#: src/pages/SetupWizard.tsx:407
+#: src/pages/SetupWizard.tsx:413
 msgid "SMTP Configuration"
 msgstr "SMTP Configuration"
 
-#: src/pages/SetupWizard.tsx:84
+#: src/pages/SetupWizard.tsx:86
 msgid "SMTP connection successful!"
 msgstr "SMTP connection successful!"
 
@@ -12578,17 +12754,17 @@ msgstr "SMTP domain"
 #: src/components/settings/Integrations.tsx:1875
 #: src/components/settings/Integrations.tsx:2409
 #: src/components/settings/SystemSettingsDrawer.tsx:322
-#: src/pages/SetupWizard.tsx:454
+#: src/pages/SetupWizard.tsx:460
 msgid "SMTP Host"
 msgstr "SMTP Host"
 
-#: src/pages/SetupWizard.tsx:456
+#: src/pages/SetupWizard.tsx:462
 msgid "SMTP host is required"
 msgstr "SMTP host is required"
 
 #: src/components/settings/Integrations.tsx:2073
 #: src/components/settings/SystemSettingsDrawer.tsx:390
-#: src/pages/SetupWizard.tsx:495
+#: src/pages/SetupWizard.tsx:501
 msgid "SMTP Password"
 msgstr "SMTP Password"
 
@@ -12598,11 +12774,11 @@ msgstr "SMTP port"
 
 #: src/components/settings/Integrations.tsx:1882
 #: src/components/settings/SystemSettingsDrawer.tsx:335
-#: src/pages/SetupWizard.tsx:463
+#: src/pages/SetupWizard.tsx:469
 msgid "SMTP Port"
 msgstr "SMTP Port"
 
-#: src/pages/SetupWizard.tsx:465
+#: src/pages/SetupWizard.tsx:471
 msgid "SMTP port is required"
 msgstr "SMTP port is required"
 
@@ -12624,7 +12800,7 @@ msgstr "SMTP User"
 
 #: src/components/settings/Integrations.tsx:2068
 #: src/components/settings/SystemSettingsDrawer.tsx:377
-#: src/pages/SetupWizard.tsx:490
+#: src/pages/SetupWizard.tsx:496
 msgid "SMTP Username"
 msgstr "SMTP Username"
 
@@ -12815,8 +12991,8 @@ msgid "Status unknown"
 msgstr "Status unknown"
 
 #: src/components/automations/UpsertAutomationDrawer.tsx:214
-msgid "Stops this automation for a contact as soon as they reply to one of its emails. This requires inbound reply forwarding to be configured at your email provider (ESP): replies to your sending domain must be routed to the provider, which forwards them to Notifuse. Without that setup, replies aren't detected and the sequence won't stop."
-msgstr "Stops this automation for a contact as soon as they reply to one of its emails. This requires inbound reply forwarding to be configured at your email provider (ESP): replies to your sending domain must be routed to the provider, which forwards them to Notifuse. Without that setup, replies aren't detected and the sequence won't stop."
+msgid "Stops this automation for a contact as soon as they reply to one of its emails. This requires inbound reply forwarding to be configured at your email provider (ESP): replies to your sending domain must be routed to the provider, which forwards them to WeScale. Without that setup, replies aren't detected and the sequence won't stop."
+msgstr "Stops this automation for a contact as soon as they reply to one of its emails. This requires inbound reply forwarding to be configured at your email provider (ESP): replies to your sending domain must be routed to the provider, which forwards them to WeScale. Without that setup, replies aren't detected and the sequence won't stop."
 
 #: src/components/file_manager/fileManager.tsx:687
 msgid "Storage settings"
@@ -12906,8 +13082,12 @@ msgid "Subscribe to List"
 msgstr "Subscribe to List"
 
 #: src/pages/SetupWizard.tsx:397
-msgid "Subscribe to the newsletter (new features...)"
-msgstr "Subscribe to the newsletter (new features...)"
+#~ msgid "Subscribe to the newsletter (new features...)"
+#~ msgstr "Subscribe to the newsletter (new features...)"
+
+#: src/pages/SetupWizard.tsx:402
+msgid "Subscribe to the Notifuse platform newsletter"
+msgstr "Subscribe to the Notifuse platform newsletter"
 
 #: src/components/integrations/SupabaseIntegration.tsx:180
 msgid "Subscribe users to these lists (Optional)"
@@ -13196,8 +13376,8 @@ msgid "Template translations"
 msgstr "Template translations"
 
 #: src/components/license/LicenceGateNotice.tsx:57
-msgid "Template translations require a Notifuse {tier} licence."
-msgstr "Template translations require a Notifuse {tier} licence."
+msgid "Template translations require a WeScale {tier} licence."
+msgstr "Template translations require a WeScale {tier} licence."
 
 #: src/components/templates/CreateTemplateDrawer.tsx:305
 msgid "Template updated successfully"
@@ -13213,7 +13393,7 @@ msgid "Template:"
 msgstr "Template:"
 
 #: src/components/settings/PermissionsMatrix.tsx:124
-#: src/layouts/WorkspaceLayout.tsx:251
+#: src/layouts/WorkspaceLayout.tsx:256
 #: src/pages/TemplatesPage.tsx:404
 #: src/services/api/errors.ts:65
 msgid "Templates"
@@ -13243,6 +13423,10 @@ msgstr "Tenant {0} was created but its configuration set is not associated, so i
 msgid "Terms"
 msgstr "Terms"
 
+#: src/layouts/MainLayout.tsx:50
+msgid "Terms of service"
+msgstr "Terms of service"
+
 #: src/components/broadcasts/GlobalFeedSettings.tsx:122
 #: src/components/broadcasts/RecipientFeedSettings.tsx:130
 #: src/components/settings/Integrations.tsx:375
@@ -13261,7 +13445,7 @@ msgid "Test Completed"
 msgstr "Test Completed"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:316
-#: src/pages/SetupWizard.tsx:535
+#: src/pages/SetupWizard.tsx:541
 msgid "Test Connection"
 msgstr "Test Connection"
 
@@ -13388,7 +13572,7 @@ msgstr "Text Padding"
 msgid "Text Settings"
 msgstr "Text Settings"
 
-#: src/pages/SetupWizard.tsx:745
+#: src/pages/SetupWizard.tsx:751
 msgid "Text shown on the sign-in button"
 msgstr "Text shown on the sign-in button"
 
@@ -13476,12 +13660,12 @@ msgstr "The export failed. Please try again."
 msgid "The following validation errors were found in your import:"
 msgstr "The following validation errors were found in your import:"
 
-#: src/components/ai-assistant/useAIAssistant.tsx:891
+#: src/components/ai-assistant/useAIAssistant.tsx:896
 msgid "The generated email has issues that prevent it from rendering:"
 msgstr "The generated email has issues that prevent it from rendering:"
 
 #: src/components/settings/Integrations.tsx:2084
-#: src/pages/SetupWizard.tsx:524
+#: src/pages/SetupWizard.tsx:530
 msgid "The hostname your server identifies itself as when connecting to the SMTP server. Defaults to the SMTP host value if empty."
 msgstr "The hostname your server identifies itself as when connecting to the SMTP server. Defaults to the SMTP host value if empty."
 
@@ -13499,8 +13683,8 @@ msgid "The last backfill failed"
 msgstr "The last backfill failed"
 
 #: src/components/settings/LicenseSettings.tsx:70
-msgid "The licence covers this whole deployment rather than this workspace. Ask the person who runs this Notifuse instance."
-msgstr "The licence covers this whole deployment rather than this workspace. Ask the person who runs this Notifuse instance."
+msgid "The licence covers this whole deployment rather than this workspace. Ask the person who runs this WeScale instance."
+msgstr "The licence covers this whole deployment rather than this workspace. Ask the person who runs this WeScale instance."
 
 #: src/services/api/permissions.ts:882
 msgid "The log names every member's email and IP address and records refused actions. Grant read to the people who need to answer \"who did this\", not to everyone."
@@ -13511,8 +13695,12 @@ msgid "The main title for your blog"
 msgstr "The main title for your blog"
 
 #: src/components/settings/ZapierSettings.tsx:88
-#~ msgid "The name {prefix} is already taken on this Notifuse installation. Please pick another one."
-#~ msgstr "The name {prefix} is already taken on this Notifuse installation. Please pick another one."
+#~ msgid "The name {prefix} is already taken on this WeScale installation. Please pick another one."
+#~ msgstr "The name {prefix} is already taken on this WeScale installation. Please pick another one."
+
+#: src/pages/DashboardPage.tsx:66
+msgid "The next stage starts here"
+msgstr "The next stage starts here"
 
 #: src/services/api/permissions.ts:694
 msgid "The outbound message log: every email the workspace sent, its delivery status, and the engagement counted against it."
@@ -13743,7 +13931,7 @@ msgstr "This deployment has reached the number of workspaces its licence allows.
 #~ msgid "This deployment keeps working without them."
 #~ msgstr "This deployment keeps working without them."
 
-#: src/pages/SetupWizard.tsx:372
+#: src/pages/SetupWizard.tsx:377
 msgid "This email will be used for the root administrator account"
 msgstr "This email will be used for the root administrator account"
 
@@ -13759,7 +13947,7 @@ msgstr "This feature makes an HTTP request for each recipient before sending the
 msgid "This hook never blocks Supabase user creation for errors. However, if 'Reject Disposable Email Addresses' is enabled and a disposable email is detected, the user signup will be rejected by Supabase."
 msgstr "This hook never blocks Supabase user creation for errors. However, if 'Reject Disposable Email Addresses' is enabled and a disposable email is detected, the user signup will be rejected by Supabase."
 
-#: src/pages/CreateWorkspacePage.tsx:138
+#: src/pages/CreateWorkspacePage.tsx:139
 msgid "This ID will be used in URLs and API requests. It can only contain lowercase letters and numbers."
 msgstr "This ID will be used in URLs and API requests. It can only contain lowercase letters and numbers."
 
@@ -13928,7 +14116,7 @@ msgstr "This will send a real test email to the address provided."
 msgid "This will set the value to NULL. Are you sure?"
 msgstr "This will set the value to NULL. Are you sure?"
 
-#: src/components/logs/AuditLogsTab.tsx:60
+#: src/components/logs/AuditLogsTab.tsx:64
 msgid "This workspace"
 msgstr "This workspace"
 
@@ -14077,11 +14265,11 @@ msgid "TLS"
 msgstr "TLS"
 
 #: src/components/settings/SystemSettingsDrawer.tsx:512
-#: src/pages/SetupWizard.tsx:638
+#: src/pages/SetupWizard.tsx:644
 msgid "TLS Certificate (Base64)"
 msgstr "TLS Certificate (Base64)"
 
-#: src/pages/SetupWizard.tsx:643
+#: src/pages/SetupWizard.tsx:649
 msgid "TLS certificate is required"
 msgstr "TLS certificate is required"
 
@@ -14093,11 +14281,11 @@ msgstr "TLS Enabled"
 msgid "TLS Key (Base64)"
 msgstr "TLS Key (Base64)"
 
-#: src/pages/SetupWizard.tsx:656
+#: src/pages/SetupWizard.tsx:662
 msgid "TLS Private Key (Base64)"
 msgstr "TLS Private Key (Base64)"
 
-#: src/pages/SetupWizard.tsx:661
+#: src/pages/SetupWizard.tsx:667
 msgid "TLS private key is required"
 msgstr "TLS private key is required"
 
@@ -14269,7 +14457,7 @@ msgstr "Traffic no filter rule has classified"
 #: src/components/analytics/EmailMetricsChart.tsx:286
 #: src/components/settings/PermissionsMatrix.tsx:126
 #: src/components/webhooks/InboundWebhookEventsTab.tsx:408
-#: src/layouts/WorkspaceLayout.tsx:440
+#: src/layouts/WorkspaceLayout.tsx:445
 #: src/pages/TemplatesPage.tsx:126
 #: src/services/api/errors.ts:67
 msgid "Transactional"
@@ -14450,7 +14638,7 @@ msgstr "Unknown"
 msgid "Unknown date"
 msgstr "Unknown date"
 
-#: src/layouts/WorkspaceLayout.tsx:236
+#: src/layouts/WorkspaceLayout.tsx:241
 msgid "Unknown error"
 msgstr "Unknown error"
 
@@ -14697,7 +14885,7 @@ msgstr "Use 0 to keep forever, or a value between {AUDIT_LOG_MIN_RETENTION_DAYS}
 #~ msgid "Use 0 to keep forever, or a value between 30 and 3650"
 #~ msgstr "Use 0 to keep forever, or a value between 30 and 3650"
 
-#: src/pages/SignInPage.tsx:286
+#: src/pages/SignInPage.tsx:291
 msgid "Use a different email"
 msgstr "Use a different email"
 
@@ -14751,7 +14939,7 @@ msgstr "Use This Theme"
 
 #: src/components/settings/Integrations.tsx:1893
 #: src/components/settings/SystemSettingsDrawer.tsx:360
-#: src/pages/SetupWizard.tsx:480
+#: src/pages/SetupWizard.tsx:486
 msgid "Use TLS"
 msgstr "Use TLS"
 
@@ -14890,7 +15078,7 @@ msgstr "Variant name"
 msgid "Variations"
 msgstr "Variations"
 
-#: src/pages/SignInPage.tsx:276
+#: src/pages/SignInPage.tsx:281
 msgid "Verify Code"
 msgstr "Verify Code"
 
@@ -14993,6 +15181,10 @@ msgstr "Visibility"
 msgid "Visit website"
 msgstr "Visit website"
 
+#: src/pages/SetupWizard.tsx:314
+msgid "Visit WeScale"
+msgstr "Visit WeScale"
+
 #: src/components/timeline/ContactTimeline.tsx:817
 #~ msgid "visited"
 #~ msgstr "visited"
@@ -15022,7 +15214,7 @@ msgstr "vs."
 msgid "Wait Duration"
 msgstr "Wait Duration"
 
-#: src/pages/SetupWizard.tsx:338
+#: src/pages/SetupWizard.tsx:341
 msgid "Waiting for server restart..."
 msgstr "Waiting for server restart..."
 
@@ -15034,7 +15226,7 @@ msgstr "Warning"
 msgid "Watch out"
 msgstr "Watch out"
 
-#: src/pages/CreateWorkspacePage.tsx:172
+#: src/pages/CreateWorkspacePage.tsx:173
 msgid "We'll automatically detect and use your website's favicon"
 msgstr "We'll automatically detect and use your website's favicon"
 
@@ -15044,7 +15236,7 @@ msgstr "We'll automatically detect and use your website's favicon"
 #: src/components/settings/WebAnalyticsSettings.tsx:242
 #: src/components/settings/WebAnalyticsSettings.tsx:291
 #: src/components/web_analytics/WebAnalyticsAIAssistant.tsx:370
-#: src/layouts/WorkspaceLayout.tsx:293
+#: src/layouts/WorkspaceLayout.tsx:298
 #: src/pages/BroadcastsPage.tsx:1195
 #: src/pages/WebAnalyticsPage.tsx:94
 #: src/services/api/errors.ts:73
@@ -15180,7 +15372,7 @@ msgstr "Website traffic tracking settings"
 
 #: src/components/settings/GeneralSettings.tsx:137
 #: src/components/settings/GeneralSettings.tsx:205
-#: src/pages/CreateWorkspacePage.tsx:163
+#: src/pages/CreateWorkspacePage.tsx:164
 msgid "Website URL"
 msgstr "Website URL"
 
@@ -15208,6 +15400,56 @@ msgstr "Welcome to Email Builder!"
 #: src/components/settings/BlogSettings.tsx:458
 msgid "Welcome to my blog where I share insights about..."
 msgstr "Welcome to my blog where I share insights about..."
+
+#: src/pages/SignInPage.tsx:209
+msgid "Welcome to WeScale"
+msgstr "Welcome to WeScale"
+
+#: src/layouts/MainLayout.tsx:22
+#: src/pages/SetupWizard.tsx:299
+#: src/pages/SetupWizard.tsx:313
+msgid "WeScale"
+msgstr "WeScale"
+
+#: src/layouts/MainLayout.tsx:47
+msgid "WeScale · Your brand, built together."
+msgstr "WeScale · Your brand, built together."
+
+#: src/layouts/WorkspaceLayout.tsx:562
+#: src/layouts/WorkspaceLayout.tsx:681
+#: src/pages/DashboardPage.tsx:30
+msgid "WeScale community"
+msgstr "WeScale community"
+
+#: src/components/settings/WebhookCard.tsx:298
+msgid "WeScale disabled this webhook automatically"
+msgstr "WeScale disabled this webhook automatically"
+
+#: src/layouts/WorkspaceLayout.tsx:668
+#: src/pages/DashboardPage.tsx:44
+msgid "WeScale GPTs"
+msgstr "WeScale GPTs"
+
+#: src/layouts/MainLayout.tsx:21
+#: src/layouts/WorkspaceLayout.tsx:523
+msgid "WeScale home"
+msgstr "WeScale home"
+
+#: src/pages/DashboardPage.tsx:37
+msgid "WeScale Launchpad"
+msgstr "WeScale Launchpad"
+
+#: src/layouts/MainLayout.tsx:48
+msgid "WeScale policies"
+msgstr "WeScale policies"
+
+#: src/pages/DashboardPage.tsx:56
+msgid "WeScale website"
+msgstr "WeScale website"
+
+#: src/components/settings/Integrations.tsx:1074
+msgid "WeScale will create a tenant in your AWS account, give it its own suppression list, and associate this integration's configuration set and sender identities with it. AWS bills per tenant per month, based on volume."
+msgstr "WeScale will create a tenant in your AWS account, give it its own suppression list, and associate this integration's configuration set and sender identities with it. AWS bills per tenant per month, based on volume."
 
 #: src/components/license/LicenseBanner.tsx:115
 #: src/components/license/SsoLicenceNotice.tsx:46
@@ -15264,7 +15506,7 @@ msgstr "When engagement is at its best"
 msgid "When matched, execute these operations:"
 msgstr "When matched, execute these operations:"
 
-#: src/pages/SetupWizard.tsx:754
+#: src/pages/SetupWizard.tsx:760
 msgid "When off (recommended), only already-invited users can sign in via SSO. When on, a verified email in an allowed domain creates an account automatically."
 msgstr "When off (recommended), only already-invited users can sign in via SSO. When on, a verified email in an allowed domain creates an account automatically."
 
@@ -15284,7 +15526,7 @@ msgstr "Which landing pages bring the most sessions, and which ones have the wor
 msgid "Who did what in this workspace: members, permissions, API keys, integrations, settings and content changes, with the address it came from and whether it was allowed."
 msgstr "Who did what in this workspace: members, permissions, API keys, integrations, settings and content changes, with the address it came from and whether it was allowed."
 
-#: src/components/logs/AuditLogsTab.tsx:61
+#: src/components/logs/AuditLogsTab.tsx:65
 msgid "Whole deployment"
 msgstr "Whole deployment"
 
@@ -15365,7 +15607,7 @@ msgstr "Workspace \"{0}\" created successfully!"
 msgid "Workspace deleted successfully"
 msgstr "Workspace deleted successfully"
 
-#: src/pages/CreateWorkspacePage.tsx:137
+#: src/pages/CreateWorkspacePage.tsx:138
 msgid "Workspace ID"
 msgstr "Workspace ID"
 
@@ -15373,13 +15615,13 @@ msgstr "Workspace ID"
 msgid "Workspace ID does not match"
 msgstr "Workspace ID does not match"
 
-#: src/pages/CreateWorkspacePage.tsx:145
+#: src/pages/CreateWorkspacePage.tsx:146
 msgid "Workspace ID is required"
 msgstr "Workspace ID is required"
 
 #: src/pages/AcceptInvitationPage.tsx:138
-msgid "Workspace Invitation"
-msgstr "Workspace Invitation"
+#~ msgid "Workspace Invitation"
+#~ msgstr "Workspace Invitation"
 
 #: src/pages/CreateWorkspacePage.tsx:89
 msgid "Workspace limit reached. Please upgrade your plan to create more workspaces."
@@ -15391,22 +15633,26 @@ msgstr "Workspace logo"
 
 #: src/components/settings/GeneralSettings.tsx:133
 #: src/components/settings/GeneralSettings.tsx:197
-#: src/pages/CreateWorkspacePage.tsx:124
+#: src/pages/CreateWorkspacePage.tsx:125
 msgid "Workspace Name"
 msgstr "Workspace Name"
 
-#: src/pages/CreateWorkspacePage.tsx:128
+#: src/pages/CreateWorkspacePage.tsx:129
 msgid "Workspace name must be at least 3 characters long"
 msgstr "Workspace name must be at least 3 characters long"
 
-#: src/layouts/WorkspaceLayout.tsx:215
+#: src/layouts/WorkspaceLayout.tsx:531
+msgid "Workspace navigation"
+msgstr "Workspace navigation"
+
+#: src/layouts/WorkspaceLayout.tsx:220
 #: src/pages/AnalyticsPage.tsx:68
 #: src/pages/FileManagerPage.tsx:56
 msgid "Workspace not found"
 msgstr "Workspace not found"
 
 #: src/components/settings/GeneralSettings.tsx:103
-#: src/layouts/WorkspaceLayout.tsx:233
+#: src/layouts/WorkspaceLayout.tsx:238
 msgid "Workspace settings updated successfully"
 msgstr "Workspace settings updated successfully"
 
@@ -15647,6 +15893,14 @@ msgstr "You're continuing a previous upload session of \"{fileName}\". The uploa
 msgid "You've been invited to join"
 msgstr "You've been invited to join"
 
+#: src/pages/SignInPage.tsx:229
+msgid "you@yourbrand.com"
+msgstr "you@yourbrand.com"
+
+#: src/pages/DashboardPage.tsx:68
+msgid "Your audience, campaigns, and content. One workspace to keep your growth moving."
+msgstr "Your audience, campaigns, and content. One workspace to keep your growth moving."
+
 #: src/components/settings/Integrations.tsx:1109
 msgid "Your AWS credentials cannot create SES tenants. Grant ses:CreateTenant and ses:CreateTenantResourceAssociation, then save again."
 msgstr "Your AWS credentials cannot create SES tenants. Grant ses:CreateTenant and ses:CreateTenantResourceAssociation, then save again."
@@ -15654,6 +15908,10 @@ msgstr "Your AWS credentials cannot create SES tenants. Grant ses:CreateTenant a
 #: src/components/settings/BlogSettings.tsx:494
 msgid "Your blog settings have not been saved. Leaving this page discards them."
 msgstr "Your blog settings have not been saved. Leaving this page discards them."
+
+#: src/pages/DashboardPage.tsx:74
+msgid "Your business, connected"
+msgstr "Your business, connected"
 
 #: src/components/license/LicenseBanner.tsx:146
 #~ msgid "Your data stays readable and available through the API. Scheduled sends, transactional email, webhooks and API keys keep working."
@@ -15663,21 +15921,13 @@ msgstr "Your blog settings have not been saved. Leaving this page discards them.
 msgid "Your files can be uploaded to any S3 compatible storage."
 msgstr "Your files can be uploaded to any S3 compatible storage."
 
+#: src/layouts/WorkspaceLayout.tsx:529
+msgid "Your growth workspace"
+msgstr "Your growth workspace"
+
 #: src/pages/SignInPage.tsx:99
 msgid "Your identity provider has not verified your email address."
 msgstr "Your identity provider has not verified your email address."
-
-#: src/pages/SetupWizard.tsx:323
-msgid "Your Notifuse instance has been successfully configured."
-msgstr "Your Notifuse instance has been successfully configured."
-
-#: src/components/license/LicenseBanner.tsx:151
-msgid "Your Notifuse licence expired on {expiryLabel} and is in its grace period."
-msgstr "Your Notifuse licence expired on {expiryLabel} and is in its grace period."
-
-#: src/components/license/LicenseBanner.tsx:152
-msgid "Your Notifuse licence has expired and is in its grace period."
-msgstr "Your Notifuse licence has expired and is in its grace period."
 
 #: src/components/settings/WebAnalyticsSettings.tsx:466
 msgid "Your web analytics settings have not been saved. Leaving this page discards them."
@@ -15687,6 +15937,18 @@ msgstr "Your web analytics settings have not been saved. Leaving this page disca
 msgid "Your website or company name"
 msgstr "Your website or company name"
 
+#: src/pages/SetupWizard.tsx:326
+msgid "Your WeScale instance has been successfully configured."
+msgstr "Your WeScale instance has been successfully configured."
+
+#: src/components/license/LicenseBanner.tsx:151
+msgid "Your WeScale licence expired on {expiryLabel} and is in its grace period."
+msgstr "Your WeScale licence expired on {expiryLabel} and is in its grace period."
+
+#: src/components/license/LicenseBanner.tsx:152
+msgid "Your WeScale licence has expired and is in its grace period."
+msgstr "Your WeScale licence has expired and is in its grace period."
+
 #: src/components/transactional/ApiCommandModal.tsx:536
 msgid "Your workspace API email (the email associated with your API key)"
 msgstr "Your workspace API email (the email associated with your API key)"
@@ -15694,6 +15956,10 @@ msgstr "Your workspace API email (the email associated with your API key)"
 #: src/components/transactional/ApiCommandModal.tsx:538
 msgid "Your workspace API key"
 msgstr "Your workspace API key"
+
+#: src/pages/SetupWizard.tsx:324
+msgid "Your workspace is ready"
+msgstr "Your workspace is ready"
 
 #: src/components/settings/GeneralSettings.tsx:330
 msgid "Your workspace settings have not been saved. Leaving this page discards them."

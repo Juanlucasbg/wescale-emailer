@@ -148,8 +148,8 @@ export function LicenseBanner() {
         type="warning"
         title={
           expiryLabel
-            ? t`Your Notifuse licence expired on ${expiryLabel} and is in its grace period.`
-            : t`Your Notifuse licence has expired and is in its grace period.`
+            ? t`Your WeScale licence expired on ${expiryLabel} and is in its grace period.`
+            : t`Your WeScale licence has expired and is in its grace period.`
         }
         description={graceDescription}
       />

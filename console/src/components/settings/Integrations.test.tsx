@@ -154,7 +154,7 @@ describe('Integrations — SES tenant isolation', () => {
     await openSESDrawer({ licensedFor: ['rbac'] })
 
     expect(
-      screen.getByText('SES tenant isolation requires a Notifuse Studio licence.')
+      screen.getByText('SES tenant isolation requires a WeScale Studio licence.')
     ).toBeInTheDocument()
     expect(isolationSwitch()).toBeDisabled()
   })

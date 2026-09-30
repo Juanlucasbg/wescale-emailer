@@ -225,7 +225,7 @@ Block content, subject and preview text support Liquid variables. Which ones are
 
 Always available:
 - {{ workspace.website_url }} - the sender's public website; compose application links as {{ workspace.website_url }}/path
-- {{ workspace.base_url }} - the Notifuse endpoint that serves tracking and notification-center links; not for application links
+- {{ workspace.base_url }} - the WeScale endpoint that serves tracking and notification-center links; not for application links
 - {{ message_id }}
 
 When a contact is known (every send to a contact; contact is an empty object otherwise):

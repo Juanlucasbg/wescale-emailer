@@ -73,7 +73,7 @@ describe('SignInPage', () => {
     renderWithProviders(<SignInPage />)
 
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument()
-    expect(screen.getByText(/send magic code/i)).toBeInTheDocument()
+    expect(screen.getByText(/send sign-in code/i)).toBeInTheDocument()
   })
 
   it('submits email and shows code input form', async () => {
@@ -89,7 +89,7 @@ describe('SignInPage', () => {
     fireEvent.change(screen.getByLabelText(/email/i), {
       target: { value: 'test@example.com' }
     })
-    fireEvent.click(screen.getByText(/send magic code/i))
+    fireEvent.click(screen.getByText(/send sign-in code/i))
 
     // Wait for code input form to appear
     await waitFor(() => {
@@ -116,7 +116,7 @@ describe('SignInPage', () => {
     fireEvent.change(screen.getByLabelText(/email/i), {
       target: { value: 'test@example.com' }
     })
-    fireEvent.click(screen.getByText(/send magic code/i))
+    fireEvent.click(screen.getByText(/send sign-in code/i))
 
     const codeInput = await screen.findByPlaceholderText('000000')
 
@@ -148,7 +148,7 @@ describe('SignInPage', () => {
     fireEvent.change(screen.getByLabelText(/email/i), {
       target: { value: 'test@example.com' }
     })
-    fireEvent.click(screen.getByText(/send magic code/i))
+    fireEvent.click(screen.getByText(/send sign-in code/i))
 
     // Wait for auto-submit to complete (code form should appear briefly, then auto-submit)
     await waitFor(
@@ -179,7 +179,7 @@ describe('SignInPage', () => {
     fireEvent.change(screen.getByLabelText(/email/i), {
       target: { value: 'test@example.com' }
     })
-    fireEvent.click(screen.getByText(/send magic code/i))
+    fireEvent.click(screen.getByText(/send sign-in code/i))
 
     // Wait for code input form
     await waitFor(() => {
@@ -211,7 +211,7 @@ describe('SignInPage', () => {
     fireEvent.change(screen.getByLabelText(/email/i), {
       target: { value: 'test@example.com' }
     })
-    fireEvent.click(screen.getByText(/send magic code/i))
+    fireEvent.click(screen.getByText(/send sign-in code/i))
 
     // Error message should appear (we can't directly check antd message.error,
     // but we can verify the API was called and the form is still shown)
@@ -379,7 +379,7 @@ describe('SignInPage', () => {
     it('extracts every OIDC error message into the source catalog', () => {
       const catalog = readFileSync(join(import.meta.dirname, '../i18n/locales/en.po'), 'utf8')
       const messages = [
-        'No Notifuse account is linked to that identity. Ask an administrator to invite you first.',
+        'No WeScale account is linked to that identity. Ask an administrator to invite you first.',
         'Your identity provider has not verified your email address.',
         'This account is already linked to a different single sign-on identity.',
         'Single sign-on is temporarily unavailable. Please try a magic code.',

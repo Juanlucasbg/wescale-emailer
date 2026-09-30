@@ -461,8 +461,8 @@ func LoadWithOptions(opts LoadOptions) (*Config, error) {
 	v.SetDefault("LOG_LEVEL", "info")
 	v.SetDefault("VERSION", VERSION)
 
-	// SMTP defaults
-	v.SetDefault("SMTP_FROM_NAME", "Notifuse")
+	// SMTP sender defaults are applied after database settings are resolved,
+	// so an absent environment value preserves a configured sender name.
 
 	// SMTP Bridge defaults (formerly SMTP Relay)
 	// NOTE: Don't set default for SMTP_BRIDGE_ENABLED - we need to detect when it's truly unset
@@ -760,7 +760,7 @@ func LoadWithOptions(opts LoadOptions) (*Config, error) {
 			smtpConfig.FromName = systemSettings.SMTPFromName
 		}
 		if smtpConfig.FromName == "" {
-			smtpConfig.FromName = "Notifuse" // Default
+			smtpConfig.FromName = "WeScale" // Default
 		}
 		// Use database value for TLS if env var is not set
 		if envVals.SMTPUseTLS == "" {
@@ -822,7 +822,7 @@ func LoadWithOptions(opts LoadOptions) (*Config, error) {
 			smtpConfig.Port = 587
 		}
 		if smtpConfig.FromName == "" {
-			smtpConfig.FromName = "Notifuse"
+			smtpConfig.FromName = "WeScale"
 		}
 
 		smtpBridgeConfig = SMTPBridgeConfig{

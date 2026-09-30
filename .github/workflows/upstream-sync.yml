@@ -1,0 +1,192 @@
+name: Notifuse upstream intake
+
+on:
+  schedule:
+    # Stagger away from the start-of-hour queue; schedules may be delayed by GitHub.
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: notifuse-upstream-intake
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_URL: https://github.com/Notifuse/notifuse.git
+
+jobs:
+  intake:
+    name: Offer upstream updates for review
+    if: github.repository == 'Juanlucasbg/wescale-emailer' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      updates: ${{ steps.sync.outputs.updates }}
+      mergeable: ${{ steps.sync.outputs.mergeable }}
+      base_sha: ${{ steps.sync.outputs.base_sha }}
+      upstream_sha: ${{ steps.sync.outputs.upstream_sha }}
+      conflicts_json: ${{ steps.sync.outputs.conflicts_json }}
+      commit_count: ${{ steps.sync.outputs.commit_count }}
+      pr_number: ${{ steps.pr.outputs.pr_number }}
+    steps:
+      - name: Check out trusted workflow helpers
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          # Optional token for upstream commits that modify workflow files.
+          # Only the trusted intake job receives it; validation jobs stay read-only.
+          token: ${{ secrets.UPSTREAM_SYNC_TOKEN || github.token }}
+      - name: Update managed intake branch and inspect merge
+        id: sync
+        run: bash .github/scripts/upstream-sync.sh
+      - name: Create or update review PR
+        id: pr
+        if: steps.sync.outputs.updates == 'true'
+        uses: actions/github-script@v7
+        env:
+          BASE_SHA: ${{ steps.sync.outputs.base_sha }}
+          UPSTREAM_SHA: ${{ steps.sync.outputs.upstream_sha }}
+          COMMIT_COUNT: ${{ steps.sync.outputs.commit_count }}
+          CONFLICTS_JSON: ${{ steps.sync.outputs.conflicts_json }}
+        with:
+          script: |
+            await require('./.github/scripts/upstream-sync-pr.cjs')({ github, context, core })
+
+  console:
+    name: Validate merged console
+    needs: intake
+    if: needs.intake.outputs.updates == 'true' && needs.intake.outputs.mergeable == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    env:
+      BASE_SHA: ${{ needs.intake.outputs.base_sha }}
+      UPSTREAM_SHA: ${{ needs.intake.outputs.upstream_sha }}
+    steps:
+      - name: Check out pinned branded main
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.intake.outputs.base_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Prepare pinned integration tree
+        run: bash .github/scripts/merge-upstream.sh
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: console/package-lock.json
+      - name: Install console dependencies
+        working-directory: console
+        run: npm ci
+      - name: Console production build
+        working-directory: console
+        run: npm run build
+      - name: Console unit tests
+        working-directory: console
+        run: npx vitest run --maxWorkers=2
+
+  notifications:
+    name: Validate merged notification center
+    needs: intake
+    if: needs.intake.outputs.updates == 'true' && needs.intake.outputs.mergeable == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    env:
+      BASE_SHA: ${{ needs.intake.outputs.base_sha }}
+      UPSTREAM_SHA: ${{ needs.intake.outputs.upstream_sha }}
+    steps:
+      - name: Check out pinned branded main
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.intake.outputs.base_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Prepare pinned integration tree
+        run: bash .github/scripts/merge-upstream.sh
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: notification_center/package-lock.json
+      - name: Install notification center dependencies
+        working-directory: notification_center
+        run: npm ci
+      - name: Notification center production build
+        working-directory: notification_center
+        run: npm run build
+      - name: Notification center unit tests
+        working-directory: notification_center
+        run: npm run test:run
+
+  go:
+    name: Validate merged Go services
+    needs: intake
+    if: needs.intake.outputs.updates == 'true' && needs.intake.outputs.mergeable == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+    env:
+      BASE_SHA: ${{ needs.intake.outputs.base_sha }}
+      UPSTREAM_SHA: ${{ needs.intake.outputs.upstream_sha }}
+    steps:
+      - name: Check out pinned branded main
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.intake.outputs.base_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Prepare pinned integration tree
+        run: bash .github/scripts/merge-upstream.sh
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Test configuration, mailer, HTTP handlers, and services
+        run: go test -race -timeout 15m ./config ./pkg/mailer ./internal/http ./internal/service
+
+  report:
+    name: Report independent integration results
+    needs: [intake, console, notifications, go]
+    if: always() && needs.intake.result == 'success' && needs.intake.outputs.updates == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check out trusted reporting helper
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.intake.outputs.base_sha }}
+          persist-credentials: false
+      - name: Publish results on managed PR
+        uses: actions/github-script@v7
+        env:
+          BASE_SHA: ${{ needs.intake.outputs.base_sha }}
+          UPSTREAM_SHA: ${{ needs.intake.outputs.upstream_sha }}
+          COMMIT_COUNT: ${{ needs.intake.outputs.commit_count }}
+          CONFLICTS_JSON: ${{ needs.intake.outputs.conflicts_json }}
+          PR_NUMBER: ${{ needs.intake.outputs.pr_number }}
+          CHECK_RESULTS: '{"console":"${{ needs.console.result }}","notifications":"${{ needs.notifications.result }}","go":"${{ needs.go.result }}"}'
+        with:
+          script: |
+            await require('./.github/scripts/upstream-sync-pr.cjs')({ github, context, core })
+      - name: Flag unresolved merge conflicts
+        if: needs.intake.outputs.mergeable != 'true'
+        run: |
+          echo '::error::Upstream changes conflict with branded main. Resolve the files listed in the PR on a separate review branch.'
+          exit 1

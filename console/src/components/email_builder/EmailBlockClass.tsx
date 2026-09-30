@@ -182,7 +182,7 @@ export class EmailBlockClass {
               style={{
                 width: 60,
                 height: 30,
-                border: '2px solid #1890ff',
+                border: '2px solid #0f8a3d',
                 borderRadius: 4,
                 backgroundColor: '#e6f7ff',
                 display: 'flex',
@@ -193,7 +193,7 @@ export class EmailBlockClass {
                 margin: '0 auto'
               }}
             >
-              <div style={{ fontSize: 10, color: '#1890ff', fontWeight: 'bold', lineHeight: 1 }}>
+              <div style={{ fontSize: 10, color: '#0f8a3d', fontWeight: 'bold', lineHeight: 1 }}>
                 Aa
               </div>
               <div style={{ fontSize: 6, color: '#69c0ff', marginTop: 1 }}>Font</div>

@@ -55,7 +55,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: Notifuse/notifuse
+          slug: ${{ github.repository }}
           files: coverage-unit.txt
           fail_ci_if_error: false
           verbose: true

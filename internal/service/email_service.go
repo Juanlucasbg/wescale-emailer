@@ -139,8 +139,8 @@ func (s *EmailService) TestEmailProvider(ctx context.Context, workspaceID string
 	}
 
 	// Generate email content
-	subject := "Notifuse: Test Email Provider"
-	content := "<h1>Notifuse: Test Email Provider</h1><p>This is a test email from Notifuse. Your provider is working!</p>"
+	subject := "WeScale: Test email provider"
+	content := "<h1>WeScale: Test email provider</h1><p>This is a test email from WeScale. Your provider is working.</p>"
 
 	// Send email with the provider details
 	messageID := uuid.New().String()

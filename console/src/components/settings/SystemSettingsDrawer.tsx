@@ -424,7 +424,7 @@ export function SystemSettingsDrawer({ workspaceId }: { workspaceId?: string } =
                 >
                   <Input
                     disabled={isOverridden('smtp_from_name')}
-                    placeholder="Notifuse"
+                    placeholder="WeScale"
                     allowClear
                   />
                 </Form.Item>

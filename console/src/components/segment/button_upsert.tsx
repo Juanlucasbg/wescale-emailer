@@ -735,7 +735,7 @@ const DrawerSegment = (props: {
                     >
                       <FontAwesomeIcon
                         icon={faInfoCircle}
-                        style={{ fontSize: '18px', color: '#1890ff', cursor: 'pointer' }}
+                        style={{ fontSize: '18px', color: '#0f8a3d', cursor: 'pointer' }}
                       />
                     </Popover>
                   ) : null}
